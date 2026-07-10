@@ -1,0 +1,1451 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+
+    <meta
+      name="description"
+      content="KONAX es una plataforma de gestión empresarial para ventas, crédito, cobranza, caja, clientes e inventario."
+    />
+
+    <title>KONAX | Gestión empresarial inteligente</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #020617;
+        color: #ffffff;
+        line-height: 1.6;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      button,
+      a {
+        transition: all 0.25s ease;
+      }
+
+      .contenedor {
+        width: min(1180px, 92%);
+        margin: 0 auto;
+      }
+
+      /* =====================================================
+         ENCABEZADO
+      ===================================================== */
+
+      .header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background: rgba(2, 6, 23, 0.94);
+        backdrop-filter: blur(14px);
+        border-bottom: 1px solid rgba(56, 189, 248, 0.18);
+      }
+
+      .nav {
+        min-height: 78px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      .marca {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .marca-icono {
+        width: 48px;
+        height: 48px;
+        border-radius: 14px;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(135deg, #06b6d4, #2563eb);
+        color: #ffffff;
+        font-size: 22px;
+        font-weight: 900;
+        box-shadow: 0 0 28px rgba(34, 211, 238, 0.35);
+      }
+
+      .marca-texto {
+        font-size: 26px;
+        font-weight: 900;
+        letter-spacing: 1.5px;
+        color: #ffffff;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+      }
+
+      .nav-links a {
+        color: #cbd5e1;
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      .nav-links a:hover {
+        color: #67e8f9;
+      }
+
+      .boton-login {
+        padding: 11px 18px;
+        border-radius: 10px;
+        background: #ffffff;
+        color: #0f172a !important;
+      }
+
+      .boton-login:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 28px rgba(255, 255, 255, 0.18);
+      }
+
+      /* =====================================================
+         HERO
+      ===================================================== */
+
+      .hero {
+        position: relative;
+        overflow: hidden;
+        padding: 100px 0 85px;
+        background:
+          radial-gradient(
+            circle at 15% 20%,
+            rgba(14, 165, 233, 0.2),
+            transparent 32%
+          ),
+          radial-gradient(
+            circle at 85% 30%,
+            rgba(37, 99, 235, 0.2),
+            transparent 34%
+          ),
+          linear-gradient(180deg, #020617, #071426);
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(
+            rgba(255, 255, 255, 0.025) 1px,
+            transparent 1px
+          ),
+          linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.025) 1px,
+            transparent 1px
+          );
+        background-size: 48px 48px;
+        pointer-events: none;
+      }
+
+      .hero-grid {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        align-items: center;
+        gap: 58px;
+      }
+
+      .etiqueta {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 14px;
+        border-radius: 999px;
+        background: rgba(8, 145, 178, 0.13);
+        border: 1px solid rgba(34, 211, 238, 0.28);
+        color: #67e8f9;
+        font-size: 13px;
+        font-weight: 800;
+        margin-bottom: 22px;
+      }
+
+      .hero h1 {
+        font-size: clamp(42px, 6vw, 72px);
+        line-height: 1.03;
+        letter-spacing: -2px;
+        margin-bottom: 24px;
+      }
+
+      .texto-degradado {
+        background: linear-gradient(
+          90deg,
+          #67e8f9,
+          #38bdf8,
+          #818cf8
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .hero p {
+        max-width: 680px;
+        color: #cbd5e1;
+        font-size: 19px;
+        margin-bottom: 32px;
+      }
+
+      .hero-botones {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-bottom: 34px;
+      }
+
+      .boton-principal,
+      .boton-secundario {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 52px;
+        padding: 13px 22px;
+        border-radius: 12px;
+        font-weight: 800;
+        font-size: 15px;
+      }
+
+      .boton-principal {
+        background: linear-gradient(135deg, #06b6d4, #2563eb);
+        color: #ffffff;
+        box-shadow: 0 14px 36px rgba(37, 99, 235, 0.34);
+      }
+
+      .boton-principal:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 18px 42px rgba(37, 99, 235, 0.46);
+      }
+
+      .boton-secundario {
+        border: 1px solid rgba(148, 163, 184, 0.34);
+        background: rgba(15, 23, 42, 0.66);
+        color: #ffffff;
+      }
+
+      .boton-secundario:hover {
+        border-color: #38bdf8;
+        color: #67e8f9;
+      }
+
+      .hero-beneficios {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px;
+        color: #94a3b8;
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .hero-beneficios span {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+      }
+
+      .hero-beneficios span::before {
+        content: "✓";
+        color: #22c55e;
+        font-weight: 900;
+      }
+
+      /* =====================================================
+         PANEL VISUAL
+      ===================================================== */
+
+      .panel-demo {
+        position: relative;
+        border-radius: 26px;
+        padding: 18px;
+        background: linear-gradient(
+          145deg,
+          rgba(15, 23, 42, 0.95),
+          rgba(8, 47, 73, 0.85)
+        );
+        border: 1px solid rgba(34, 211, 238, 0.25);
+        box-shadow:
+          0 35px 80px rgba(0, 0, 0, 0.48),
+          0 0 60px rgba(14, 165, 233, 0.16);
+      }
+
+      .panel-superior {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 18px;
+      }
+
+      .puntos {
+        display: flex;
+        gap: 7px;
+      }
+
+      .punto {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #334155;
+      }
+
+      .punto:nth-child(1) {
+        background: #ef4444;
+      }
+
+      .punto:nth-child(2) {
+        background: #f59e0b;
+      }
+
+      .punto:nth-child(3) {
+        background: #22c55e;
+      }
+
+      .panel-titulo {
+        color: #cbd5e1;
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      .dashboard-mini {
+        border-radius: 18px;
+        padding: 18px;
+        background: rgba(2, 6, 23, 0.78);
+        border: 1px solid rgba(148, 163, 184, 0.14);
+      }
+
+      .mini-header {
+        margin-bottom: 18px;
+      }
+
+      .mini-header h3 {
+        font-size: 20px;
+        margin-bottom: 4px;
+      }
+
+      .mini-header p {
+        color: #64748b;
+        font-size: 12px;
+      }
+
+      .mini-kpis {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+
+      .mini-card {
+        padding: 15px;
+        border-radius: 14px;
+        background: linear-gradient(
+          145deg,
+          rgba(15, 23, 42, 0.88),
+          rgba(30, 41, 59, 0.7)
+        );
+        border: 1px solid rgba(148, 163, 184, 0.12);
+      }
+
+      .mini-card span {
+        color: #94a3b8;
+        font-size: 11px;
+      }
+
+      .mini-card strong {
+        display: block;
+        margin-top: 6px;
+        font-size: 21px;
+      }
+
+      .barra-grafica {
+        margin-top: 16px;
+        height: 155px;
+        border-radius: 14px;
+        background:
+          linear-gradient(
+            to top,
+            rgba(34, 211, 238, 0.13),
+            transparent
+          ),
+          rgba(15, 23, 42, 0.66);
+        display: flex;
+        align-items: flex-end;
+        gap: 10px;
+        padding: 16px;
+      }
+
+      .barra {
+        flex: 1;
+        border-radius: 8px 8px 2px 2px;
+        background: linear-gradient(to top, #2563eb, #22d3ee);
+      }
+
+      .barra:nth-child(1) {
+        height: 42%;
+      }
+
+      .barra:nth-child(2) {
+        height: 65%;
+      }
+
+      .barra:nth-child(3) {
+        height: 52%;
+      }
+
+      .barra:nth-child(4) {
+        height: 82%;
+      }
+
+      .barra:nth-child(5) {
+        height: 72%;
+      }
+
+      .barra:nth-child(6) {
+        height: 94%;
+      }
+
+      /* =====================================================
+         SECCIONES GENERALES
+      ===================================================== */
+
+      .seccion {
+        padding: 88px 0;
+      }
+
+      .seccion-clara {
+        background: #f8fafc;
+        color: #0f172a;
+      }
+
+      .seccion-oscura {
+        background: #020617;
+      }
+
+      .encabezado-seccion {
+        max-width: 760px;
+        margin: 0 auto 48px;
+        text-align: center;
+      }
+
+      .encabezado-seccion span {
+        color: #06b6d4;
+        font-size: 13px;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+      }
+
+      .encabezado-seccion h2 {
+        margin-top: 12px;
+        font-size: clamp(32px, 4vw, 48px);
+        line-height: 1.12;
+      }
+
+      .encabezado-seccion p {
+        margin-top: 16px;
+        color: #64748b;
+        font-size: 17px;
+      }
+
+      .seccion-oscura .encabezado-seccion p {
+        color: #94a3b8;
+      }
+
+      /* =====================================================
+         PROBLEMAS Y BENEFICIOS
+      ===================================================== */
+
+      .grid-problemas {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+      }
+
+      .tarjeta-problema {
+        padding: 26px;
+        border-radius: 18px;
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        box-shadow: 0 14px 34px rgba(15, 23, 42, 0.07);
+      }
+
+      .icono {
+        width: 52px;
+        height: 52px;
+        border-radius: 14px;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(135deg, #cffafe, #dbeafe);
+        font-size: 24px;
+        margin-bottom: 18px;
+      }
+
+      .tarjeta-problema h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+
+      .tarjeta-problema p {
+        color: #64748b;
+        font-size: 15px;
+      }
+
+      /* =====================================================
+         MÓDULOS
+      ===================================================== */
+
+      .grid-modulos {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+
+      .modulo {
+        padding: 26px;
+        border-radius: 19px;
+        background: linear-gradient(
+          145deg,
+          rgba(15, 23, 42, 0.94),
+          rgba(15, 38, 63, 0.84)
+        );
+        border: 1px solid rgba(148, 163, 184, 0.14);
+      }
+
+      .modulo:hover {
+        transform: translateY(-5px);
+        border-color: rgba(34, 211, 238, 0.45);
+      }
+
+      .modulo-numero {
+        color: #22d3ee;
+        font-size: 13px;
+        font-weight: 900;
+      }
+
+      .modulo h3 {
+        margin: 12px 0 10px;
+        font-size: 21px;
+      }
+
+      .modulo p {
+        color: #94a3b8;
+        font-size: 15px;
+      }
+
+      /* =====================================================
+         PROPUESTA DE VALOR
+      ===================================================== */
+
+      .propuesta {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 56px;
+        align-items: center;
+      }
+
+      .propuesta-visual {
+        min-height: 430px;
+        border-radius: 26px;
+        padding: 28px;
+        background:
+          radial-gradient(
+            circle at top right,
+            rgba(34, 211, 238, 0.2),
+            transparent 36%
+          ),
+          linear-gradient(145deg, #0f172a, #082f49);
+        border: 1px solid rgba(34, 211, 238, 0.22);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .propuesta-visual h3 {
+        font-size: 30px;
+      }
+
+      .propuesta-visual p {
+        color: #cbd5e1;
+        margin-top: 12px;
+      }
+
+      .resultado-box {
+        display: grid;
+        gap: 12px;
+      }
+
+      .resultado-item {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 15px;
+        border-radius: 13px;
+        background: rgba(2, 6, 23, 0.64);
+        border: 1px solid rgba(148, 163, 184, 0.15);
+      }
+
+      .resultado-item span {
+        color: #94a3b8;
+      }
+
+      .resultado-item strong {
+        color: #67e8f9;
+      }
+
+      .propuesta-texto h2 {
+        color: #0f172a;
+        font-size: clamp(34px, 4vw, 48px);
+        line-height: 1.12;
+        margin-bottom: 20px;
+      }
+
+      .propuesta-texto > p {
+        color: #64748b;
+        font-size: 17px;
+        margin-bottom: 26px;
+      }
+
+      .lista-beneficios {
+        display: grid;
+        gap: 15px;
+      }
+
+      .beneficio {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .check {
+        min-width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        background: #dcfce7;
+        color: #15803d;
+        font-weight: 900;
+      }
+
+      .beneficio h4 {
+        color: #0f172a;
+        margin-bottom: 3px;
+      }
+
+      .beneficio p {
+        color: #64748b;
+        font-size: 14px;
+      }
+
+      /* =====================================================
+         PLANES
+      ===================================================== */
+
+      .grid-planes {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+      }
+
+      .plan {
+        position: relative;
+        padding: 30px;
+        border-radius: 22px;
+        background: rgba(15, 23, 42, 0.88);
+        border: 1px solid rgba(148, 163, 184, 0.16);
+      }
+
+      .plan-destacado {
+        border-color: #22d3ee;
+        box-shadow: 0 20px 50px rgba(6, 182, 212, 0.18);
+      }
+
+      .etiqueta-plan {
+        position: absolute;
+        top: -13px;
+        right: 20px;
+        padding: 6px 12px;
+        border-radius: 999px;
+        background: #22d3ee;
+        color: #083344;
+        font-size: 11px;
+        font-weight: 900;
+      }
+
+      .plan h3 {
+        font-size: 24px;
+        margin-bottom: 8px;
+      }
+
+      .plan > p {
+        color: #94a3b8;
+        min-height: 52px;
+      }
+
+      .precio {
+        margin: 22px 0;
+        font-size: 34px;
+        font-weight: 900;
+      }
+
+      .precio small {
+        color: #94a3b8;
+        font-size: 13px;
+        font-weight: 600;
+      }
+
+      .lista-plan {
+        list-style: none;
+        display: grid;
+        gap: 11px;
+        margin-bottom: 25px;
+      }
+
+      .lista-plan li {
+        color: #cbd5e1;
+        font-size: 14px;
+      }
+
+      .lista-plan li::before {
+        content: "✓";
+        color: #22c55e;
+        margin-right: 9px;
+        font-weight: 900;
+      }
+
+      .boton-plan {
+        display: block;
+        text-align: center;
+        padding: 12px;
+        border-radius: 10px;
+        border: 1px solid rgba(56, 189, 248, 0.35);
+        color: #ffffff;
+        font-weight: 800;
+      }
+
+      .boton-plan:hover {
+        background: #0ea5e9;
+        border-color: #0ea5e9;
+      }
+
+      /* =====================================================
+         CTA FINAL
+      ===================================================== */
+
+      .cta {
+        padding: 80px 0;
+        background:
+          radial-gradient(
+            circle at center,
+            rgba(37, 99, 235, 0.23),
+            transparent 45%
+          ),
+          #07111f;
+      }
+
+      .cta-box {
+        padding: 52px 34px;
+        border-radius: 26px;
+        text-align: center;
+        background: linear-gradient(
+          135deg,
+          rgba(8, 47, 73, 0.92),
+          rgba(30, 41, 59, 0.9)
+        );
+        border: 1px solid rgba(34, 211, 238, 0.24);
+      }
+
+      .cta-box h2 {
+        font-size: clamp(32px, 4vw, 48px);
+        margin-bottom: 15px;
+      }
+
+      .cta-box p {
+        max-width: 700px;
+        margin: 0 auto 28px;
+        color: #cbd5e1;
+        font-size: 17px;
+      }
+
+      .cta-botones {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+
+      /* =====================================================
+         PIE DE PÁGINA
+      ===================================================== */
+
+      .footer {
+        background: #020617;
+        border-top: 1px solid rgba(148, 163, 184, 0.12);
+        padding: 34px 0;
+      }
+
+      .footer-contenido {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .footer p {
+        color: #64748b;
+        font-size: 13px;
+      }
+
+      .footer-links {
+        display: flex;
+        gap: 18px;
+        flex-wrap: wrap;
+      }
+
+      .footer-links a {
+        color: #94a3b8;
+        font-size: 13px;
+      }
+
+      .footer-links a:hover {
+        color: #67e8f9;
+      }
+
+      /* =====================================================
+         RESPONSIVE
+      ===================================================== */
+
+      @media (max-width: 960px) {
+        .hero-grid,
+        .propuesta {
+          grid-template-columns: 1fr;
+        }
+
+        .grid-problemas,
+        .grid-modulos,
+        .grid-planes {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .panel-demo {
+          max-width: 620px;
+          margin: 0 auto;
+        }
+
+        .nav-links a:not(.boton-login) {
+          display: none;
+        }
+      }
+
+      @media (max-width: 680px) {
+        .hero {
+          padding-top: 72px;
+        }
+
+        .hero h1 {
+          font-size: 43px;
+          letter-spacing: -1px;
+        }
+
+        .grid-problemas,
+        .grid-modulos,
+        .grid-planes,
+        .mini-kpis {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-botones,
+        .cta-botones {
+          flex-direction: column;
+        }
+
+        .boton-principal,
+        .boton-secundario {
+          width: 100%;
+        }
+
+        .marca-texto {
+          font-size: 22px;
+        }
+
+        .nav {
+          min-height: 68px;
+        }
+
+        .boton-login {
+          padding: 9px 12px;
+          font-size: 12px !important;
+        }
+
+        .seccion {
+          padding: 68px 0;
+        }
+
+        .propuesta-visual {
+          min-height: 360px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="contenedor nav">
+        <a href="#inicio" class="marca">
+          <div class="marca-icono">K</div>
+          <div class="marca-texto">KONAX</div>
+        </a>
+
+        <nav class="nav-links">
+          <a href="#soluciones">Soluciones</a>
+          <a href="#modulos">Módulos</a>
+          <a href="#beneficios">Beneficios</a>
+          <a href="#planes">Planes</a>
+
+          <a
+            href="https://app.konax.net/login"
+            class="boton-login"
+          >
+            Iniciar sesión
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio">
+        <div class="contenedor hero-grid">
+          <div>
+            <div class="etiqueta">
+              Plataforma integral de gestión empresarial
+            </div>
+
+            <h1>
+              Controla tu negocio con
+              <span class="texto-degradado">
+                información real
+              </span>
+            </h1>
+
+            <p>
+              KONAX centraliza ventas, crédito, cobranza,
+              clientes, caja e inventario para que puedas
+              tomar decisiones con mayor control, orden y
+              claridad.
+            </p>
+
+            <div class="hero-botones">
+              <a
+                href="https://wa.me/50760211024?text=Hola,%20quiero%20solicitar%20una%20demostración%20de%20KONAX."
+                class="boton-principal"
+                target="_blank"
+              >
+                Solicitar demostración
+              </a>
+
+              <a
+                href="https://app.konax.net/login"
+                class="boton-secundario"
+              >
+                Entrar al sistema
+              </a>
+            </div>
+
+            <div class="hero-beneficios">
+              <span>Acceso desde cualquier lugar</span>
+              <span>Información centralizada</span>
+              <span>Control por usuarios</span>
+            </div>
+          </div>
+
+          <div class="panel-demo">
+            <div class="panel-superior">
+              <div class="puntos">
+                <div class="punto"></div>
+                <div class="punto"></div>
+                <div class="punto"></div>
+              </div>
+
+              <div class="panel-titulo">
+                KONAX Gestión
+              </div>
+            </div>
+
+            <div class="dashboard-mini">
+              <div class="mini-header">
+                <h3>Resumen empresarial</h3>
+                <p>Información actualizada del negocio</p>
+              </div>
+
+              <div class="mini-kpis">
+                <div class="mini-card">
+                  <span>Ventas del mes</span>
+                  <strong>$18,450</strong>
+                </div>
+
+                <div class="mini-card">
+                  <span>Cartera pendiente</span>
+                  <strong>$12,780</strong>
+                </div>
+
+                <div class="mini-card">
+                  <span>Recuperado</span>
+                  <strong>$6,920</strong>
+                </div>
+
+                <div class="mini-card">
+                  <span>Clientes activos</span>
+                  <strong>184</strong>
+                </div>
+              </div>
+
+              <div class="barra-grafica">
+                <div class="barra"></div>
+                <div class="barra"></div>
+                <div class="barra"></div>
+                <div class="barra"></div>
+                <div class="barra"></div>
+                <div class="barra"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="seccion seccion-clara"
+        id="soluciones"
+      >
+        <div class="contenedor">
+          <div class="encabezado-seccion">
+            <span>El problema</span>
+
+            <h2>
+              Tu negocio no debe depender de información
+              dispersa
+            </h2>
+
+            <p>
+              Cuando ventas, cobros, clientes, caja e inventario
+              se manejan por separado, aumenta el riesgo de
+              errores, pérdidas y decisiones tardías.
+            </p>
+          </div>
+
+          <div class="grid-problemas">
+            <article class="tarjeta-problema">
+              <div class="icono">📊</div>
+
+              <h3>Falta de visibilidad</h3>
+
+              <p>
+                Conoce cuánto vendes, cuánto has cobrado,
+                cuánto permanece pendiente y dónde está
+                concentrado el riesgo.
+              </p>
+            </article>
+
+            <article class="tarjeta-problema">
+              <div class="icono">💳</div>
+
+              <h3>Cartera sin seguimiento</h3>
+
+              <p>
+                Organiza cuentas por cobrar, clientes morosos,
+                promesas de pago, gestores y recuperación.
+              </p>
+            </article>
+
+            <article class="tarjeta-problema">
+              <div class="icono">📦</div>
+
+              <h3>Inventario descontrolado</h3>
+
+              <p>
+                Registra entradas, salidas, costos, precios,
+                proveedores y existencias disponibles.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="seccion seccion-oscura"
+        id="modulos"
+      >
+        <div class="contenedor">
+          <div class="encabezado-seccion">
+            <span>Módulos principales</span>
+
+            <h2>
+              Un solo sistema para controlar el ciclo completo
+            </h2>
+
+            <p>
+              Activa los módulos que necesita tu empresa y
+              administra cada proceso desde una sola plataforma.
+            </p>
+          </div>
+
+          <div class="grid-modulos">
+            <article class="modulo">
+              <div class="modulo-numero">01</div>
+              <h3>Clientes</h3>
+              <p>
+                Centraliza datos personales, cuentas, saldos,
+                documentos, pagos y gestiones realizadas.
+              </p>
+            </article>
+
+            <article class="modulo">
+              <div class="modulo-numero">02</div>
+              <h3>Ventas y crédito</h3>
+              <p>
+                Registra ventas al contado, ventas a crédito,
+                abonos iniciales y cuentas por cobrar.
+              </p>
+            </article>
+
+            <article class="modulo">
+              <div class="modulo-numero">03</div>
+              <h3>Cobranza</h3>
+              <p>
+                Controla mora, días de atraso, promesas,
+                responsables, gestiones y recuperación.
+              </p>
+            </article>
+
+            <article class="modulo">
+              <div class="modulo-numero">04</div>
+              <h3>Caja</h3>
+              <p>
+                Registra pagos, cobros, métodos de pago,
+                transacciones y movimientos diarios.
+              </p>
+            </article>
+
+            <article class="modulo">
+              <div class="modulo-numero">05</div>
+              <h3>Inventario</h3>
+              <p>
+                Controla productos, stock, precios, proveedores,
+                movimientos y alertas de existencias.
+              </p>
+            </article>
+
+            <article class="modulo">
+              <div class="modulo-numero">06</div>
+              <h3>Usuarios y permisos</h3>
+              <p>
+                Define roles, accesos y permisos según las
+                responsabilidades de cada colaborador.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="seccion seccion-clara"
+        id="beneficios"
+      >
+        <div class="contenedor propuesta">
+          <div class="propuesta-visual">
+            <div>
+              <h3>Información para decidir</h3>
+
+              <p>
+                Convierte los movimientos del negocio en
+                indicadores claros y accionables.
+              </p>
+            </div>
+
+            <div class="resultado-box">
+              <div class="resultado-item">
+                <span>Cartera recuperada</span>
+                <strong>+24.6%</strong>
+              </div>
+
+              <div class="resultado-item">
+                <span>Clientes en mora</span>
+                <strong>32</strong>
+              </div>
+
+              <div class="resultado-item">
+                <span>Inventario disponible</span>
+                <strong>418 unidades</strong>
+              </div>
+
+              <div class="resultado-item">
+                <span>Operaciones registradas</span>
+                <strong>Tiempo real</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="propuesta-texto">
+            <h2>
+              Más control operativo, financiero y comercial
+            </h2>
+
+            <p>
+              KONAX ayuda a ordenar los procesos internos,
+              reducir errores y conocer la situación real del
+              negocio.
+            </p>
+
+            <div class="lista-beneficios">
+              <div class="beneficio">
+                <div class="check">✓</div>
+
+                <div>
+                  <h4>Información centralizada</h4>
+                  <p>
+                    Evita depender de múltiples hojas, libretas
+                    o sistemas desconectados.
+                  </p>
+                </div>
+              </div>
+
+              <div class="beneficio">
+                <div class="check">✓</div>
+
+                <div>
+                  <h4>Seguimiento de responsabilidades</h4>
+                  <p>
+                    Conoce qué usuario registró cada venta,
+                    pago, cobro o gestión.
+                  </p>
+                </div>
+              </div>
+
+              <div class="beneficio">
+                <div class="check">✓</div>
+
+                <div>
+                  <h4>Indicadores actualizados</h4>
+                  <p>
+                    Consulta cartera, recuperación, mora, caja,
+                    clientes y movimientos.
+                  </p>
+                </div>
+              </div>
+
+              <div class="beneficio">
+                <div class="check">✓</div>
+
+                <div>
+                  <h4>Escalable por módulos</h4>
+                  <p>
+                    La empresa puede comenzar con lo esencial y
+                    ampliar funciones según su crecimiento.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="seccion seccion-oscura"
+        id="planes"
+      >
+        <div class="contenedor">
+          <div class="encabezado-seccion">
+            <span>Planes</span>
+
+            <h2>
+              Una solución adaptada a cada operación
+            </h2>
+
+            <p>
+              Los planes y precios definitivos se configuran
+              según los módulos, usuarios y necesidades de cada
+              empresa.
+            </p>
+          </div>
+
+          <div class="grid-planes">
+            <article class="plan">
+              <h3>KONAX Cobros</h3>
+
+              <p>
+                Para empresas que necesitan controlar cartera,
+                mora y recuperación.
+              </p>
+
+              <div class="precio">
+                Cotización
+                <small>personalizada</small>
+              </div>
+
+              <ul class="lista-plan">
+                <li>Clientes y cuentas</li>
+                <li>Gestión de cobranza</li>
+                <li>Promesas de pago</li>
+                <li>Pagos y caja</li>
+                <li>Dashboard de cartera</li>
+              </ul>
+
+              <a
+                href="https://wa.me/50760211024?text=Hola,%20quiero%20información%20del%20plan%20KONAX%20Cobros."
+                class="boton-plan"
+                target="_blank"
+              >
+                Solicitar información
+              </a>
+            </article>
+
+            <article class="plan plan-destacado">
+              <div class="etiqueta-plan">
+                Recomendado
+              </div>
+
+              <h3>KONAX Gestión</h3>
+
+              <p>
+                Una solución integral para ventas, crédito,
+                cobranza, caja e inventario.
+              </p>
+
+              <div class="precio">
+                Cotización
+                <small>personalizada</small>
+              </div>
+
+              <ul class="lista-plan">
+                <li>Ventas contado y crédito</li>
+                <li>Cuentas por cobrar</li>
+                <li>Caja y pagos</li>
+                <li>Inventario y proveedores</li>
+                <li>Usuarios y permisos</li>
+              </ul>
+
+              <a
+                href="https://wa.me/50760211024?text=Hola,%20quiero%20información%20del%20plan%20KONAX%20Gestión."
+                class="boton-plan"
+                target="_blank"
+              >
+                Solicitar información
+              </a>
+            </article>
+
+            <article class="plan">
+              <h3>KONAX Empresa</h3>
+
+              <p>
+                Para operaciones que requieren mayor
+                personalización, usuarios y control.
+              </p>
+
+              <div class="precio">
+                A medida
+                <small>según operación</small>
+              </div>
+
+              <ul class="lista-plan">
+                <li>Módulos personalizados</li>
+                <li>Mayor cantidad de usuarios</li>
+                <li>Configuración por empresa</li>
+                <li>Soporte de implementación</li>
+                <li>Flujos adaptados</li>
+              </ul>
+
+              <a
+                href="https://wa.me/50760211024?text=Hola,%20quiero%20información%20sobre%20KONAX%20Empresa."
+                class="boton-plan"
+                target="_blank"
+              >
+                Hablar con un asesor
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta">
+        <div class="contenedor">
+          <div class="cta-box">
+            <h2>
+              Empieza a ordenar y controlar mejor tu negocio
+            </h2>
+
+            <p>
+              Solicita una demostración de KONAX y conoce cómo
+              podemos adaptar la plataforma a la operación de
+              tu empresa.
+            </p>
+
+            <div class="cta-botones">
+              <a
+                href="https://wa.me/50760211024?text=Hola,%20quiero%20una%20demostración%20de%20KONAX."
+                class="boton-principal"
+                target="_blank"
+              >
+                Solicitar demostración
+              </a>
+
+              <a
+                href="https://app.konax.net/login"
+                class="boton-secundario"
+              >
+                Iniciar sesión
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="contenedor footer-contenido">
+        <div class="marca">
+          <div class="marca-icono">K</div>
+          <div class="marca-texto">KONAX</div>
+        </div>
+
+        <p>
+          © <span id="anio"></span> KONAX. Todos los derechos
+          reservados.
+        </p>
+
+        <div class="footer-links">
+          <a href="#inicio">Inicio</a>
+          <a href="#modulos">Módulos</a>
+          <a href="#planes">Planes</a>
+          <a href="https://app.konax.net/login">
+            Iniciar sesión
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("anio").textContent =
+        new Date().getFullYear();
+    </script>
+  </body>
+</html>
