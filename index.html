@@ -21,18 +21,17 @@
 
     <style>
       :root {
-        --negro: #020604;
-        --carbon: #07110d;
-        --verde-profundo: #063b2b;
-        --verde-oscuro: #07583d;
-        --verde: #0f9f67;
-        --verde-brillante: #24d18a;
-        --verde-menta: #9ff3cf;
+        --negro: #0f1720;
+        --carbon: #15211b;
+        --verde-profundo: #0b5f46;
+        --verde-oscuro: #0f7f5c;
+        --verde: #16a36a;
+        --verde-brillante: #21c47b;
+        --verde-menta: #a7f3d0;
         --blanco: #ffffff;
-        --gris-claro: #e8f0ec;
-        --gris: #9caea5;
-        --borde: rgba(70, 229, 157, 0.18);
-        --sombra: rgba(0, 0, 0, 0.38);
+        --gris-claro: #f5f8f6;
+        --gris: #6b7280;
+        --borde: #dfe7e2;
       }
 
       * {
@@ -47,8 +46,8 @@
 
       body {
         font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
-        background: var(--negro);
-        color: var(--blanco);
+        background: #ffffff;
+        color: #111827;
         line-height: 1.6;
       }
 
@@ -77,9 +76,10 @@
         position: sticky;
         top: 0;
         z-index: 1000;
-        background: rgba(2, 6, 4, 0.94);
+        background: rgba(255, 255, 255, 0.96);
         backdrop-filter: blur(14px);
-        border-bottom: 1px solid var(--borde);
+        border-bottom: 1px solid #e5ebe7;
+        box-shadow: 0 6px 22px rgba(15, 23, 32, 0.04);
       }
 
       .nav {
@@ -111,20 +111,21 @@
       }
 
       .nav-links a {
-        color: #c8d6cf;
+        color: #25322c;
         font-size: 14px;
         font-weight: 700;
       }
 
       .nav-links a:hover {
-        color: var(--verde-menta);
+        color: var(--verde);
       }
 
       .boton-login {
         padding: 11px 18px;
         border-radius: 10px;
-        background: var(--blanco);
-        color: #082016 !important;
+        background: var(--verde);
+        color: #ffffff !important;
+        border: 1px solid var(--verde);
       }
 
       .boton-login:hover {
@@ -137,19 +138,19 @@
       .hero {
         position: relative;
         overflow: hidden;
-        padding: 104px 0 88px;
+        padding: 105px 0 90px;
         background:
           radial-gradient(
             circle at 15% 20%,
-            rgba(15, 159, 103, 0.24),
-            transparent 32%
+            rgba(33, 196, 123, 0.16),
+            transparent 34%
           ),
           radial-gradient(
             circle at 85% 30%,
-            rgba(36, 209, 138, 0.14),
-            transparent 34%
+            rgba(22, 163, 106, 0.10),
+            transparent 36%
           ),
-          linear-gradient(180deg, #020604, #06130d);
+          linear-gradient(180deg, #ffffff, #f4faf7);
       }
 
       .hero::before {
@@ -158,12 +159,12 @@
         inset: 0;
         background-image:
           linear-gradient(
-            rgba(255, 255, 255, 0.025) 1px,
+            rgba(15, 23, 32, 0.035) 1px,
             transparent 1px
           ),
           linear-gradient(
             90deg,
-            rgba(255, 255, 255, 0.025) 1px,
+            rgba(15, 23, 32, 0.035) 1px,
             transparent 1px
           );
         background-size: 48px 48px;
@@ -227,14 +228,9 @@
 
       .boton-principal,
       .boton-secundario {
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 52px;
-        padding: 13px 22px;
-        border-radius: 12px;
-        font-weight: 800;
-        font-size: 15px;
+        border: 1px solid #cfd9d3;
+        background: #ffffff;
+        color: #173127;
       }
 
       .boton-principal {
@@ -259,8 +255,9 @@
       }
 
       .boton-secundario:hover {
-        border-color: var(--verde-brillante);
-        color: var(--verde-menta);
+        border-color: var(--verde);
+        color: var(--verde);
+        background: #f4faf7;
       }
 
       .hero-beneficios {
@@ -379,12 +376,13 @@
       }
 
       .seccion-clara {
-        background: #f4f8f6;
-        color: #07110d;
+        background: #ffffff;
+        color: #111827;
       }
 
       .seccion-oscura {
-        background: #020604;
+        background: #f4f8f6;
+        color: #111827;
       }
 
       .encabezado-seccion {
@@ -417,7 +415,7 @@
       }
 
       .seccion-oscura .encabezado-seccion p {
-        color: #91a59b;
+        color: #66766d;
       }
 
       /* PROBLEMAS */
@@ -472,18 +470,14 @@
         background:
           radial-gradient(
             circle at bottom left,
-            rgba(15, 159, 103, 0.2),
-            transparent 40%
+            rgba(22, 163, 106, 0.08),
+            transparent 42%
           ),
-          linear-gradient(
-            145deg,
-            rgba(7, 17, 13, 0.98),
-            rgba(6, 59, 43, 0.82)
-          );
-        border: 1px solid rgba(159, 243, 207, 0.2);
+          #ffffff;
+        border: 1px solid #dfe7e2;
         box-shadow:
-          0 18px 40px rgba(0, 0, 0, 0.28),
-          inset 0 1px 0 rgba(255, 255, 255, 0.03);
+          0 16px 34px rgba(15, 23, 32, 0.06),
+          inset 0 1px 0 rgba(255, 255, 255, 0.65);
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -492,10 +486,10 @@
 
       .modulo:hover {
         transform: translateY(-6px);
-        border-color: rgba(36, 209, 138, 0.68);
+        border-color: rgba(22, 163, 106, 0.50);
         box-shadow:
-          0 24px 48px rgba(0, 0, 0, 0.34),
-          0 0 28px rgba(15, 159, 103, 0.18);
+          0 22px 42px rgba(15, 23, 32, 0.10),
+          0 0 24px rgba(22, 163, 106, 0.08);
       }
 
       .modulo-top {
@@ -557,14 +551,15 @@
         background:
           radial-gradient(
             circle at top right,
-            rgba(36, 209, 138, 0.2),
+            rgba(36, 209, 138, 0.18),
             transparent 36%
           ),
-          linear-gradient(145deg, #07110d, #063b2b);
+          linear-gradient(145deg, #10271f, #0b5f46);
         border: 1px solid rgba(36, 209, 138, 0.22);
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        color: #ffffff;
       }
 
       .propuesta-visual h3 {
@@ -656,8 +651,10 @@
         position: relative;
         padding: 30px;
         border-radius: 22px;
-        background: rgba(7, 17, 13, 0.92);
-        border: 1px solid rgba(159, 243, 207, 0.14);
+        background: #ffffff;
+        border: 1px solid #dfe7e2;
+        box-shadow: 0 14px 34px rgba(15, 23, 32, 0.06);
+        color: #111827;
       }
 
       .plan-destacado {
@@ -707,7 +704,7 @@
       }
 
       .lista-plan li {
-        color: #c8d6cf;
+        color: #435149;
         font-size: 14px;
       }
 
@@ -723,14 +720,15 @@
         text-align: center;
         padding: 12px;
         border-radius: 10px;
-        border: 1px solid rgba(36, 209, 138, 0.35);
-        color: #ffffff;
+        border: 1px solid var(--verde);
+        color: var(--verde);
         font-weight: 800;
       }
 
       .boton-plan:hover {
         background: var(--verde);
         border-color: var(--verde);
+        color: #ffffff;
       }
 
       /* CTA */
@@ -780,9 +778,9 @@
       /* FOOTER */
 
       .footer {
-        background: #020604;
+        background: #0f1720;
         border-top: 1px solid rgba(159, 243, 207, 0.1);
-        padding: 34px 0;
+        padding: 36px 0;
       }
 
       .footer-contenido {
@@ -853,17 +851,17 @@
         gap: 8px;
         padding: 10px 13px;
         border-radius: 10px;
-        border: 1px solid rgba(159, 243, 207, 0.24);
-        background: rgba(7, 17, 13, 0.75);
-        color: #ffffff;
+        border: 1px solid #d7e0db;
+        background: #ffffff;
+        color: #25322c;
         font-size: 13px;
-        font-weight: 800;
+        font-weight: 700;
         cursor: pointer;
       }
 
       .idioma-boton:hover {
-        border-color: var(--verde-brillante);
-        color: var(--verde-menta);
+        border-color: var(--verde);
+        color: var(--verde);
       }
 
       .idioma-menu {
@@ -917,13 +915,14 @@
           ),
           linear-gradient(
             145deg,
-            rgba(7, 17, 13, 0.98),
-            rgba(6, 59, 43, 0.86)
+            #10271f,
+            #0b5f46
           );
-        border: 1px solid rgba(36, 209, 138, 0.25);
+        border: 1px solid rgba(36, 209, 138, 0.28);
         box-shadow:
-          0 35px 80px rgba(0, 0, 0, 0.45),
-          0 0 55px rgba(15, 159, 103, 0.14);
+          0 28px 65px rgba(15, 23, 32, 0.18),
+          0 0 45px rgba(15, 159, 103, 0.10);
+        color: #ffffff;
       }
 
       .flujo-encabezado {
