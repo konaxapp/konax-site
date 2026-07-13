@@ -2,20 +2,31 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <meta
       name="description"
       content="KONAX es una plataforma de gestión empresarial para ventas, crédito, cobranza, caja, clientes e inventario."
     />
 
-    <title>KONAX | Gestión empresarial inteligente</title>
+    <title>KONAX | Eficiencia en cada proceso</title>
 
     <style>
+      :root {
+        --negro: #020604;
+        --carbon: #07110d;
+        --verde-profundo: #063b2b;
+        --verde-oscuro: #07583d;
+        --verde: #0f9f67;
+        --verde-brillante: #24d18a;
+        --verde-menta: #9ff3cf;
+        --blanco: #ffffff;
+        --gris-claro: #e8f0ec;
+        --gris: #9caea5;
+        --borde: rgba(70, 229, 157, 0.18);
+        --sombra: rgba(0, 0, 0, 0.38);
+      }
+
       * {
         box-sizing: border-box;
         margin: 0;
@@ -28,8 +39,8 @@
 
       body {
         font-family: Arial, Helvetica, sans-serif;
-        background: #020617;
-        color: #ffffff;
+        background: var(--negro);
+        color: var(--blanco);
         line-height: 1.6;
       }
 
@@ -42,26 +53,29 @@
         transition: all 0.25s ease;
       }
 
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
       .contenedor {
         width: min(1180px, 92%);
         margin: 0 auto;
       }
 
-      /* =====================================================
-         ENCABEZADO
-      ===================================================== */
+      /* ENCABEZADO */
 
       .header {
         position: sticky;
         top: 0;
         z-index: 1000;
-        background: rgba(2, 6, 23, 0.94);
+        background: rgba(2, 6, 4, 0.94);
         backdrop-filter: blur(14px);
-        border-bottom: 1px solid rgba(56, 189, 248, 0.18);
+        border-bottom: 1px solid var(--borde);
       }
 
       .nav {
-        min-height: 78px;
+        min-height: 82px;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -71,27 +85,18 @@
       .marca {
         display: flex;
         align-items: center;
-        gap: 12px;
+        gap: 14px;
       }
 
-      .marca-icono {
-        width: 48px;
-        height: 48px;
+      .marca-logo {
+        width: 190px;
+        height: 62px;
+        object-fit: contain;
+        object-position: left center;
+        background: #ffffff;
         border-radius: 14px;
-        display: grid;
-        place-items: center;
-        background: linear-gradient(135deg, #06b6d4, #2563eb);
-        color: #ffffff;
-        font-size: 22px;
-        font-weight: 900;
-        box-shadow: 0 0 28px rgba(34, 211, 238, 0.35);
-      }
-
-      .marca-texto {
-        font-size: 26px;
-        font-weight: 900;
-        letter-spacing: 1.5px;
-        color: #ffffff;
+        padding: 7px 12px;
+        box-shadow: 0 10px 28px rgba(15, 159, 103, 0.18);
       }
 
       .nav-links {
@@ -101,47 +106,45 @@
       }
 
       .nav-links a {
-        color: #cbd5e1;
+        color: #c8d6cf;
         font-size: 14px;
         font-weight: 700;
       }
 
       .nav-links a:hover {
-        color: #67e8f9;
+        color: var(--verde-menta);
       }
 
       .boton-login {
         padding: 11px 18px;
         border-radius: 10px;
-        background: #ffffff;
-        color: #0f172a !important;
+        background: var(--blanco);
+        color: #082016 !important;
       }
 
       .boton-login:hover {
         transform: translateY(-2px);
-        box-shadow: 0 10px 28px rgba(255, 255, 255, 0.18);
+        box-shadow: 0 10px 28px rgba(255, 255, 255, 0.14);
       }
 
-      /* =====================================================
-         HERO
-      ===================================================== */
+      /* HERO */
 
       .hero {
         position: relative;
         overflow: hidden;
-        padding: 100px 0 85px;
+        padding: 104px 0 88px;
         background:
           radial-gradient(
             circle at 15% 20%,
-            rgba(14, 165, 233, 0.2),
+            rgba(15, 159, 103, 0.24),
             transparent 32%
           ),
           radial-gradient(
             circle at 85% 30%,
-            rgba(37, 99, 235, 0.2),
+            rgba(36, 209, 138, 0.14),
             transparent 34%
           ),
-          linear-gradient(180deg, #020617, #071426);
+          linear-gradient(180deg, #020604, #06130d);
       }
 
       .hero::before {
@@ -176,9 +179,9 @@
         gap: 8px;
         padding: 8px 14px;
         border-radius: 999px;
-        background: rgba(8, 145, 178, 0.13);
-        border: 1px solid rgba(34, 211, 238, 0.28);
-        color: #67e8f9;
+        background: rgba(15, 159, 103, 0.13);
+        border: 1px solid rgba(36, 209, 138, 0.3);
+        color: var(--verde-menta);
         font-size: 13px;
         font-weight: 800;
         margin-bottom: 22px;
@@ -194,9 +197,9 @@
       .texto-degradado {
         background: linear-gradient(
           90deg,
-          #67e8f9,
-          #38bdf8,
-          #818cf8
+          #9ff3cf,
+          #24d18a,
+          #0f9f67
         );
         -webkit-background-clip: text;
         background-clip: text;
@@ -205,7 +208,7 @@
 
       .hero p {
         max-width: 680px;
-        color: #cbd5e1;
+        color: #c8d6cf;
         font-size: 19px;
         margin-bottom: 32px;
       }
@@ -230,32 +233,36 @@
       }
 
       .boton-principal {
-        background: linear-gradient(135deg, #06b6d4, #2563eb);
-        color: #ffffff;
-        box-shadow: 0 14px 36px rgba(37, 99, 235, 0.34);
+        background: linear-gradient(
+          135deg,
+          var(--verde-brillante),
+          var(--verde)
+        );
+        color: #032016;
+        box-shadow: 0 14px 36px rgba(15, 159, 103, 0.32);
       }
 
       .boton-principal:hover {
         transform: translateY(-3px);
-        box-shadow: 0 18px 42px rgba(37, 99, 235, 0.46);
+        box-shadow: 0 18px 42px rgba(15, 159, 103, 0.46);
       }
 
       .boton-secundario {
-        border: 1px solid rgba(148, 163, 184, 0.34);
-        background: rgba(15, 23, 42, 0.66);
-        color: #ffffff;
+        border: 1px solid rgba(159, 243, 207, 0.26);
+        background: rgba(7, 17, 13, 0.76);
+        color: var(--blanco);
       }
 
       .boton-secundario:hover {
-        border-color: #38bdf8;
-        color: #67e8f9;
+        border-color: var(--verde-brillante);
+        color: var(--verde-menta);
       }
 
       .hero-beneficios {
         display: flex;
         flex-wrap: wrap;
         gap: 18px;
-        color: #94a3b8;
+        color: #91a59b;
         font-size: 13px;
         font-weight: 700;
       }
@@ -268,13 +275,11 @@
 
       .hero-beneficios span::before {
         content: "✓";
-        color: #22c55e;
+        color: var(--verde-brillante);
         font-weight: 900;
       }
 
-      /* =====================================================
-         PANEL VISUAL
-      ===================================================== */
+      /* PANEL VISUAL */
 
       .panel-demo {
         position: relative;
@@ -282,13 +287,13 @@
         padding: 18px;
         background: linear-gradient(
           145deg,
-          rgba(15, 23, 42, 0.95),
-          rgba(8, 47, 73, 0.85)
+          rgba(7, 17, 13, 0.96),
+          rgba(6, 59, 43, 0.88)
         );
-        border: 1px solid rgba(34, 211, 238, 0.25);
+        border: 1px solid rgba(36, 209, 138, 0.25);
         box-shadow:
           0 35px 80px rgba(0, 0, 0, 0.48),
-          0 0 60px rgba(14, 165, 233, 0.16);
+          0 0 60px rgba(15, 159, 103, 0.15);
       }
 
       .panel-superior {
@@ -307,7 +312,7 @@
         width: 10px;
         height: 10px;
         border-radius: 50%;
-        background: #334155;
+        background: #33463d;
       }
 
       .punto:nth-child(1) {
@@ -323,7 +328,7 @@
       }
 
       .panel-titulo {
-        color: #cbd5e1;
+        color: #c8d6cf;
         font-size: 13px;
         font-weight: 800;
       }
@@ -331,8 +336,8 @@
       .dashboard-mini {
         border-radius: 18px;
         padding: 18px;
-        background: rgba(2, 6, 23, 0.78);
-        border: 1px solid rgba(148, 163, 184, 0.14);
+        background: rgba(2, 6, 4, 0.8);
+        border: 1px solid rgba(159, 243, 207, 0.12);
       }
 
       .mini-header {
@@ -345,7 +350,7 @@
       }
 
       .mini-header p {
-        color: #64748b;
+        color: #73867c;
         font-size: 12px;
       }
 
@@ -360,14 +365,14 @@
         border-radius: 14px;
         background: linear-gradient(
           145deg,
-          rgba(15, 23, 42, 0.88),
-          rgba(30, 41, 59, 0.7)
+          rgba(7, 17, 13, 0.94),
+          rgba(12, 45, 32, 0.74)
         );
-        border: 1px solid rgba(148, 163, 184, 0.12);
+        border: 1px solid rgba(159, 243, 207, 0.11);
       }
 
       .mini-card span {
-        color: #94a3b8;
+        color: #91a59b;
         font-size: 11px;
       }
 
@@ -384,10 +389,10 @@
         background:
           linear-gradient(
             to top,
-            rgba(34, 211, 238, 0.13),
+            rgba(36, 209, 138, 0.13),
             transparent
           ),
-          rgba(15, 23, 42, 0.66);
+          rgba(7, 17, 13, 0.72);
         display: flex;
         align-items: flex-end;
         gap: 10px;
@@ -397,48 +402,33 @@
       .barra {
         flex: 1;
         border-radius: 8px 8px 2px 2px;
-        background: linear-gradient(to top, #2563eb, #22d3ee);
+        background: linear-gradient(
+          to top,
+          var(--verde-oscuro),
+          var(--verde-brillante)
+        );
       }
 
-      .barra:nth-child(1) {
-        height: 42%;
-      }
+      .barra:nth-child(1) { height: 42%; }
+      .barra:nth-child(2) { height: 65%; }
+      .barra:nth-child(3) { height: 52%; }
+      .barra:nth-child(4) { height: 82%; }
+      .barra:nth-child(5) { height: 72%; }
+      .barra:nth-child(6) { height: 94%; }
 
-      .barra:nth-child(2) {
-        height: 65%;
-      }
-
-      .barra:nth-child(3) {
-        height: 52%;
-      }
-
-      .barra:nth-child(4) {
-        height: 82%;
-      }
-
-      .barra:nth-child(5) {
-        height: 72%;
-      }
-
-      .barra:nth-child(6) {
-        height: 94%;
-      }
-
-      /* =====================================================
-         SECCIONES GENERALES
-      ===================================================== */
+      /* SECCIONES */
 
       .seccion {
         padding: 88px 0;
       }
 
       .seccion-clara {
-        background: #f8fafc;
-        color: #0f172a;
+        background: #f4f8f6;
+        color: #07110d;
       }
 
       .seccion-oscura {
-        background: #020617;
+        background: #020604;
       }
 
       .encabezado-seccion {
@@ -448,7 +438,7 @@
       }
 
       .encabezado-seccion span {
-        color: #06b6d4;
+        color: var(--verde);
         font-size: 13px;
         font-weight: 900;
         text-transform: uppercase;
@@ -463,17 +453,15 @@
 
       .encabezado-seccion p {
         margin-top: 16px;
-        color: #64748b;
+        color: #627269;
         font-size: 17px;
       }
 
       .seccion-oscura .encabezado-seccion p {
-        color: #94a3b8;
+        color: #91a59b;
       }
 
-      /* =====================================================
-         PROBLEMAS Y BENEFICIOS
-      ===================================================== */
+      /* PROBLEMAS */
 
       .grid-problemas {
         display: grid;
@@ -485,8 +473,8 @@
         padding: 26px;
         border-radius: 18px;
         background: #ffffff;
-        border: 1px solid #e2e8f0;
-        box-shadow: 0 14px 34px rgba(15, 23, 42, 0.07);
+        border: 1px solid #dce7e1;
+        box-shadow: 0 14px 34px rgba(7, 17, 13, 0.07);
       }
 
       .icono {
@@ -495,7 +483,7 @@
         border-radius: 14px;
         display: grid;
         place-items: center;
-        background: linear-gradient(135deg, #cffafe, #dbeafe);
+        background: linear-gradient(135deg, #dff8ec, #c9f4df);
         font-size: 24px;
         margin-bottom: 18px;
       }
@@ -506,13 +494,11 @@
       }
 
       .tarjeta-problema p {
-        color: #64748b;
+        color: #627269;
         font-size: 15px;
       }
 
-      /* =====================================================
-         MÓDULOS
-      ===================================================== */
+      /* MÓDULOS */
 
       .grid-modulos {
         display: grid;
@@ -525,19 +511,19 @@
         border-radius: 19px;
         background: linear-gradient(
           145deg,
-          rgba(15, 23, 42, 0.94),
-          rgba(15, 38, 63, 0.84)
+          rgba(7, 17, 13, 0.96),
+          rgba(6, 59, 43, 0.7)
         );
-        border: 1px solid rgba(148, 163, 184, 0.14);
+        border: 1px solid rgba(159, 243, 207, 0.13);
       }
 
       .modulo:hover {
         transform: translateY(-5px);
-        border-color: rgba(34, 211, 238, 0.45);
+        border-color: rgba(36, 209, 138, 0.44);
       }
 
       .modulo-numero {
-        color: #22d3ee;
+        color: var(--verde-brillante);
         font-size: 13px;
         font-weight: 900;
       }
@@ -548,13 +534,11 @@
       }
 
       .modulo p {
-        color: #94a3b8;
+        color: #91a59b;
         font-size: 15px;
       }
 
-      /* =====================================================
-         PROPUESTA DE VALOR
-      ===================================================== */
+      /* PROPUESTA */
 
       .propuesta {
         display: grid;
@@ -570,11 +554,11 @@
         background:
           radial-gradient(
             circle at top right,
-            rgba(34, 211, 238, 0.2),
+            rgba(36, 209, 138, 0.2),
             transparent 36%
           ),
-          linear-gradient(145deg, #0f172a, #082f49);
-        border: 1px solid rgba(34, 211, 238, 0.22);
+          linear-gradient(145deg, #07110d, #063b2b);
+        border: 1px solid rgba(36, 209, 138, 0.22);
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -585,7 +569,7 @@
       }
 
       .propuesta-visual p {
-        color: #cbd5e1;
+        color: #c8d6cf;
         margin-top: 12px;
       }
 
@@ -600,27 +584,27 @@
         gap: 16px;
         padding: 15px;
         border-radius: 13px;
-        background: rgba(2, 6, 23, 0.64);
-        border: 1px solid rgba(148, 163, 184, 0.15);
+        background: rgba(2, 6, 4, 0.64);
+        border: 1px solid rgba(159, 243, 207, 0.13);
       }
 
       .resultado-item span {
-        color: #94a3b8;
+        color: #91a59b;
       }
 
       .resultado-item strong {
-        color: #67e8f9;
+        color: var(--verde-menta);
       }
 
       .propuesta-texto h2 {
-        color: #0f172a;
+        color: #07110d;
         font-size: clamp(34px, 4vw, 48px);
         line-height: 1.12;
         margin-bottom: 20px;
       }
 
       .propuesta-texto > p {
-        color: #64748b;
+        color: #627269;
         font-size: 17px;
         margin-bottom: 26px;
       }
@@ -642,24 +626,22 @@
         border-radius: 50%;
         display: grid;
         place-items: center;
-        background: #dcfce7;
-        color: #15803d;
+        background: #dff8ec;
+        color: #08774c;
         font-weight: 900;
       }
 
       .beneficio h4 {
-        color: #0f172a;
+        color: #07110d;
         margin-bottom: 3px;
       }
 
       .beneficio p {
-        color: #64748b;
+        color: #627269;
         font-size: 14px;
       }
 
-      /* =====================================================
-         PLANES
-      ===================================================== */
+      /* PLANES */
 
       .grid-planes {
         display: grid;
@@ -671,13 +653,13 @@
         position: relative;
         padding: 30px;
         border-radius: 22px;
-        background: rgba(15, 23, 42, 0.88);
-        border: 1px solid rgba(148, 163, 184, 0.16);
+        background: rgba(7, 17, 13, 0.92);
+        border: 1px solid rgba(159, 243, 207, 0.14);
       }
 
       .plan-destacado {
-        border-color: #22d3ee;
-        box-shadow: 0 20px 50px rgba(6, 182, 212, 0.18);
+        border-color: var(--verde-brillante);
+        box-shadow: 0 20px 50px rgba(15, 159, 103, 0.17);
       }
 
       .etiqueta-plan {
@@ -686,8 +668,8 @@
         right: 20px;
         padding: 6px 12px;
         border-radius: 999px;
-        background: #22d3ee;
-        color: #083344;
+        background: var(--verde-brillante);
+        color: #032016;
         font-size: 11px;
         font-weight: 900;
       }
@@ -698,7 +680,7 @@
       }
 
       .plan > p {
-        color: #94a3b8;
+        color: #91a59b;
         min-height: 52px;
       }
 
@@ -709,7 +691,7 @@
       }
 
       .precio small {
-        color: #94a3b8;
+        color: #91a59b;
         font-size: 13px;
         font-weight: 600;
       }
@@ -722,13 +704,13 @@
       }
 
       .lista-plan li {
-        color: #cbd5e1;
+        color: #c8d6cf;
         font-size: 14px;
       }
 
       .lista-plan li::before {
         content: "✓";
-        color: #22c55e;
+        color: var(--verde-brillante);
         margin-right: 9px;
         font-weight: 900;
       }
@@ -738,29 +720,27 @@
         text-align: center;
         padding: 12px;
         border-radius: 10px;
-        border: 1px solid rgba(56, 189, 248, 0.35);
+        border: 1px solid rgba(36, 209, 138, 0.35);
         color: #ffffff;
         font-weight: 800;
       }
 
       .boton-plan:hover {
-        background: #0ea5e9;
-        border-color: #0ea5e9;
+        background: var(--verde);
+        border-color: var(--verde);
       }
 
-      /* =====================================================
-         CTA FINAL
-      ===================================================== */
+      /* CTA */
 
       .cta {
         padding: 80px 0;
         background:
           radial-gradient(
             circle at center,
-            rgba(37, 99, 235, 0.23),
+            rgba(15, 159, 103, 0.22),
             transparent 45%
           ),
-          #07111f;
+          #040b08;
       }
 
       .cta-box {
@@ -769,10 +749,10 @@
         text-align: center;
         background: linear-gradient(
           135deg,
-          rgba(8, 47, 73, 0.92),
-          rgba(30, 41, 59, 0.9)
+          rgba(6, 59, 43, 0.94),
+          rgba(7, 17, 13, 0.94)
         );
-        border: 1px solid rgba(34, 211, 238, 0.24);
+        border: 1px solid rgba(36, 209, 138, 0.24);
       }
 
       .cta-box h2 {
@@ -783,7 +763,7 @@
       .cta-box p {
         max-width: 700px;
         margin: 0 auto 28px;
-        color: #cbd5e1;
+        color: #c8d6cf;
         font-size: 17px;
       }
 
@@ -794,13 +774,11 @@
         gap: 14px;
       }
 
-      /* =====================================================
-         PIE DE PÁGINA
-      ===================================================== */
+      /* FOOTER */
 
       .footer {
-        background: #020617;
-        border-top: 1px solid rgba(148, 163, 184, 0.12);
+        background: #020604;
+        border-top: 1px solid rgba(159, 243, 207, 0.1);
         padding: 34px 0;
       }
 
@@ -812,8 +790,18 @@
         flex-wrap: wrap;
       }
 
+      .footer-logo {
+        width: 180px;
+        height: 58px;
+        object-fit: contain;
+        object-position: left center;
+        background: #ffffff;
+        border-radius: 13px;
+        padding: 7px 11px;
+      }
+
       .footer p {
-        color: #64748b;
+        color: #71837a;
         font-size: 13px;
       }
 
@@ -824,17 +812,38 @@
       }
 
       .footer-links a {
-        color: #94a3b8;
+        color: #91a59b;
         font-size: 13px;
       }
 
       .footer-links a:hover {
-        color: #67e8f9;
+        color: var(--verde-menta);
       }
 
-      /* =====================================================
-         RESPONSIVE
-      ===================================================== */
+      /* WHATSAPP */
+
+      .whatsapp-flotante {
+        position: fixed;
+        right: 22px;
+        bottom: 22px;
+        z-index: 1200;
+        width: 58px;
+        height: 58px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        background: #25d366;
+        color: #ffffff;
+        font-size: 27px;
+        font-weight: 900;
+        box-shadow: 0 16px 36px rgba(0, 0, 0, 0.34);
+      }
+
+      .whatsapp-flotante:hover {
+        transform: translateY(-4px) scale(1.03);
+      }
+
+      /* RESPONSIVE */
 
       @media (max-width: 960px) {
         .hero-grid,
@@ -885,8 +894,9 @@
           width: 100%;
         }
 
-        .marca-texto {
-          font-size: 22px;
+        .marca-logo {
+          width: 145px;
+          height: 52px;
         }
 
         .nav {
@@ -905,6 +915,15 @@
         .propuesta-visual {
           min-height: 360px;
         }
+
+        .footer-logo {
+          width: 150px;
+        }
+
+        .whatsapp-flotante {
+          right: 16px;
+          bottom: 16px;
+        }
       }
     </style>
   </head>
@@ -912,9 +931,12 @@
   <body>
     <header class="header">
       <div class="contenedor nav">
-        <a href="#inicio" class="marca">
-          <div class="marca-icono">K</div>
-          <div class="marca-texto">KONAX</div>
+        <a href="#inicio" class="marca" aria-label="Ir al inicio">
+          <img
+            src="/konax-logo.png"
+            alt="KONAX - Eficiencia en cada proceso"
+            class="marca-logo"
+          />
         </a>
 
         <nav class="nav-links">
@@ -938,7 +960,7 @@
         <div class="contenedor hero-grid">
           <div>
             <div class="etiqueta">
-              Plataforma integral de gestión empresarial
+              Eficiencia en cada proceso
             </div>
 
             <h1>
@@ -960,6 +982,7 @@
                 href="https://wa.me/50760211024?text=Hola,%20quiero%20solicitar%20una%20demostración%20de%20KONAX."
                 class="boton-principal"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 Solicitar demostración
               </a>
@@ -1033,10 +1056,7 @@
         </div>
       </section>
 
-      <section
-        class="seccion seccion-clara"
-        id="soluciones"
-      >
+      <section class="seccion seccion-clara" id="soluciones">
         <div class="contenedor">
           <div class="encabezado-seccion">
             <span>El problema</span>
@@ -1056,9 +1076,7 @@
           <div class="grid-problemas">
             <article class="tarjeta-problema">
               <div class="icono">📊</div>
-
               <h3>Falta de visibilidad</h3>
-
               <p>
                 Conoce cuánto vendes, cuánto has cobrado,
                 cuánto permanece pendiente y dónde está
@@ -1068,9 +1086,7 @@
 
             <article class="tarjeta-problema">
               <div class="icono">💳</div>
-
               <h3>Cartera sin seguimiento</h3>
-
               <p>
                 Organiza cuentas por cobrar, clientes morosos,
                 promesas de pago, gestores y recuperación.
@@ -1079,9 +1095,7 @@
 
             <article class="tarjeta-problema">
               <div class="icono">📦</div>
-
               <h3>Inventario descontrolado</h3>
-
               <p>
                 Registra entradas, salidas, costos, precios,
                 proveedores y existencias disponibles.
@@ -1091,10 +1105,7 @@
         </div>
       </section>
 
-      <section
-        class="seccion seccion-oscura"
-        id="modulos"
-      >
+      <section class="seccion seccion-oscura" id="modulos">
         <div class="contenedor">
           <div class="encabezado-seccion">
             <span>Módulos principales</span>
@@ -1167,15 +1178,11 @@
         </div>
       </section>
 
-      <section
-        class="seccion seccion-clara"
-        id="beneficios"
-      >
+      <section class="seccion seccion-clara" id="beneficios">
         <div class="contenedor propuesta">
           <div class="propuesta-visual">
             <div>
               <h3>Información para decidir</h3>
-
               <p>
                 Convierte los movimientos del negocio en
                 indicadores claros y accionables.
@@ -1219,7 +1226,6 @@
             <div class="lista-beneficios">
               <div class="beneficio">
                 <div class="check">✓</div>
-
                 <div>
                   <h4>Información centralizada</h4>
                   <p>
@@ -1231,7 +1237,6 @@
 
               <div class="beneficio">
                 <div class="check">✓</div>
-
                 <div>
                   <h4>Seguimiento de responsabilidades</h4>
                   <p>
@@ -1243,7 +1248,6 @@
 
               <div class="beneficio">
                 <div class="check">✓</div>
-
                 <div>
                   <h4>Indicadores actualizados</h4>
                   <p>
@@ -1255,7 +1259,6 @@
 
               <div class="beneficio">
                 <div class="check">✓</div>
-
                 <div>
                   <h4>Escalable por módulos</h4>
                   <p>
@@ -1269,10 +1272,7 @@
         </div>
       </section>
 
-      <section
-        class="seccion seccion-oscura"
-        id="planes"
-      >
+      <section class="seccion seccion-oscura" id="planes">
         <div class="contenedor">
           <div class="encabezado-seccion">
             <span>Planes</span>
@@ -1314,6 +1314,7 @@
                 href="https://wa.me/50760211024?text=Hola,%20quiero%20información%20del%20plan%20KONAX%20Cobros."
                 class="boton-plan"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 Solicitar información
               </a>
@@ -1348,6 +1349,7 @@
                 href="https://wa.me/50760211024?text=Hola,%20quiero%20información%20del%20plan%20KONAX%20Gestión."
                 class="boton-plan"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 Solicitar información
               </a>
@@ -1378,6 +1380,7 @@
                 href="https://wa.me/50760211024?text=Hola,%20quiero%20información%20sobre%20KONAX%20Empresa."
                 class="boton-plan"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 Hablar con un asesor
               </a>
@@ -1404,6 +1407,7 @@
                 href="https://wa.me/50760211024?text=Hola,%20quiero%20una%20demostración%20de%20KONAX."
                 class="boton-principal"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 Solicitar demostración
               </a>
@@ -1422,10 +1426,13 @@
 
     <footer class="footer">
       <div class="contenedor footer-contenido">
-        <div class="marca">
-          <div class="marca-icono">K</div>
-          <div class="marca-texto">KONAX</div>
-        </div>
+        <a href="#inicio" aria-label="Ir al inicio">
+          <img
+            src="/konax-logo.png"
+            alt="KONAX - Eficiencia en cada proceso"
+            class="footer-logo"
+          />
+        </a>
 
         <p>
           © <span id="anio"></span> KONAX. Todos los derechos
@@ -1442,6 +1449,17 @@
         </div>
       </div>
     </footer>
+
+    <a
+      href="https://wa.me/50760211024?text=Hola,%20quiero%20información%20sobre%20KONAX."
+      class="whatsapp-flotante"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Hablar por WhatsApp"
+      title="Hablar por WhatsApp"
+    >
+      ☎
+    </a>
 
     <script>
       document.getElementById("anio").textContent =
