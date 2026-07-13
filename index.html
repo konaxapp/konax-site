@@ -85,18 +85,28 @@
       .marca {
         display: flex;
         align-items: center;
-        gap: 14px;
+      }
+
+      .marca-logo-box {
+        background: #ffffff;
+        border-radius: 22px;
+        padding: 10px 16px;
+        width: 290px;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        box-shadow: 0 12px 30px rgba(15, 159, 103, 0.2);
       }
 
       .marca-logo {
-        width: 190px;
-        height: 62px;
+        width: 255px;
+        height: 78px;
         object-fit: contain;
-        object-position: left center;
-        background: #ffffff;
-        border-radius: 14px;
-        padding: 7px 12px;
-        box-shadow: 0 10px 28px rgba(15, 159, 103, 0.18);
+        object-position: center;
+        transform: scale(1.18);
+        display: block;
       }
 
       .nav-links {
@@ -503,39 +513,83 @@
       .grid-modulos {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
+        gap: 24px;
       }
 
       .modulo {
-        padding: 26px;
-        border-radius: 19px;
-        background: linear-gradient(
-          145deg,
-          rgba(7, 17, 13, 0.96),
-          rgba(6, 59, 43, 0.7)
-        );
-        border: 1px solid rgba(159, 243, 207, 0.13);
+        min-height: 235px;
+        padding: 28px;
+        border-radius: 24px;
+        background:
+          radial-gradient(
+            circle at bottom left,
+            rgba(15, 159, 103, 0.2),
+            transparent 40%
+          ),
+          linear-gradient(
+            145deg,
+            rgba(7, 17, 13, 0.98),
+            rgba(6, 59, 43, 0.82)
+          );
+        border: 1px solid rgba(159, 243, 207, 0.2);
+        box-shadow:
+          0 18px 40px rgba(0, 0, 0, 0.28),
+          inset 0 1px 0 rgba(255, 255, 255, 0.03);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: all 0.28s ease;
       }
 
       .modulo:hover {
-        transform: translateY(-5px);
-        border-color: rgba(36, 209, 138, 0.44);
+        transform: translateY(-6px);
+        border-color: rgba(36, 209, 138, 0.68);
+        box-shadow:
+          0 24px 48px rgba(0, 0, 0, 0.34),
+          0 0 28px rgba(15, 159, 103, 0.18);
+      }
+
+      .modulo-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 22px;
+      }
+
+      .modulo-icono {
+        width: 64px;
+        height: 64px;
+        border-radius: 19px;
+        display: grid;
+        place-items: center;
+        font-size: 30px;
+        background: linear-gradient(
+          135deg,
+          rgba(36, 209, 138, 0.24),
+          rgba(15, 159, 103, 0.1)
+        );
+        border: 1px solid rgba(159, 243, 207, 0.22);
+        box-shadow: 0 9px 22px rgba(15, 159, 103, 0.14);
       }
 
       .modulo-numero {
         color: var(--verde-brillante);
-        font-size: 13px;
+        font-size: 16px;
         font-weight: 900;
       }
 
       .modulo h3 {
-        margin: 12px 0 10px;
-        font-size: 21px;
+        margin: 0 0 12px;
+        font-size: 31px;
+        line-height: 1.08;
+        color: #ffffff;
       }
 
       .modulo p {
-        color: #91a59b;
-        font-size: 15px;
+        color: #c8d6cf;
+        font-size: 16px;
+        line-height: 1.48;
+        max-width: 96%;
       }
 
       /* PROPUESTA */
@@ -790,14 +844,25 @@
         flex-wrap: wrap;
       }
 
-      .footer-logo {
-        width: 180px;
-        height: 58px;
-        object-fit: contain;
-        object-position: left center;
+      .footer-logo-box {
         background: #ffffff;
-        border-radius: 13px;
-        padding: 7px 11px;
+        border-radius: 18px;
+        padding: 9px 14px;
+        width: 230px;
+        height: 82px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .footer-logo {
+        width: 205px;
+        height: 64px;
+        object-fit: contain;
+        object-position: center;
+        transform: scale(1.14);
+        display: block;
       }
 
       .footer p {
@@ -894,9 +959,17 @@
           width: 100%;
         }
 
+        .marca-logo-box {
+          width: 190px;
+          height: 68px;
+          border-radius: 16px;
+          padding: 7px 10px;
+        }
+
         .marca-logo {
-          width: 145px;
+          width: 168px;
           height: 52px;
+          transform: scale(1.12);
         }
 
         .nav {
@@ -916,8 +989,15 @@
           min-height: 360px;
         }
 
+        .footer-logo-box {
+          width: 185px;
+          height: 66px;
+        }
+
         .footer-logo {
-          width: 150px;
+          width: 165px;
+          height: 50px;
+          transform: scale(1.1);
         }
 
         .whatsapp-flotante {
@@ -932,11 +1012,13 @@
     <header class="header">
       <div class="contenedor nav">
         <a href="#inicio" class="marca" aria-label="Ir al inicio">
-          <img
-            src="/konax-logo.png"
-            alt="KONAX - Eficiencia en cada proceso"
-            class="marca-logo"
-          />
+          <div class="marca-logo-box">
+            <img
+              src="konax-logo.png"
+              alt="KONAX - Eficiencia en cada proceso"
+              class="marca-logo"
+            />
+          </div>
         </a>
 
         <nav class="nav-links">
@@ -1111,68 +1193,85 @@
             <span>Módulos principales</span>
 
             <h2>
-              Un solo sistema para controlar el ciclo completo
+              Todo el control de tu negocio en un solo lugar
             </h2>
 
             <p>
-              Activa los módulos que necesita tu empresa y
-              administra cada proceso desde una sola plataforma.
+              Menos enredos, menos pérdidas y más control en cada área clave.
             </p>
           </div>
 
           <div class="grid-modulos">
             <article class="modulo">
-              <div class="modulo-numero">01</div>
-              <h3>Clientes</h3>
-              <p>
-                Centraliza datos personales, cuentas, saldos,
-                documentos, pagos y gestiones realizadas.
-              </p>
+              <div class="modulo-top">
+                <div class="modulo-icono">👥</div>
+                <div class="modulo-numero">01</div>
+              </div>
+
+              <div>
+                <h3>Clientes</h3>
+                <p>Datos, cuentas y pagos en un solo perfil.</p>
+              </div>
             </article>
 
             <article class="modulo">
-              <div class="modulo-numero">02</div>
-              <h3>Ventas y crédito</h3>
-              <p>
-                Registra ventas al contado, ventas a crédito,
-                abonos iniciales y cuentas por cobrar.
-              </p>
+              <div class="modulo-top">
+                <div class="modulo-icono">💳</div>
+                <div class="modulo-numero">02</div>
+              </div>
+
+              <div>
+                <h3>Ventas y crédito</h3>
+                <p>Registra ventas, abonos y cuentas por cobrar.</p>
+              </div>
             </article>
 
             <article class="modulo">
-              <div class="modulo-numero">03</div>
-              <h3>Cobranza</h3>
-              <p>
-                Controla mora, días de atraso, promesas,
-                responsables, gestiones y recuperación.
-              </p>
+              <div class="modulo-top">
+                <div class="modulo-icono">📞</div>
+                <div class="modulo-numero">03</div>
+              </div>
+
+              <div>
+                <h3>Cobranza</h3>
+                <p>Controla mora, promesas y recuperación.</p>
+              </div>
             </article>
 
             <article class="modulo">
-              <div class="modulo-numero">04</div>
-              <h3>Caja</h3>
-              <p>
-                Registra pagos, cobros, métodos de pago,
-                transacciones y movimientos diarios.
-              </p>
+              <div class="modulo-top">
+                <div class="modulo-icono">💵</div>
+                <div class="modulo-numero">04</div>
+              </div>
+
+              <div>
+                <h3>Caja</h3>
+                <p>Pagos, cobros y movimientos diarios.</p>
+              </div>
             </article>
 
             <article class="modulo">
-              <div class="modulo-numero">05</div>
-              <h3>Inventario</h3>
-              <p>
-                Controla productos, stock, precios, proveedores,
-                movimientos y alertas de existencias.
-              </p>
+              <div class="modulo-top">
+                <div class="modulo-icono">📦</div>
+                <div class="modulo-numero">05</div>
+              </div>
+
+              <div>
+                <h3>Inventario</h3>
+                <p>Stock, precios y control de productos.</p>
+              </div>
             </article>
 
             <article class="modulo">
-              <div class="modulo-numero">06</div>
-              <h3>Usuarios y permisos</h3>
-              <p>
-                Define roles, accesos y permisos según las
-                responsabilidades de cada colaborador.
-              </p>
+              <div class="modulo-top">
+                <div class="modulo-icono">🔐</div>
+                <div class="modulo-numero">06</div>
+              </div>
+
+              <div>
+                <h3>Usuarios y permisos</h3>
+                <p>Controla accesos y responsabilidades.</p>
+              </div>
             </article>
           </div>
         </div>
@@ -1427,11 +1526,13 @@
     <footer class="footer">
       <div class="contenedor footer-contenido">
         <a href="#inicio" aria-label="Ir al inicio">
-          <img
-            src="/konax-logo.png"
-            alt="KONAX - Eficiencia en cada proceso"
-            class="footer-logo"
-          />
+          <div class="footer-logo-box">
+            <img
+              src="konax-logo.png"
+              alt="KONAX - Eficiencia en cada proceso"
+              class="footer-logo"
+            />
+          </div>
         </a>
 
         <p>
