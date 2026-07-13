@@ -11,6 +11,14 @@
 
     <title>KONAX | Eficiencia en cada proceso</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+
     <style>
       :root {
         --negro: #020604;
@@ -1120,6 +1128,24 @@
           font-size: 15px;
         }
 
+        .cabecera-buscador h2 {
+          font-size: 42px;
+          letter-spacing: -1.5px;
+        }
+
+        .buscador-input {
+          font-size: 16px;
+        }
+
+        .tarjetas-enfoque {
+          grid-template-columns: 1fr;
+        }
+
+        .hero h1 {
+          font-size: 43px;
+          letter-spacing: -1.8px;
+        }
+
         .whatsapp-flotante {
           right: 16px;
           bottom: 16px;
@@ -1289,49 +1315,78 @@
         </div>
       </section>
 
-      <section class="seccion seccion-clara" id="soluciones">
+      <section class="seccion-buscador" id="soluciones">
         <div class="contenedor">
-          <div class="encabezado-seccion">
-            <span>Gestión integrada</span>
+          <div class="cabecera-buscador">
+            <span class="etiqueta-clara">Gestión integrada</span>
 
             <h2>
-              Tu negocio no debe depender de información
-              dispersa
+              Toda la operación de tu negocio, conectada
             </h2>
-
-            <p>
-              Cuando ventas, cobros, clientes, caja e inventario
-              se manejan por separado, aumenta el riesgo de
-              errores, pérdidas y decisiones tardías.
-            </p>
           </div>
 
-          <div class="grid-problemas">
-            <article class="tarjeta-problema">
-              <div class="icono">📊</div>
+          <div class="buscador-contenedor">
+            <div class="buscador-box">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <circle cx="11" cy="11" r="7"></circle>
+                <line x1="20" y1="20" x2="16.65" y2="16.65"></line>
+              </svg>
+
+              <input
+                id="buscadorKonax"
+                class="buscador-input"
+                type="search"
+                autocomplete="off"
+                placeholder="Buscar preguntas frecuentes, módulos y mucho más"
+                aria-label="Buscar contenido en KONAX"
+              />
+            </div>
+
+            <div
+              id="resultadosBusqueda"
+              class="resultados-busqueda"
+            ></div>
+          </div>
+
+          <div class="tarjetas-enfoque">
+            <article class="tarjeta-enfoque">
+              <div class="tarjeta-enfoque-icono">📊</div>
+
               <h3>Información centralizada</h3>
+
               <p>
-                Conoce cuánto vendes, cuánto has cobrado,
-                cuánto permanece pendiente y dónde está
-                concentrado el riesgo.
+                Reúne ventas, clientes, caja e inventario en una
+                sola plataforma para decidir con mayor claridad.
               </p>
             </article>
 
-            <article class="tarjeta-problema">
-              <div class="icono">💳</div>
+            <article class="tarjeta-enfoque">
+              <div class="tarjeta-enfoque-icono">💳</div>
+
               <h3>Cobranza organizada</h3>
+
               <p>
-                Organiza cuentas por cobrar, clientes morosos,
-                promesas de pago, gestores y recuperación.
+                Prioriza clientes, cuentas por cobrar, promesas
+                de pago y vencimientos pendientes.
               </p>
             </article>
 
-            <article class="tarjeta-problema">
-              <div class="icono">📦</div>
+            <article class="tarjeta-enfoque">
+              <div class="tarjeta-enfoque-icono">📦</div>
+
               <h3>Inventario bajo control</h3>
+
               <p>
-                Registra entradas, salidas, costos, precios,
-                proveedores y existencias disponibles.
+                Consulta existencias, movimientos y alertas para
+                evitar faltantes y pérdidas de stock.
               </p>
             </article>
           </div>
@@ -1949,6 +2004,172 @@
       });
 
       prepararTraducciones();
+    </script>
+
+
+    <script>
+      const contenidoBuscableKonax = [
+        {
+          tituloEs: "Módulos",
+          tituloEn: "Modules",
+          descripcionEs: "Clientes, ventas, crédito, cobranza, caja e inventario.",
+          descripcionEn: "Customers, sales, credit, collections, cash operations and inventory.",
+          destino: "#modulos"
+        },
+        {
+          tituloEs: "Planes",
+          tituloEn: "Plans",
+          descripcionEs: "KONAX Cobros, Gestión y Empresa.",
+          descripcionEn: "KONAX Collections, Management and Enterprise.",
+          destino: "#planes"
+        },
+        {
+          tituloEs: "Beneficios",
+          tituloEn: "Benefits",
+          descripcionEs: "Control operativo, financiero y comercial.",
+          descripcionEn: "Operational, financial and commercial control.",
+          destino: "#beneficios"
+        },
+        {
+          tituloEs: "Cobranza",
+          tituloEn: "Collections",
+          descripcionEs: "Mora, promesas de pago, gestores y recuperación.",
+          descripcionEn: "Overdue balances, payment promises, agents and recovery.",
+          destino: "#modulos"
+        },
+        {
+          tituloEs: "Inventario",
+          tituloEn: "Inventory",
+          descripcionEs: "Stock, productos, movimientos y alertas.",
+          descripcionEn: "Stock, products, movements and alerts.",
+          destino: "#modulos"
+        },
+        {
+          tituloEs: "Caja",
+          tituloEn: "Cash Management",
+          descripcionEs: "Pagos, cobros y movimientos diarios.",
+          descripcionEn: "Payments, collections and daily transactions.",
+          destino: "#modulos"
+        },
+        {
+          tituloEs: "Demostración",
+          tituloEn: "Demo",
+          descripcionEs: "Solicita una demostración personalizada de KONAX.",
+          descripcionEn: "Request a personalized KONAX demo.",
+          destino: "#inicio"
+        },
+        {
+          tituloEs: "Preguntas frecuentes",
+          tituloEn: "Frequently Asked Questions",
+          descripcionEs: "Conoce cómo funciona KONAX y qué incluye.",
+          descripcionEn: "Learn how KONAX works and what it includes.",
+          destino: "#planes"
+        }
+      ];
+
+      const buscadorKonax = document.getElementById("buscadorKonax");
+      const resultadosBusqueda = document.getElementById("resultadosBusqueda");
+
+      function normalizarBusqueda(texto) {
+        return String(texto || "")
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .toLowerCase()
+          .trim();
+      }
+
+      function idiomaActualKonax() {
+        return document.documentElement.lang === "en" ? "en" : "es";
+      }
+
+      function cerrarResultados() {
+        resultadosBusqueda.classList.remove("visible");
+        resultadosBusqueda.innerHTML = "";
+      }
+
+      function mostrarResultados(valor) {
+        const termino = normalizarBusqueda(valor);
+
+        if (!termino) {
+          cerrarResultados();
+          return;
+        }
+
+        const idioma = idiomaActualKonax();
+
+        const encontrados = contenidoBuscableKonax.filter((item) => {
+          const contenido = normalizarBusqueda(
+            `${item.tituloEs} ${item.tituloEn} ${item.descripcionEs} ${item.descripcionEn}`
+          );
+
+          return contenido.includes(termino);
+        });
+
+        resultadosBusqueda.innerHTML = "";
+
+        if (encontrados.length === 0) {
+          resultadosBusqueda.innerHTML = `
+            <div class="sin-resultados">
+              ${idioma === "en"
+                ? "No results found."
+                : "No encontramos resultados."}
+            </div>
+          `;
+          resultadosBusqueda.classList.add("visible");
+          return;
+        }
+
+        encontrados.forEach((item) => {
+          const boton = document.createElement("div");
+          boton.className = "resultado-busqueda";
+
+          const titulo = idioma === "en" ? item.tituloEn : item.tituloEs;
+          const descripcion =
+            idioma === "en" ? item.descripcionEn : item.descripcionEs;
+
+          boton.innerHTML = `
+            <div>
+              <strong>${titulo}</strong>
+              <span>${descripcion}</span>
+            </div>
+            <span>→</span>
+          `;
+
+          boton.addEventListener("click", () => {
+            const destino = document.querySelector(item.destino);
+
+            if (destino) {
+              destino.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+              });
+            }
+
+            buscadorKonax.value = "";
+            cerrarResultados();
+          });
+
+          resultadosBusqueda.appendChild(boton);
+        });
+
+        resultadosBusqueda.classList.add("visible");
+      }
+
+      buscadorKonax.addEventListener("input", (evento) => {
+        mostrarResultados(evento.target.value);
+      });
+
+      buscadorKonax.addEventListener("focus", () => {
+        if (buscadorKonax.value.trim()) {
+          mostrarResultados(buscadorKonax.value);
+        }
+      });
+
+      document.addEventListener("click", (evento) => {
+        if (!evento.target.closest(".buscador-contenedor")) {
+          cerrarResultados();
+        }
+      });
     </script>
 
   </body>
