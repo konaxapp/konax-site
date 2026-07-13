@@ -1769,6 +1769,170 @@
         }
       }
 
+
+      /* CORRECCIÓN FINAL DE VISIBILIDAD */
+
+      @media (min-width: 901px) {
+        .hero {
+          padding-top: 82px;
+          padding-bottom: 88px;
+        }
+
+        .hero-grid {
+          grid-template-columns: minmax(420px, 0.9fr) minmax(620px, 1.1fr);
+          gap: 54px;
+        }
+
+        .hero h1 {
+          font-size: clamp(54px, 5.4vw, 78px);
+          line-height: 1.02;
+        }
+
+        .hero p {
+          font-size: 19px;
+          line-height: 1.65;
+        }
+
+        .dashboard-comercial {
+          min-width: 640px;
+        }
+
+        .dashboard-topbar {
+          min-height: 62px;
+          padding: 0 20px;
+        }
+
+        .dashboard-brand {
+          font-size: 21px;
+        }
+
+        .dashboard-empresa {
+          font-size: 12px;
+        }
+
+        .dashboard-cuerpo {
+          grid-template-columns: 64px 1fr;
+          min-height: 430px;
+        }
+
+        .dashboard-contenido {
+          padding: 20px;
+        }
+
+        .dashboard-titulo {
+          font-size: 15px;
+          margin-bottom: 15px;
+        }
+
+        .dashboard-kpis {
+          gap: 12px;
+        }
+
+        .dashboard-kpi {
+          padding: 15px;
+        }
+
+        .dashboard-kpi small {
+          min-height: 32px;
+          font-size: 10px;
+        }
+
+        .dashboard-kpi strong {
+          font-size: 18px;
+        }
+
+        .dashboard-kpi em {
+          font-size: 9px;
+        }
+
+        .dashboard-grafica h4,
+        .dashboard-actividad h4 {
+          font-size: 11px;
+        }
+
+        .actividad-mini-texto strong {
+          font-size: 9px;
+        }
+
+        .actividad-mini-texto span,
+        .actividad-mini-monto {
+          font-size: 8px;
+        }
+
+        .asesor-bloque {
+          grid-template-columns: minmax(0, 1.05fr) minmax(420px, 0.95fr);
+          min-height: 470px;
+        }
+
+        .asesor-contenido {
+          padding: 48px;
+        }
+
+        .asesor-contenido h3 {
+          font-size: clamp(42px, 4.2vw, 58px);
+        }
+
+        .asesor-contenido p {
+          font-size: 17px;
+        }
+
+        .asesor-imagen {
+          min-height: 470px;
+          background: #ffffff;
+          padding: 18px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .asesor-imagen img {
+          width: 100%;
+          height: 100%;
+          max-height: 434px;
+          min-height: 0;
+          object-fit: contain;
+          object-position: center;
+          border-radius: 16px;
+        }
+
+        .whatsapp {
+          right: 24px;
+          bottom: 24px;
+          width: 60px;
+          height: 60px;
+          overflow: visible;
+        }
+      }
+
+      @media (max-width: 900px) {
+        .hero h1 {
+          font-size: 42px;
+        }
+
+        .hero p {
+          font-size: 17px;
+        }
+
+        .telefono-demo {
+          max-width: 340px;
+        }
+
+        .telefono-kpi small {
+          font-size: 13px;
+        }
+
+        .telefono-kpi strong {
+          font-size: 23px;
+        }
+
+        .whatsapp {
+          right: 12px;
+          bottom: 14px;
+          width: 54px;
+          height: 54px;
+        }
+      }
+
     </style>
   </head>
 
