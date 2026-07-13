@@ -1555,6 +1555,220 @@
           flex-direction: column;
         }
       }
+
+      /* AJUSTES ESCRITORIO Y MÓVIL */
+
+      @media (min-width: 901px) {
+        .planes-seccion {
+          padding-top: 88px;
+          padding-bottom: 74px;
+        }
+
+        .planes-cabecera {
+          align-items: center;
+        }
+
+        .planes-cabecera-texto {
+          max-width: 720px;
+        }
+
+        .planes-cabecera h2 {
+          max-width: 760px;
+        }
+
+        .asesor-bloque {
+          grid-template-columns: minmax(0, 1fr) minmax(360px, 0.9fr);
+          align-items: stretch;
+        }
+
+        .asesor-imagen {
+          display: flex;
+          align-items: stretch;
+        }
+
+        .asesor-imagen img {
+          width: 100%;
+          height: 100%;
+          min-height: 430px;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+
+      @media (max-width: 900px) {
+        .planes-seccion {
+          padding: 48px 0 54px;
+        }
+
+        .planes-seccion::after {
+          display: none;
+        }
+
+        .planes-contenido {
+          width: min(100% - 32px, 680px);
+        }
+
+        .planes-cabecera {
+          display: block;
+          margin-bottom: 26px;
+        }
+
+        .planes-cabecera-texto {
+          max-width: none;
+        }
+
+        .planes-etiqueta {
+          margin-bottom: 10px;
+          font-size: 11px;
+          letter-spacing: 1.2px;
+        }
+
+        .planes-cabecera h2 {
+          max-width: 560px;
+          font-size: clamp(34px, 10vw, 48px);
+          line-height: 1.04;
+          letter-spacing: -1.4px;
+          margin-bottom: 14px;
+        }
+
+        .planes-cabecera p {
+          max-width: 560px;
+          font-size: 16px;
+          line-height: 1.55;
+        }
+
+        .planes-toggle {
+          width: 100%;
+          max-width: 340px;
+          margin-top: 22px;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .toggle-plan {
+          width: 100%;
+          padding: 11px 12px;
+        }
+
+        .grid-planes {
+          grid-template-columns: 1fr;
+          gap: 18px;
+        }
+
+        .plan,
+        .plan.seleccionado {
+          width: 100%;
+          transform: none;
+          padding: 24px;
+          border-radius: 18px;
+        }
+
+        .plan:hover {
+          transform: none;
+        }
+
+        .recomendado {
+          border-radius: 16px 16px 0 0;
+        }
+
+        .plan h3 {
+          font-size: 24px;
+        }
+
+        .plan-descripcion {
+          min-height: auto;
+        }
+
+        .precio-numero {
+          font-size: 46px;
+        }
+
+        .asesor-bloque {
+          margin-top: 28px;
+          grid-template-columns: 1fr;
+          border-radius: 18px;
+        }
+
+        .asesor-contenido {
+          padding: 28px 24px 24px;
+        }
+
+        .asesor-etiqueta {
+          font-size: 11px;
+        }
+
+        .asesor-contenido h3 {
+          font-size: clamp(34px, 10vw, 46px);
+          line-height: 1.05;
+          margin-bottom: 14px;
+        }
+
+        .asesor-contenido p {
+          font-size: 16px;
+          line-height: 1.6;
+        }
+
+        .asesor-beneficios {
+          display: grid;
+          gap: 12px;
+          margin-bottom: 22px;
+        }
+
+        .asesor-beneficios span {
+          font-size: 14px;
+        }
+
+        .boton-asesor {
+          width: 100%;
+        }
+
+        .asesor-imagen {
+          display: none;
+        }
+
+        .whatsapp {
+          width: 56px;
+          height: 56px;
+          right: 14px;
+          bottom: 18px;
+        }
+
+        .whatsapp svg {
+          width: 29px;
+          height: 29px;
+        }
+      }
+
+      @media (max-width: 520px) {
+        .planes-contenido {
+          width: calc(100% - 24px);
+        }
+
+        .planes-seccion {
+          padding-top: 38px;
+        }
+
+        .planes-cabecera h2 {
+          font-size: 38px;
+        }
+
+        .planes-cabecera p {
+          font-size: 15px;
+        }
+
+        .plan {
+          padding: 22px 20px;
+        }
+
+        .asesor-contenido {
+          padding: 24px 20px;
+        }
+
+        .asesor-contenido h3 {
+          font-size: 38px;
+        }
+      }
+
     </style>
   </head>
 
@@ -2348,19 +2562,11 @@
                 Asesoría personalizada
               </div>
 
-              <h3>
-                <span
-                  data-es="Habla con un asesor"
-                  data-en="Talk to an advisor"
-                >
-                  Habla con un asesor
-                </span>
-                <span
-                  data-es=" en línea"
-                  data-en=" online"
-                >
-                  en línea
-                </span>
+              <h3
+                data-es="Habla con un asesor en línea"
+                data-en="Talk to an advisor online"
+              >
+                Habla con un asesor en línea
               </h3>
 
               <p
