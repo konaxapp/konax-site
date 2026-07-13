@@ -85,55 +85,29 @@
       .marca {
         display: flex;
         align-items: center;
-        gap: 14px;
         text-decoration: none;
-      }
-
-      .marca-simbolo {
-        width: 56px;
-        height: 56px;
-        border-radius: 16px;
-        display: grid;
-        place-items: center;
-        background: linear-gradient(
-          135deg,
-          rgba(36, 209, 138, 0.22),
-          rgba(15, 159, 103, 0.08)
-        );
-        border: 1px solid rgba(159, 243, 207, 0.24);
-        box-shadow:
-          0 10px 28px rgba(15, 159, 103, 0.18),
-          inset 0 1px 0 rgba(255, 255, 255, 0.04);
-        color: #ffffff;
-        font-size: 27px;
-        font-weight: 900;
-        letter-spacing: -2px;
       }
 
       .marca-textos {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        line-height: 1.05;
       }
 
-      .marca-nombre {
-        font-size: 30px;
-        font-weight: 900;
-        letter-spacing: 2.5px;
-        color: #ffffff;
-      }
-
-      .marca-nombre .acento {
-        color: var(--verde-brillante);
+      .marca-imagen {
+        width: 255px;
+        max-width: 100%;
+        height: auto;
+        display: block;
+        filter: drop-shadow(0 10px 22px rgba(0, 0, 0, 0.18));
       }
 
       .marca-slogan {
-        margin-top: 5px;
+        margin-top: 6px;
         color: var(--verde-menta);
-        font-size: 12px;
+        font-size: 14px;
         font-weight: 800;
-        letter-spacing: 1.15px;
+        letter-spacing: 1.45px;
         text-transform: uppercase;
       }
 
@@ -872,20 +846,13 @@
         flex-wrap: wrap;
       }
 
-      .marca-footer .marca-simbolo {
-        width: 48px;
-        height: 48px;
-        border-radius: 14px;
-        font-size: 23px;
-      }
-
-      .marca-footer .marca-nombre {
-        font-size: 24px;
+      .marca-footer .marca-imagen {
+        width: 200px;
       }
 
       .marca-footer .marca-slogan {
-        font-size: 10px;
-        letter-spacing: 0.9px;
+        font-size: 11px;
+        letter-spacing: 1px;
       }
 
       .footer p {
@@ -982,25 +949,13 @@
           width: 100%;
         }
 
-        .marca {
-          gap: 9px;
-        }
-
-        .marca-simbolo {
-          width: 46px;
-          height: 46px;
-          border-radius: 13px;
-          font-size: 22px;
-        }
-
-        .marca-nombre {
-          font-size: 22px;
-          letter-spacing: 1.4px;
+        .marca-imagen {
+          width: 195px;
         }
 
         .marca-slogan {
-          font-size: 9px;
-          letter-spacing: 0.7px;
+          font-size: 10px;
+          letter-spacing: 0.75px;
         }
 
         .nav {
@@ -1034,12 +989,12 @@
     <header class="header">
       <div class="contenedor nav">
         <a href="#inicio" class="marca" aria-label="Ir al inicio">
-          <div class="marca-simbolo">K</div>
-
           <div class="marca-textos">
-            <div class="marca-nombre">
-              KON<span class="acento">A</span>X
-            </div>
+            <img
+              src="./konax-wordmark-transparent.png"
+              alt="KONAX"
+              class="marca-imagen"
+            />
 
             <div class="marca-slogan">
               Eficiencia en cada proceso
@@ -1556,12 +1511,12 @@
           class="marca marca-footer"
           aria-label="Ir al inicio"
         >
-          <div class="marca-simbolo">K</div>
-
           <div class="marca-textos">
-            <div class="marca-nombre">
-              KON<span class="acento">A</span>X
-            </div>
+            <img
+              src="./konax-wordmark-transparent.png"
+              alt="KONAX"
+              class="marca-imagen"
+            />
 
             <div class="marca-slogan">
               Eficiencia en cada proceso
