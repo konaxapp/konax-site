@@ -9,10 +9,59 @@
 
     <meta
       name="description"
-      content="KONAX centraliza ventas, crédito, cobranza, caja, clientes e inventario en una sola plataforma."
+      content="KONAX es un software de gestión empresarial para ventas, créditos, cobranza, caja, clientes e inventario. Controla tu negocio desde una sola plataforma."
     />
 
-    <title>KONAX | Eficiencia en cada proceso</title>
+    <meta
+      name="keywords"
+      content="KONAX, software de gestión empresarial, software de cobranza, cuentas por cobrar, ventas a crédito, inventario, caja, ERP Panamá"
+    />
+
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+
+    <link rel="canonical" href="https://www.konax.net/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_PA" />
+    <meta property="og:site_name" content="KONAX" />
+    <meta property="og:title" content="KONAX | Ventas, créditos y cobranza en un solo lugar" />
+    <meta
+      property="og:description"
+      content="Centraliza ventas, crédito, cobranza, caja, clientes e inventario con KONAX."
+    />
+    <meta property="og:url" content="https://www.konax.net/" />
+    <meta property="og:image" content="https://www.konax.net/konax-logo-final.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="KONAX | Gestión empresarial inteligente" />
+    <meta
+      name="twitter:description"
+      content="Controla ventas, créditos, cobranza, caja e inventario desde una sola plataforma."
+    />
+
+    <title>KONAX | Ventas, créditos y cobranza en un solo lugar</title>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "KONAX",
+        "url": "https://www.konax.net/",
+        "logo": "https://www.konax.net/konax-logo-final.png",
+        "description": "Software de gestión empresarial para ventas, créditos, cobranza, caja, clientes e inventario.",
+        "sameAs": []
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "KONAX",
+        "url": "https://www.konax.net/",
+        "inLanguage": ["es", "en"]
+      }
+    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -282,10 +331,14 @@
       }
 
       .hero-grid {
-        display: block;
-        max-width: 920px;
-        margin: 0 auto;
-        text-align: center;
+        display: grid;
+        grid-template-columns: 0.82fr 1.18fr;
+        align-items: center;
+        gap: 48px;
+      }
+
+      .hero-contenido {
+        min-width: 0;
       }
 
       .hero-etiqueta {
@@ -316,13 +369,12 @@
         color: var(--texto-suave);
         font-size: 18px;
         line-height: 1.65;
-        max-width: 720px;
-        margin: 0 auto 30px;
+        max-width: 620px;
+        margin-bottom: 30px;
       }
 
       .hero-botones {
         display: flex;
-        justify-content: center;
         gap: 13px;
         flex-wrap: wrap;
       }
@@ -482,6 +534,255 @@
         font-size: 10px;
       }
 
+
+      /* DASHBOARD COMERCIAL DEL HERO */
+
+      .hero-visual {
+        position: relative;
+        min-width: 0;
+        padding: 18px 28px 18px 0;
+      }
+
+      .dashboard-comercial {
+        overflow: hidden;
+        border: 1px solid #dfe7e2;
+        border-radius: 22px;
+        background: #ffffff;
+        box-shadow: 0 28px 70px rgba(23, 33, 28, 0.13);
+      }
+
+      .dashboard-topbar {
+        min-height: 54px;
+        padding: 0 17px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
+        border-bottom: 1px solid #e7ede9;
+      }
+
+      .dashboard-brand {
+        font-size: 18px;
+        font-weight: 800;
+        letter-spacing: 1.5px;
+      }
+
+      .dashboard-brand span {
+        color: var(--verde);
+      }
+
+      .dashboard-empresa {
+        color: #66736c;
+        font-size: 10px;
+        font-weight: 600;
+      }
+
+      .dashboard-cuerpo {
+        display: grid;
+        grid-template-columns: 54px 1fr;
+        min-height: 385px;
+      }
+
+      .dashboard-sidebar {
+        padding: 14px 9px;
+        display: grid;
+        align-content: start;
+        gap: 8px;
+        border-right: 1px solid #e7ede9;
+        background: #fbfdfc;
+      }
+
+      .sidebar-icono {
+        width: 36px;
+        height: 36px;
+        border-radius: 9px;
+        display: grid;
+        place-items: center;
+        color: #738078;
+        font-size: 15px;
+      }
+
+      .sidebar-icono.activo {
+        color: var(--verde);
+        background: var(--verde-claro);
+      }
+
+      .dashboard-contenido {
+        min-width: 0;
+        padding: 16px;
+      }
+
+      .dashboard-titulo {
+        margin-bottom: 12px;
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .dashboard-kpis {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 9px;
+      }
+
+      .dashboard-kpi {
+        min-width: 0;
+        padding: 12px;
+        border: 1px solid #e3eae6;
+        border-radius: 11px;
+        background: #ffffff;
+      }
+
+      .dashboard-kpi small {
+        display: block;
+        min-height: 28px;
+        color: #6d7972;
+        font-size: 8px;
+        line-height: 1.35;
+      }
+
+      .dashboard-kpi strong {
+        display: block;
+        margin: 5px 0 3px;
+        font-size: 15px;
+        white-space: nowrap;
+      }
+
+      .dashboard-kpi em {
+        color: var(--verde);
+        font-size: 7px;
+        font-style: normal;
+        font-weight: 700;
+      }
+
+      .dashboard-inferior {
+        margin-top: 10px;
+        display: grid;
+        grid-template-columns: 1.25fr 0.75fr;
+        gap: 10px;
+      }
+
+      .dashboard-grafica,
+      .dashboard-actividad {
+        min-width: 0;
+        padding: 13px;
+        border: 1px solid #e3eae6;
+        border-radius: 11px;
+        background: #ffffff;
+      }
+
+      .dashboard-grafica h4,
+      .dashboard-actividad h4 {
+        margin-bottom: 9px;
+        font-size: 9px;
+      }
+
+      .grafica-svg {
+        display: block;
+        width: 100%;
+        height: 150px;
+      }
+
+      .actividad-mini {
+        display: grid;
+        gap: 8px;
+      }
+
+      .actividad-mini-item {
+        display: grid;
+        grid-template-columns: 22px 1fr auto;
+        align-items: center;
+        gap: 6px;
+        padding-bottom: 7px;
+        border-bottom: 1px solid #edf1ef;
+      }
+
+      .actividad-mini-item:last-child {
+        border-bottom: 0;
+      }
+
+      .actividad-mini-icono {
+        width: 22px;
+        height: 22px;
+        border-radius: 7px;
+        display: grid;
+        place-items: center;
+        background: var(--verde-claro);
+        color: var(--verde);
+        font-size: 10px;
+      }
+
+      .actividad-mini-texto strong {
+        display: block;
+        font-size: 7px;
+      }
+
+      .actividad-mini-texto span,
+      .actividad-mini-monto {
+        color: #758179;
+        font-size: 6px;
+      }
+
+      .telefono-demo {
+        position: absolute;
+        right: -3px;
+        bottom: -5px;
+        width: 148px;
+        padding: 9px 7px 12px;
+        border: 5px solid #101511;
+        border-radius: 27px;
+        background: #ffffff;
+        box-shadow: 0 20px 40px rgba(23, 33, 28, 0.2);
+      }
+
+      .telefono-camara {
+        width: 48px;
+        height: 10px;
+        margin: -4px auto 8px;
+        border-radius: 0 0 8px 8px;
+        background: #101511;
+      }
+
+      .telefono-logo {
+        margin-bottom: 9px;
+        font-size: 14px;
+        font-weight: 800;
+        letter-spacing: 1px;
+      }
+
+      .telefono-logo span {
+        color: var(--verde);
+      }
+
+      .telefono-kpis {
+        display: grid;
+        gap: 7px;
+      }
+
+      .telefono-kpi {
+        padding: 9px;
+        border: 1px solid #e3eae6;
+        border-radius: 10px;
+      }
+
+      .telefono-kpi small {
+        display: block;
+        color: #6d7972;
+        font-size: 7px;
+      }
+
+      .telefono-kpi strong {
+        display: block;
+        margin-top: 3px;
+        font-size: 12px;
+      }
+
+      .telefono-kpi em {
+        color: var(--verde);
+        font-size: 6px;
+        font-style: normal;
+        font-weight: 700;
+      }
+
       /* SECCIONES */
 
       .seccion {
@@ -603,29 +904,99 @@
         font-size: 13px;
       }
 
+
       /* PLANES */
 
-      .planes-toggle {
+      .planes-seccion {
+        position: relative;
+        padding: 92px 0 76px;
+        background:
+          radial-gradient(
+            circle at 15% 15%,
+            rgba(45, 212, 191, 0.16),
+            transparent 28%
+          ),
+          linear-gradient(135deg, #0b3f31, #0f6a4c);
+      }
+
+      .planes-seccion::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 165px;
+        background: #ffffff;
+        z-index: 0;
+      }
+
+      .planes-contenido {
+        position: relative;
+        z-index: 1;
+      }
+
+      .planes-cabecera {
         display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 24px;
+        margin-bottom: 38px;
+      }
+
+      .planes-cabecera-texto {
+        max-width: 720px;
+      }
+
+      .planes-etiqueta {
+        display: inline-block;
+        margin-bottom: 12px;
+        color: #a7f3d0;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+      }
+
+      .planes-cabecera h2 {
+        color: #ffffff;
+        font-size: clamp(36px, 4.6vw, 56px);
+        line-height: 1.06;
+        letter-spacing: -1.8px;
+        font-weight: 700;
+        margin-bottom: 14px;
+      }
+
+      .planes-cabecera p {
+        max-width: 650px;
+        color: #d7eee4;
+        font-size: 16px;
+      }
+
+      .planes-toggle {
+        display: inline-flex;
         justify-content: center;
-        gap: 8px;
-        margin-bottom: 34px;
+        gap: 4px;
+        padding: 5px;
+        border: 1px solid rgba(255, 255, 255, 0.28);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.1);
+        margin-bottom: 0;
+        flex-shrink: 0;
       }
 
       .toggle-plan {
-        padding: 10px 21px;
-        border: 1px solid var(--borde);
+        padding: 10px 20px;
+        border: 0;
         border-radius: 999px;
-        background: #fff;
-        color: var(--texto);
+        background: transparent;
+        color: #d7eee4;
         cursor: pointer;
         font-weight: 700;
       }
 
       .toggle-plan.activo {
-        background: var(--verde);
-        border-color: var(--verde);
-        color: #fff;
+        background: #ffffff;
+        color: #0f6a4c;
       }
 
       .grid-planes {
@@ -640,10 +1011,11 @@
         display: flex;
         flex-direction: column;
         padding: 30px;
-        border: 1px solid var(--borde);
+        border: 1px solid rgba(255,255,255,0.4);
         border-radius: 20px;
         background: #ffffff;
-        box-shadow: 0 10px 28px rgba(23, 33, 28, 0.05);
+        box-shadow: 0 24px 60px rgba(0,0,0,0.18);
+        color: #17211c;
         cursor: pointer;
         transition:
           transform 0.22s ease,
@@ -652,43 +1024,33 @@
       }
 
       .plan:hover {
-        transform: translateY(-4px);
+        transform: translateY(-5px);
         border-color: #9bd1b8;
-        box-shadow: 0 16px 38px rgba(23, 33, 28, 0.09);
       }
 
       .plan.seleccionado {
-        border: 2px solid var(--verde);
-        transform: translateY(-7px);
-        box-shadow: 0 20px 46px rgba(17, 138, 87, 0.16);
-      }
-
-      .plan.seleccionado::after {
-        content: "✓";
-        position: absolute;
-        top: 18px;
-        left: 18px;
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        display: grid;
-        place-items: center;
-        background: var(--verde);
-        color: #ffffff;
-        font-weight: 800;
-        box-shadow: 0 8px 18px rgba(17, 138, 87, 0.22);
+        transform: translateY(-9px);
+        border: 2px solid #f3b544;
+        box-shadow: 0 28px 70px rgba(0,0,0,0.22);
       }
 
       .recomendado {
         position: absolute;
-        top: -14px;
-        right: 20px;
-        padding: 6px 12px;
-        border-radius: 999px;
-        background: var(--verde);
-        color: #fff;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 10px;
+        border-radius: 18px 18px 0 0;
+        background: #f3b544;
+        color: #3b2b00;
+        text-align: center;
         font-size: 11px;
-        font-weight: 800;
+        font-weight: 900;
+        letter-spacing: 0.8px;
+      }
+
+      .plan.seleccionado .plan-etiqueta {
+        margin-top: 28px;
       }
 
       .plan-etiqueta {
@@ -696,7 +1058,7 @@
         align-self: flex-start;
         padding: 6px 10px;
         border-radius: 999px;
-        background: #ffffff;
+        background: var(--verde-claro);
         color: var(--verde);
         font-size: 11px;
         font-weight: 800;
@@ -709,7 +1071,7 @@
       }
 
       .plan-descripcion {
-        min-height: 52px;
+        min-height: 66px;
         color: var(--texto-suave);
         font-size: 14px;
       }
@@ -728,7 +1090,7 @@
       }
 
       .precio-numero {
-        font-size: 48px;
+        font-size: 50px;
         line-height: 1;
         font-weight: 800;
         letter-spacing: -2px;
@@ -751,7 +1113,7 @@
         padding: 11px;
         border: 1px solid var(--borde);
         border-radius: 10px;
-        background: #ffffff;
+        background: #f7faf8;
         font-size: 13px;
         font-weight: 700;
         margin-bottom: 18px;
@@ -796,6 +1158,109 @@
         text-align: center;
         color: var(--texto-suave);
         font-size: 12px;
+      }
+
+      .asesor-bloque {
+        position: relative;
+        z-index: 1;
+        margin-top: 36px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        overflow: hidden;
+        border-radius: 22px;
+        background: #ffffff;
+        box-shadow: 0 22px 55px rgba(0,0,0,0.14);
+      }
+
+      .asesor-contenido {
+        padding: 42px;
+      }
+
+      .asesor-etiqueta {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 14px;
+        color: var(--verde);
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 1.3px;
+        text-transform: uppercase;
+      }
+
+      .asesor-contenido h3 {
+        font-size: clamp(34px, 4vw, 52px);
+        line-height: 1.08;
+        letter-spacing: -1.6px;
+        margin-bottom: 16px;
+      }
+
+      .asesor-contenido h3 span {
+        color: var(--verde);
+      }
+
+      .asesor-contenido p {
+        color: var(--texto-suave);
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
+
+      .asesor-beneficios {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-bottom: 24px;
+      }
+
+      .asesor-beneficios span {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        color: #344139;
+        font-size: 13px;
+        font-weight: 600;
+      }
+
+      .asesor-beneficios span::before {
+        content: "✓";
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        background: var(--verde-claro);
+        color: var(--verde);
+        font-weight: 800;
+      }
+
+      .boton-asesor {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 14px 22px;
+        border-radius: 10px;
+        background: var(--verde);
+        color: #ffffff;
+        font-weight: 800;
+      }
+
+      .boton-asesor:hover {
+        background: var(--verde-hover);
+        transform: translateY(-2px);
+      }
+
+      .asesor-imagen {
+        min-height: 100%;
+        background: #f4f8f6;
+      }
+
+      .asesor-imagen img {
+        width: 100%;
+        height: 100%;
+        min-height: 430px;
+        object-fit: cover;
+        display: block;
       }
 
       /* CTA FINAL */
@@ -934,9 +1399,29 @@
       /* RESPONSIVE */
 
       @media (max-width: 1000px) {
-        .hero-grid,
-        .cta-box {
+        .hero-grid {
           grid-template-columns: 1fr;
+        }
+
+        .hero-contenido {
+          max-width: 760px;
+          margin: 0 auto;
+          text-align: center;
+        }
+
+        .hero p {
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .hero-botones {
+          justify-content: center;
+        }
+
+        .hero-visual {
+          max-width: 760px;
+          margin: 0 auto;
+          padding-right: 35px;
         }
 
         .grid-modulos,
@@ -961,6 +1446,65 @@
         .nav {
           min-height: 70px;
         }
+
+
+        .hero-visual {
+          width: 100%;
+          max-width: 350px;
+          min-height: 500px;
+          padding: 0;
+        }
+
+        .dashboard-comercial {
+          display: none;
+        }
+
+        .telefono-demo {
+          position: relative;
+          right: auto;
+          bottom: auto;
+          width: 100%;
+          max-width: 320px;
+          margin: 0 auto;
+          padding: 14px 12px 18px;
+          border-width: 7px;
+          border-radius: 38px;
+        }
+
+        .telefono-camara {
+          width: 82px;
+          height: 15px;
+          margin-top: -7px;
+          margin-bottom: 14px;
+          border-radius: 0 0 12px 12px;
+        }
+
+        .telefono-logo {
+          font-size: 23px;
+          margin-bottom: 16px;
+        }
+
+        .telefono-kpis {
+          gap: 11px;
+        }
+
+        .telefono-kpi {
+          padding: 15px;
+          border-radius: 14px;
+        }
+
+        .telefono-kpi small {
+          font-size: 12px;
+        }
+
+        .telefono-kpi strong {
+          font-size: 22px;
+        }
+
+        .telefono-kpi em {
+          font-size: 10px;
+        }
+
 
         .marca img {
           width: 170px;
@@ -1100,34 +1644,47 @@
     <main>
       <section class="hero" id="inicio">
         <div class="contenedor hero-grid">
-          <div>
+          <div class="hero-contenido">
             <div
               class="hero-etiqueta"
-              data-es="Eficiencia en cada proceso"
-              data-en="Efficiency in every process"
+              data-es="Software de gestión comercial para PYMES"
+              data-en="Business management software for SMEs"
             >
-              Eficiencia en cada proceso
+              Software de gestión comercial para PYMES
             </div>
 
             <h1>
-              <span data-es="Controla tus ventas, créditos y cobros" data-en="Manage your sales, credit and collections">
-                Controla tus ventas, créditos y cobros
-              </span>
               <span
-                class="verde"
-                data-es="desde un solo lugar"
+                data-es="Controla ventas,"
+                data-en="Manage sales,"
+              >
+                Controla ventas,
+              </span>
+
+              <span class="verde">
+                <span
+                  data-es="créditos y cobranza"
+                  data-en="credit and collections"
+                >
+                  créditos y cobranza
+                </span>
+              </span>
+
+              <span
+                data-es="en un solo lugar"
                 data-en="from one place"
               >
-                desde un solo lugar
+                en un solo lugar
               </span>
             </h1>
 
             <p
-              data-es="KONAX centraliza ventas, crédito, cobranza, clientes, caja e inventario para darte control, orden y claridad."
-              data-en="KONAX centralizes sales, credit, collections, customers, cash operations and inventory to give you control, order and clarity."
+              data-es="KONAX centraliza tu operación comercial para que tomes mejores decisiones, reduzcas riesgos y aceleres tu flujo de efectivo."
+              data-en="KONAX centralizes your business operation so you can make better decisions, reduce risk and accelerate cash flow."
             >
-              KONAX centraliza ventas, crédito, cobranza, clientes,
-              caja e inventario para darte control, orden y claridad.
+              KONAX centraliza tu operación comercial para que tomes
+              mejores decisiones, reduzcas riesgos y aceleres tu flujo
+              de efectivo.
             </p>
 
             <div class="hero-botones">
@@ -1136,20 +1693,175 @@
                 class="boton-principal"
                 target="_blank"
                 rel="noopener noreferrer"
-                data-es="Solicitar demostración"
-                data-en="Request a demo"
+                data-es="Agendar demostración"
+                data-en="Schedule a demo"
               >
-                Solicitar demostración
+                Agendar demostración
               </a>
 
               <a
                 href="#modulos"
                 class="boton-secundario"
-                data-es="Conocer los módulos"
-                data-en="Explore modules"
+                data-es="Ver módulos"
+                data-en="View modules"
               >
-                Conocer los módulos
+                Ver módulos
               </a>
+            </div>
+          </div>
+
+          <div class="hero-visual" aria-label="Vista de KONAX en computadora y celular">
+            <div class="dashboard-comercial">
+              <div class="dashboard-topbar">
+                <div class="dashboard-brand">KON<span>AX</span></div>
+                <div class="dashboard-empresa">Comercial del Norte S.A.S.</div>
+              </div>
+
+              <div class="dashboard-cuerpo">
+                <div class="dashboard-sidebar">
+                  <div class="sidebar-icono activo">⌂</div>
+                  <div class="sidebar-icono">▣</div>
+                  <div class="sidebar-icono">♙</div>
+                  <div class="sidebar-icono">▤</div>
+                  <div class="sidebar-icono">$</div>
+                  <div class="sidebar-icono">⚙</div>
+                </div>
+
+                <div class="dashboard-contenido">
+                  <div class="dashboard-titulo">Resumen empresarial</div>
+
+                  <div class="dashboard-kpis">
+                    <div class="dashboard-kpi">
+                      <small>Ventas del mes</small>
+                      <strong>US$ 48,750</strong>
+                      <em>▲ 18% vs. mes anterior</em>
+                    </div>
+
+                    <div class="dashboard-kpi">
+                      <small>Cartera por cobrar</small>
+                      <strong>US$ 32,430</strong>
+                      <em>▲ 12% seguimiento</em>
+                    </div>
+
+                    <div class="dashboard-kpi">
+                      <small>Cobrado del mes</small>
+                      <strong>US$ 27,980</strong>
+                      <em>▲ 22% recuperación</em>
+                    </div>
+
+                    <div class="dashboard-kpi">
+                      <small>Clientes activos</small>
+                      <strong>1,248</strong>
+                      <em>▲ 8% crecimiento</em>
+                    </div>
+                  </div>
+
+                  <div class="dashboard-inferior">
+                    <div class="dashboard-grafica">
+                      <h4>Ventas de los últimos 6 meses</h4>
+
+                      <svg
+                        class="grafica-svg"
+                        viewBox="0 0 420 160"
+                        preserveAspectRatio="none"
+                        aria-hidden="true"
+                      >
+                        <line x1="0" y1="140" x2="420" y2="140" stroke="#e9eeeb" />
+                        <line x1="0" y1="95" x2="420" y2="95" stroke="#eef2f0" />
+                        <line x1="0" y1="50" x2="420" y2="50" stroke="#eef2f0" />
+
+                        <path
+                          d="M5,130 C55,112 65,105 92,87 C125,64 145,105 180,92 C225,75 246,37 275,52 C310,71 330,95 360,68 C382,49 395,37 415,26"
+                          fill="none"
+                          stroke="#16a36a"
+                          stroke-width="5"
+                          stroke-linecap="round"
+                        />
+
+                        <circle cx="5" cy="130" r="5" fill="#16a36a" />
+                        <circle cx="92" cy="87" r="5" fill="#16a36a" />
+                        <circle cx="180" cy="92" r="5" fill="#16a36a" />
+                        <circle cx="275" cy="52" r="5" fill="#16a36a" />
+                        <circle cx="360" cy="68" r="5" fill="#16a36a" />
+                        <circle cx="415" cy="26" r="5" fill="#16a36a" />
+                      </svg>
+                    </div>
+
+                    <div class="dashboard-actividad">
+                      <h4>Actividad reciente</h4>
+
+                      <div class="actividad-mini">
+                        <div class="actividad-mini-item">
+                          <div class="actividad-mini-icono">$</div>
+                          <div class="actividad-mini-texto">
+                            <strong>Pago recibido</strong>
+                            <span>Distribuciones del Valle</span>
+                          </div>
+                          <div class="actividad-mini-monto">US$ 2,450</div>
+                        </div>
+
+                        <div class="actividad-mini-item">
+                          <div class="actividad-mini-icono">▤</div>
+                          <div class="actividad-mini-texto">
+                            <strong>Factura creada</strong>
+                            <span>FV-10025</span>
+                          </div>
+                          <div class="actividad-mini-monto">Hoy</div>
+                        </div>
+
+                        <div class="actividad-mini-item">
+                          <div class="actividad-mini-icono">✓</div>
+                          <div class="actividad-mini-texto">
+                            <strong>Promesa registrada</strong>
+                            <span>Seguimiento activo</span>
+                          </div>
+                          <div class="actividad-mini-monto">10:30 a.m.</div>
+                        </div>
+
+                        <div class="actividad-mini-item">
+                          <div class="actividad-mini-icono">↗</div>
+                          <div class="actividad-mini-texto">
+                            <strong>Venta a crédito</strong>
+                            <span>Cuenta nueva</span>
+                          </div>
+                          <div class="actividad-mini-monto">US$ 1,320</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="telefono-demo" aria-hidden="true">
+              <div class="telefono-camara"></div>
+              <div class="telefono-logo">KON<span>AX</span></div>
+
+              <div class="telefono-kpis">
+                <div class="telefono-kpi">
+                  <small>Ventas del mes</small>
+                  <strong>US$ 48,750</strong>
+                  <em>▲ 18% vs. mes anterior</em>
+                </div>
+
+                <div class="telefono-kpi">
+                  <small>Cartera por cobrar</small>
+                  <strong>US$ 32,430</strong>
+                  <em>▲ 12% seguimiento</em>
+                </div>
+
+                <div class="telefono-kpi">
+                  <small>Cobrado del mes</small>
+                  <strong>US$ 27,980</strong>
+                  <em>▲ 22% recuperación</em>
+                </div>
+
+                <div class="telefono-kpi">
+                  <small>Clientes activos</small>
+                  <strong>1,248</strong>
+                  <em>▲ 8% crecimiento</em>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1371,31 +2083,53 @@
         </div>
       </section>
 
-      <section class="seccion" id="planes">
-        <div class="contenedor">
-          <div class="seccion-cabecera">
-            <span data-es="Planes" data-en="Plans">Planes</span>
-            <h2
-              data-es="Planes diseñados para crecer contigo"
-              data-en="Plans designed to grow with you"
-            >
-              Planes diseñados para crecer contigo
-            </h2>
-            <p
-              data-es="Selecciona pago mensual o anual. El plan anual incluye ahorro."
-              data-en="Choose monthly or annual billing. Annual plans include savings."
-            >
-              Selecciona pago mensual o anual. El plan anual incluye ahorro.
-            </p>
-          </div>
+      <section class="planes-seccion" id="planes">
+        <div class="contenedor planes-contenido">
+          <div class="planes-cabecera">
+            <div class="planes-cabecera-texto">
+              <span
+                class="planes-etiqueta"
+                data-es="Planes KONAX"
+                data-en="KONAX plans"
+              >
+                Planes KONAX
+              </span>
 
-          <div class="planes-toggle">
-            <button class="toggle-plan activo" id="mensualBtn" data-es="Mensual" data-en="Monthly">
-              Mensual
-            </button>
-            <button class="toggle-plan" id="anualBtn" data-es="Anual" data-en="Annual">
-              Anual
-            </button>
+              <h2
+                data-es="Planes para cada etapa de tu negocio"
+                data-en="Plans for every stage of your business"
+              >
+                Planes para cada etapa de tu negocio
+              </h2>
+
+              <p
+                data-es="Elige el nivel de control que necesita tu empresa y cambia de plan cuando tu operación crezca."
+                data-en="Choose the level of control your company needs and upgrade as your operation grows."
+              >
+                Elige el nivel de control que necesita tu empresa y cambia
+                de plan cuando tu operación crezca.
+              </p>
+            </div>
+
+            <div class="planes-toggle">
+              <button
+                class="toggle-plan activo"
+                id="mensualBtn"
+                data-es="Mensual"
+                data-en="Monthly"
+              >
+                Mensual
+              </button>
+
+              <button
+                class="toggle-plan"
+                id="anualBtn"
+                data-es="Anual"
+                data-en="Annual"
+              >
+                Anual
+              </button>
+            </div>
           </div>
 
           <div class="grid-planes">
@@ -1405,7 +2139,11 @@
               data-precio-mensual="49"
               data-precio-anual="499"
             >
-              <div class="plan-etiqueta" data-es="Cartera y cobranza" data-en="Receivables and collections">
+              <div
+                class="plan-etiqueta"
+                data-es="Cartera y cobranza"
+                data-en="Receivables and collections"
+              >
                 Cartera y cobranza
               </div>
 
@@ -1413,10 +2151,11 @@
 
               <p
                 class="plan-descripcion"
-                data-es="Para empresas que necesitan controlar cartera, mora y recuperación."
-                data-en="For companies that need to manage receivables, overdue balances and recovery."
+                data-es="Para empresas que necesitan controlar cuentas por cobrar, mora, promesas y recuperación."
+                data-en="For companies that need to manage receivables, overdue balances, promises and recovery."
               >
-                Para empresas que necesitan controlar cartera, mora y recuperación.
+                Para empresas que necesitan controlar cuentas por cobrar,
+                mora, promesas y recuperación.
               </p>
 
               <div class="precio-box">
@@ -1435,12 +2174,10 @@
 
               <ul class="lista-plan">
                 <li data-es="Clientes" data-en="Customers">Clientes</li>
-                <li data-es="Vista Cliente" data-en="Customer view">Vista Cliente</li>
-                <li data-es="Cuentas por Cobrar" data-en="Accounts receivable">Cuentas por Cobrar</li>
-                <li data-es="Caja Básica" data-en="Basic cash management">Caja Básica</li>
-                <li data-es="Cobranza y gestión de cobros" data-en="Collections management">Cobranza y gestión de cobros</li>
-                <li data-es="Promesas de Pago" data-en="Payment promises">Promesas de Pago</li>
-                <li data-es="Dashboard de Cobranza" data-en="Collections dashboard">Dashboard de Cobranza</li>
+                <li data-es="Cuentas por cobrar" data-en="Accounts receivable">Cuentas por cobrar</li>
+                <li data-es="Cobranza" data-en="Collections">Cobranza</li>
+                <li data-es="Promesas de pago" data-en="Payment promises">Promesas de pago</li>
+                <li data-es="Caja básica" data-en="Basic cash management">Caja básica</li>
               </ul>
 
               <a
@@ -1448,10 +2185,10 @@
                 href="https://wa.me/50760211024?text=Hola,%20quiero%20información%20del%20plan%20KONAX%20Cobros."
                 target="_blank"
                 rel="noopener noreferrer"
-                data-es="Solicitar KONAX Cobros"
-                data-en="Request KONAX Collections"
+                data-es="Elegir KONAX Cobros"
+                data-en="Choose KONAX Collections"
               >
-                Solicitar KONAX Cobros
+                Elegir KONAX Cobros
               </a>
 
               <div
@@ -1469,11 +2206,15 @@
               data-precio-mensual="99"
               data-precio-anual="999"
             >
-              <div class="recomendado" data-es="Más recomendado" data-en="Most popular">
-                Más recomendado
+              <div class="recomendado" data-es="MÁS RECOMENDADO" data-en="MOST POPULAR">
+                MÁS RECOMENDADO
               </div>
 
-              <div class="plan-etiqueta" data-es="Operación completa" data-en="Complete operation">
+              <div
+                class="plan-etiqueta"
+                data-es="Operación completa"
+                data-en="Complete operation"
+              >
                 Operación completa
               </div>
 
@@ -1481,10 +2222,11 @@
 
               <p
                 class="plan-descripcion"
-                data-es="Para empresas que necesitan ventas, crédito, caja, inventario y cobranza."
-                data-en="For companies that need sales, credit, cash management, inventory and collections."
+                data-es="Para empresas que gestionan ventas, crédito, caja, inventario y cobranza."
+                data-en="For companies managing sales, credit, cash operations, inventory and collections."
               >
-                Para empresas que necesitan ventas, crédito, caja, inventario y cobranza.
+                Para empresas que gestionan ventas, crédito, caja,
+                inventario y cobranza.
               </p>
 
               <div class="precio-box">
@@ -1503,13 +2245,10 @@
 
               <ul class="lista-plan">
                 <li data-es="Todo KONAX Cobros" data-en="Everything in KONAX Collections">Todo KONAX Cobros</li>
+                <li data-es="Ventas al contado y crédito" data-en="Cash and credit sales">Ventas al contado y crédito</li>
                 <li data-es="Inventario" data-en="Inventory">Inventario</li>
-                <li data-es="Venta Crédito" data-en="Credit sales">Venta Crédito</li>
-                <li data-es="Caja y Control de Caja" data-en="Cash management and cash control">Caja y Control de Caja</li>
-                <li data-es="Gastos / Egresos" data-en="Expenses">Gastos / Egresos</li>
-                <li data-es="Recargos" data-en="Surcharges">Recargos</li>
-                <li data-es="Dashboard de Ventas" data-en="Sales dashboard">Dashboard de Ventas</li>
-                <li data-es="Reportes Operativos" data-en="Operational reports">Reportes Operativos</li>
+                <li data-es="Caja y gastos" data-en="Cash management and expenses">Caja y gastos</li>
+                <li data-es="Reportes operativos" data-en="Operational reports">Reportes operativos</li>
               </ul>
 
               <a
@@ -1517,10 +2256,10 @@
                 href="https://wa.me/50760211024?text=Hola,%20quiero%20información%20del%20plan%20KONAX%20Ventas%20y%20Gestión."
                 target="_blank"
                 rel="noopener noreferrer"
-                data-es="Solicitar Ventas y Gestión"
-                data-en="Request Sales and Management"
+                data-es="Elegir Ventas y Gestión"
+                data-en="Choose Sales and Management"
               >
-                Solicitar Ventas y Gestión
+                Elegir Ventas y Gestión
               </a>
 
               <div
@@ -1538,7 +2277,11 @@
               data-precio-mensual="149"
               data-precio-anual="1499"
             >
-              <div class="plan-etiqueta" data-es="Gerencia y crecimiento" data-en="Management and growth">
+              <div
+                class="plan-etiqueta"
+                data-es="Gerencia y crecimiento"
+                data-en="Management and growth"
+              >
                 Gerencia y crecimiento
               </div>
 
@@ -1546,10 +2289,10 @@
 
               <p
                 class="plan-descripcion"
-                data-es="Para operaciones con múltiples sucursales, metas y control gerencial."
-                data-en="For operations with multiple branches, targets and management control."
+                data-es="Para empresas con sucursales, equipos y control gerencial."
+                data-en="For companies with branches, teams and management control."
               >
-                Para operaciones con múltiples sucursales, metas y control gerencial.
+                Para empresas con sucursales, equipos y control gerencial.
               </p>
 
               <div class="precio-box">
@@ -1567,15 +2310,11 @@
               </div>
 
               <ul class="lista-plan">
-                <li data-es="Todo KONAX Ventas y Gestión" data-en="Everything in KONAX Sales and Management">Todo KONAX Ventas y Gestión</li>
-                <li data-es="Dashboard Ejecutivo" data-en="Executive dashboard">Dashboard Ejecutivo</li>
-                <li data-es="Reportes Avanzados" data-en="Advanced reports">Reportes Avanzados</li>
-                <li data-es="Comisiones" data-en="Commissions">Comisiones</li>
-                <li data-es="Metas por Vendedor y Gestor" data-en="Sales and collections targets">Metas por Vendedor y Gestor</li>
-                <li data-es="Multi Sucursales" data-en="Multi-branch">Multi Sucursales</li>
-                <li data-es="Comparativos Mensuales" data-en="Monthly comparisons">Comparativos Mensuales</li>
-                <li data-es="Presupuesto vs Resultado" data-en="Budget vs actual">Presupuesto vs Resultado</li>
-                <li data-es="Soporte Prioritario" data-en="Priority support">Soporte Prioritario</li>
+                <li data-es="Todo Ventas y Gestión" data-en="Everything in Sales and Management">Todo Ventas y Gestión</li>
+                <li data-es="Dashboard ejecutivo" data-en="Executive dashboard">Dashboard ejecutivo</li>
+                <li data-es="Metas y comisiones" data-en="Targets and commissions">Metas y comisiones</li>
+                <li data-es="Multi sucursales" data-en="Multi-branch">Multi sucursales</li>
+                <li data-es="Reportes avanzados" data-en="Advanced reports">Reportes avanzados</li>
               </ul>
 
               <a
@@ -1583,10 +2322,10 @@
                 href="https://wa.me/50760211024?text=Hola,%20quiero%20información%20del%20plan%20KONAX%20Pro."
                 target="_blank"
                 rel="noopener noreferrer"
-                data-es="Solicitar KONAX Pro"
-                data-en="Request KONAX Pro"
+                data-es="Elegir KONAX Pro"
+                data-en="Choose KONAX Pro"
               >
-                Solicitar KONAX Pro
+                Elegir KONAX Pro
               </a>
 
               <div
@@ -1597,6 +2336,82 @@
                 Usuario adicional: US$10.99/mes
               </div>
             </article>
+          </div>
+
+          <div class="asesor-bloque">
+            <div class="asesor-contenido">
+              <div
+                class="asesor-etiqueta"
+                data-es="Asesoría personalizada"
+                data-en="Personalized guidance"
+              >
+                Asesoría personalizada
+              </div>
+
+              <h3>
+                <span
+                  data-es="Habla con un asesor"
+                  data-en="Talk to an advisor"
+                >
+                  Habla con un asesor
+                </span>
+                <span
+                  data-es=" en línea"
+                  data-en=" online"
+                >
+                  en línea
+                </span>
+              </h3>
+
+              <p
+                data-es="Nuestro equipo de expertos te ayuda a elegir el plan ideal según la operación y las necesidades de tu negocio."
+                data-en="Our team helps you choose the right plan based on your operation and business needs."
+              >
+                Nuestro equipo de expertos te ayuda a elegir el plan ideal
+                según la operación y las necesidades de tu negocio.
+              </p>
+
+              <div class="asesor-beneficios">
+                <span
+                  data-es="Asesoría según tu negocio"
+                  data-en="Guidance for your business"
+                >
+                  Asesoría según tu negocio
+                </span>
+
+                <span
+                  data-es="Ayuda para elegir el plan ideal"
+                  data-en="Help choosing the right plan"
+                >
+                  Ayuda para elegir el plan ideal
+                </span>
+
+                <span
+                  data-es="Respuesta rápida"
+                  data-en="Fast response"
+                >
+                  Respuesta rápida
+                </span>
+              </div>
+
+              <a
+                href="https://wa.me/50760211024?text=Hola,%20quiero%20hablar%20con%20un%20asesor%20sobre%20los%20planes%20de%20KONAX."
+                class="boton-asesor"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-es="Hablar con un asesor"
+                data-en="Talk to an advisor"
+              >
+                Hablar con un asesor
+              </a>
+            </div>
+
+            <div class="asesor-imagen">
+              <img
+                src="asesor-konax.png"
+                alt="Asesora en línea atendiendo consultas"
+              />
+            </div>
           </div>
         </div>
       </section>
