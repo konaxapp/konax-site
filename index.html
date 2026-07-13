@@ -282,10 +282,10 @@
       }
 
       .hero-grid {
-        display: grid;
-        grid-template-columns: 0.88fr 1.12fr;
-        align-items: center;
-        gap: 58px;
+        display: block;
+        max-width: 920px;
+        margin: 0 auto;
+        text-align: center;
       }
 
       .hero-etiqueta {
@@ -316,12 +316,13 @@
         color: var(--texto-suave);
         font-size: 18px;
         line-height: 1.65;
-        max-width: 620px;
-        margin-bottom: 30px;
+        max-width: 720px;
+        margin: 0 auto 30px;
       }
 
       .hero-botones {
         display: flex;
+        justify-content: center;
         gap: 13px;
         flex-wrap: wrap;
       }
@@ -801,37 +802,18 @@
 
       .cta {
         background: #ffffff;
-        padding: 76px 0;
+        padding: 54px 0;
         border-top: 1px solid var(--borde);
       }
 
-      .cta-box {
-        display: grid;
-        grid-template-columns: 1.1fr 0.9fr;
-        gap: 35px;
-        align-items: center;
-        padding: 45px;
-        border: 1px solid #cfe3d8;
-        border-radius: 22px;
-        background: #ffffff;
-      }
-
-      .cta h2 {
-        font-size: clamp(31px, 4vw, 46px);
-        line-height: 1.12;
-        letter-spacing: -1.5px;
-        margin-bottom: 12px;
-      }
-
-      .cta p {
-        color: var(--texto-suave);
-      }
-
-      .cta-acciones {
+      .cta-simple {
         display: flex;
-        justify-content: flex-end;
-        gap: 12px;
-        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .boton-demo-final {
+        min-width: 280px;
       }
 
       /* FOOTER */
@@ -918,8 +900,7 @@
         stroke-width: 1.8;
       }
 
-      .copyright,
-      .footer-lema {
+      .copyright {
         color: var(--texto-suave);
         font-size: 12px;
       }
@@ -1010,8 +991,7 @@
           transform: none;
         }
 
-        .hero-botones,
-        .cta-acciones {
+        .hero-botones {
           flex-direction: column;
         }
 
@@ -1020,8 +1000,9 @@
           width: 100%;
         }
 
-        .cta-box {
-          padding: 30px 24px;
+        .boton-demo-final {
+          width: 100%;
+          min-width: 0;
         }
 
         .footer-superior,
@@ -1169,91 +1150,6 @@
               >
                 Conocer los módulos
               </a>
-            </div>
-          </div>
-
-          <div class="panel-demo" aria-label="Vista demostrativa de KONAX">
-            <div class="panel-barra">
-              <div class="panel-puntos">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-              <div class="panel-nombre">KONAX Gestión</div>
-            </div>
-
-            <div class="dashboard">
-              <div class="kpis">
-                <div class="kpi">
-                  <span data-es="Ventas del mes" data-en="Monthly sales">Ventas del mes</span>
-                  <strong>US$ 48,750</strong>
-                </div>
-                <div class="kpi">
-                  <span data-es="Cuentas por cobrar" data-en="Accounts receivable">Cuentas por cobrar</span>
-                  <strong>US$ 32,430</strong>
-                </div>
-                <div class="kpi">
-                  <span data-es="Cobrado del mes" data-en="Collected this month">Cobrado del mes</span>
-                  <strong>US$ 27,980</strong>
-                </div>
-                <div class="kpi">
-                  <span data-es="Clientes activos" data-en="Active customers">Clientes activos</span>
-                  <strong>1,248</strong>
-                </div>
-              </div>
-
-              <div class="dashboard-grid">
-                <div class="grafica">
-                  <h4 data-es="Comportamiento de ventas" data-en="Sales performance">
-                    Comportamiento de ventas
-                  </h4>
-
-                  <div class="linea-grafica">
-                    <svg viewBox="0 0 500 160" preserveAspectRatio="none">
-                      <polyline
-                        fill="none"
-                        stroke="#118a57"
-                        stroke-width="5"
-                        points="8,130 80,95 150,112 225,60 300,90 375,42 492,78"
-                      />
-                      <line x1="0" y1="145" x2="500" y2="145" stroke="#dfe7e2" />
-                      <line x1="0" y1="105" x2="500" y2="105" stroke="#eef3f0" />
-                      <line x1="0" y1="65" x2="500" y2="65" stroke="#eef3f0" />
-                    </svg>
-                  </div>
-                </div>
-
-                <div class="actividad">
-                  <h4 data-es="Actividad reciente" data-en="Recent activity">
-                    Actividad reciente
-                  </h4>
-
-                  <div class="actividad-lista">
-                    <div class="actividad-fila">
-                      <strong data-es="Cobro registrado" data-en="Payment recorded">
-                        Cobro registrado
-                      </strong>
-                      <span>US$ 2,450</span>
-                    </div>
-
-                    <div class="actividad-fila">
-                      <strong data-es="Venta a crédito" data-en="Credit sale">
-                        Venta a crédito
-                      </strong>
-                      <span>US$ 1,320</span>
-                    </div>
-
-                    <div class="actividad-fila">
-                      <strong data-es="Promesa de pago" data-en="Payment promise">
-                        Promesa de pago
-                      </strong>
-                      <span data-es="Seguimiento activo" data-en="Active follow-up">
-                        Seguimiento activo
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -1707,45 +1603,17 @@
 
       <section class="cta">
         <div class="contenedor">
-          <div class="cta-box">
-            <div>
-              <h2
-                data-es="¿Listo para tener más control de tu negocio?"
-                data-en="Ready to gain more control of your business?"
-              >
-                ¿Listo para tener más control de tu negocio?
-              </h2>
-
-              <p
-                data-es="Solicita una demostración personalizada y conoce cómo KONAX puede adaptarse a tu operación."
-                data-en="Request a personalized demo and discover how KONAX can adapt to your operation."
-              >
-                Solicita una demostración personalizada y conoce cómo
-                KONAX puede adaptarse a tu operación.
-              </p>
-            </div>
-
-            <div class="cta-acciones">
-              <a
-                href="https://wa.me/50760211024?text=Hola,%20quiero%20una%20demostración%20de%20KONAX."
-                class="boton-principal"
-                target="_blank"
-                rel="noopener noreferrer"
-                data-es="Agendar demostración"
-                data-en="Schedule a demo"
-              >
-                Agendar demostración
-              </a>
-
-              <a
-                href="https://app.konax.net/login"
-                class="boton-secundario"
-                data-es="Iniciar sesión"
-                data-en="Log in"
-              >
-                Iniciar sesión
-              </a>
-            </div>
+          <div class="cta-simple">
+            <a
+              href="https://wa.me/50760211024?text=Hola,%20quiero%20una%20demostración%20de%20KONAX."
+              class="boton-principal boton-demo-final"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-es="Agendar demostración"
+              data-en="Schedule a demo"
+            >
+              Agendar demostración
+            </a>
           </div>
         </div>
       </section>
@@ -1781,14 +1649,6 @@
           <span data-es="Todos los derechos reservados." data-en="All rights reserved.">
             Todos los derechos reservados.
           </span>
-        </p>
-
-        <p
-          class="footer-lema"
-          data-es="Eficiencia en cada proceso"
-          data-en="Efficiency in every process"
-        >
-          Eficiencia en cada proceso
         </p>
       </div>
     </footer>
