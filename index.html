@@ -2596,6 +2596,304 @@
         }
       }
 
+
+      /* AJUSTES FINALES SOLICITADOS */
+
+      .acciones-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-shrink: 0;
+      }
+
+      .boton-iniciar,
+      .boton-login {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 52px;
+        padding: 13px 22px;
+        border-radius: 11px;
+        font-size: 15px;
+        font-weight: 800;
+        text-decoration: none;
+        white-space: nowrap;
+        transition: 0.2s ease;
+      }
+
+      .boton-iniciar {
+        border: 1px solid #cfd8d3;
+        background: #ffffff;
+        color: #111827;
+      }
+
+      .boton-iniciar:hover {
+        border-color: #13935f;
+        color: #0f7a4f;
+        transform: translateY(-2px);
+      }
+
+      .boton-login {
+        border: 1px solid #111827;
+        background: #111827;
+        color: #ffffff !important;
+        box-shadow: 0 8px 20px rgba(17, 24, 39, 0.15);
+      }
+
+      .boton-login:hover {
+        background: #0f172a;
+        transform: translateY(-2px);
+      }
+
+      #modulos {
+        padding-top: 74px;
+        padding-bottom: 82px;
+      }
+
+      #modulos .seccion-cabecera {
+        max-width: 940px;
+        margin-bottom: 38px;
+      }
+
+      #modulos .seccion-cabecera span {
+        font-size: 13px;
+        letter-spacing: 1.5px;
+      }
+
+      #modulos .seccion-cabecera h2 {
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: clamp(46px, 4.8vw, 68px);
+        line-height: 1.08;
+        letter-spacing: -1.8px;
+      }
+
+      #modulos .grid-modulos {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+      }
+
+      #modulos .modulo {
+        min-height: 245px;
+        padding: 32px 28px;
+        border: 1px solid #dde5e1;
+        border-radius: 20px;
+        background: #ffffff;
+        box-shadow: 0 12px 30px rgba(17, 24, 39, 0.06);
+      }
+
+      #modulos .modulo-icono {
+        width: 58px;
+        height: 58px;
+        display: grid;
+        place-items: center;
+        margin-bottom: 22px;
+        border-radius: 14px;
+        background: #eaf7f0;
+        font-size: 29px;
+      }
+
+      #modulos .modulo h3 {
+        margin-bottom: 12px;
+        font-size: 25px;
+        line-height: 1.2;
+      }
+
+      #modulos .modulo p {
+        font-size: 17px;
+        line-height: 1.6;
+        color: #5a665f;
+      }
+
+      .asesor-solo-texto {
+        display: block !important;
+        max-width: 1120px;
+        min-height: 0 !important;
+        margin: 38px auto 0;
+        overflow: visible;
+        border: 1px solid #dce5e0;
+        border-radius: 24px;
+        background:
+          radial-gradient(circle at 90% 20%, rgba(31, 181, 116, 0.12), transparent 28%),
+          #ffffff;
+        box-shadow: 0 18px 45px rgba(0, 0, 0, 0.10);
+      }
+
+      .asesor-solo-texto .asesor-contenido {
+        max-width: 100%;
+        padding: 54px 58px;
+      }
+
+      .asesor-solo-texto .asesor-etiqueta {
+        margin-bottom: 14px;
+        font-size: 13px;
+        letter-spacing: 1.5px;
+      }
+
+      .asesor-solo-texto h3 {
+        max-width: 850px;
+        margin-bottom: 18px;
+        font-size: clamp(48px, 5vw, 70px);
+        line-height: 1.03;
+        letter-spacing: -2px;
+      }
+
+      .asesor-solo-texto p {
+        max-width: 900px;
+        margin-bottom: 26px;
+        font-size: 20px;
+        line-height: 1.65;
+      }
+
+      .asesor-solo-texto .asesor-beneficios {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px 28px;
+        margin-bottom: 28px;
+      }
+
+      .asesor-solo-texto .asesor-beneficios span {
+        font-size: 16px;
+      }
+
+      .asesor-solo-texto .boton-asesor {
+        min-height: 54px;
+        padding: 15px 26px;
+        font-size: 17px;
+      }
+
+      @media (min-width: 1100px) {
+        .nav {
+          width: min(1380px, calc(100% - 48px));
+          max-width: none;
+          gap: 30px;
+        }
+
+        .marca img {
+          width: 290px;
+          max-width: none;
+        }
+
+        .nav-links {
+          gap: 26px;
+        }
+
+        .nav-links > a {
+          font-size: 16px;
+        }
+      }
+
+      @media (max-width: 1099px) {
+        .acciones-header {
+          gap: 8px;
+        }
+
+        .boton-iniciar,
+        .boton-login {
+          min-height: 48px;
+          padding: 11px 16px;
+          font-size: 14px;
+        }
+
+        #modulos .grid-modulos {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 900px) {
+        .acciones-header {
+          width: 100%;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          margin-top: 10px;
+        }
+
+        .boton-iniciar,
+        .boton-login {
+          width: 100%;
+          min-height: 48px;
+        }
+
+        #modulos {
+          padding-top: 52px;
+          padding-bottom: 58px;
+        }
+
+        #modulos .seccion-cabecera h2 {
+          font-size: 40px;
+        }
+
+        #modulos .modulo {
+          min-height: 210px;
+          padding: 26px 22px;
+        }
+
+        #modulos .modulo h3 {
+          font-size: 23px;
+        }
+
+        #modulos .modulo p {
+          font-size: 16px;
+        }
+
+        .asesor-solo-texto .asesor-contenido {
+          padding: 36px 28px;
+        }
+
+        .asesor-solo-texto h3 {
+          font-size: 44px;
+        }
+
+        .asesor-solo-texto p {
+          font-size: 18px;
+        }
+
+        .asesor-solo-texto .asesor-beneficios {
+          display: grid;
+          gap: 13px;
+        }
+      }
+
+      @media (max-width: 620px) {
+        .acciones-header {
+          grid-template-columns: 1fr;
+        }
+
+        #modulos .grid-modulos {
+          grid-template-columns: 1fr;
+          gap: 16px;
+        }
+
+        #modulos .seccion-cabecera h2 {
+          font-size: 34px;
+        }
+
+        #modulos .modulo {
+          min-height: 0;
+        }
+
+        .asesor-solo-texto {
+          border-radius: 18px;
+        }
+
+        .asesor-solo-texto .asesor-contenido {
+          padding: 30px 22px;
+        }
+
+        .asesor-solo-texto h3 {
+          font-size: 37px;
+        }
+
+        .asesor-solo-texto p {
+          font-size: 17px;
+        }
+
+        .asesor-solo-texto .boton-asesor {
+          width: 100%;
+        }
+      }
+
     </style>
   </head>
 
@@ -2636,16 +2934,27 @@
             </div>
           </div>
 
-          <a
-            href="https://wa.me/50760211024?text=Hola,%20quiero%20solicitar%20una%20demostración%20de%20KONAX."
-            class="boton-login"
-            target="_blank"
-            rel="noopener noreferrer"
-            data-es="Solicitar demo"
-            data-en="Request a demo"
-          >
-            Solicitar demo
-          </a>
+          <div class="acciones-header">
+            <a
+              href="https://app.konax.net/login"
+              class="boton-iniciar"
+              data-es="Iniciar sesión"
+              data-en="Log in"
+            >
+              Iniciar sesión
+            </a>
+
+            <a
+              href="https://wa.me/50760211024?text=Hola,%20quiero%20solicitar%20una%20demostración%20de%20KONAX."
+              class="boton-login"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-es="Solicitar demo"
+              data-en="Request a demo"
+            >
+              Solicitar demo
+            </a>
+          </div>
         </nav>
       </div>
 
@@ -3456,7 +3765,7 @@
             </article>
           </div>
 
-          <div class="asesor-bloque">
+          <div class="asesor-bloque asesor-solo-texto">
             <div class="asesor-contenido">
               <div
                 class="asesor-etiqueta"
@@ -3474,11 +3783,11 @@
               </h3>
 
               <p
-                data-es="Nuestro equipo de expertos te ayuda a elegir el plan ideal según la operación y las necesidades de tu negocio."
+                data-es="Nuestro equipo te ayuda a elegir el plan ideal según la operación y las necesidades de tu negocio."
                 data-en="Our team helps you choose the right plan based on your operation and business needs."
               >
-                Nuestro equipo de expertos te ayuda a elegir el plan ideal
-                según la operación y las necesidades de tu negocio.
+                Nuestro equipo te ayuda a elegir el plan ideal según la
+                operación y las necesidades de tu negocio.
               </p>
 
               <div class="asesor-beneficios">
@@ -3515,34 +3824,11 @@
                 Hablar con un asesor
               </a>
             </div>
-
-            <div class="asesor-imagen">
-              <img
-                src="asesor-konax.png"
-                alt="Asesora atendiendo consultas en línea"
-              />
-            </div>
           </div>
         </div>
       </section>
 
-      <section class="cta">
-        <div class="contenedor">
-          <div class="cta-simple">
-            <a
-              href="https://wa.me/50760211024?text=Hola,%20quiero%20una%20demostración%20de%20KONAX."
-              class="boton-principal boton-demo-final"
-              target="_blank"
-              rel="noopener noreferrer"
-              data-es="Agendar demostración"
-              data-en="Schedule a demo"
-            >
-              Agendar demostración
-            </a>
-          </div>
-        </div>
-      </section>
-    </main>
+</main>
 
     <footer class="footer">
       <div class="contenedor footer-centro">
