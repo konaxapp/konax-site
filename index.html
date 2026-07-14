@@ -2013,6 +2013,357 @@
         }
       }
 
+
+      /* AJUSTES FINALES DE TAMAÑO Y ENCUADRE */
+
+      @media (min-width: 1100px) {
+        .contenedor {
+          width: min(94%, 1380px);
+        }
+
+        .header-principal {
+          padding: 18px 0 14px;
+        }
+
+        .header-superior {
+          gap: 28px;
+        }
+
+        .logo img {
+          width: 290px;
+          max-height: 92px;
+          object-fit: contain;
+        }
+
+        .menu-principal {
+          gap: 34px;
+        }
+
+        .menu-principal a {
+          font-size: 18px;
+          font-weight: 700;
+        }
+
+        .idioma-boton,
+        .boton-login {
+          min-height: 54px;
+          padding: 0 24px;
+          font-size: 16px;
+        }
+
+        .buscador {
+          max-width: 920px;
+          margin: 18px auto 0;
+        }
+
+        .buscador input {
+          height: 62px;
+          font-size: 18px;
+          padding-left: 58px;
+        }
+
+        .buscador svg {
+          width: 24px;
+          height: 24px;
+          left: 22px;
+        }
+
+        .hero {
+          padding: 90px 0 96px;
+        }
+
+        .hero-grid {
+          grid-template-columns: minmax(470px, 0.9fr) minmax(700px, 1.1fr);
+          gap: 64px;
+        }
+
+        .hero h1 {
+          font-size: clamp(64px, 5.8vw, 88px);
+          line-height: 1;
+        }
+
+        .hero p {
+          font-size: 21px;
+          line-height: 1.65;
+        }
+
+        .dashboard-comercial {
+          min-width: 720px;
+          transform: scale(1.04);
+          transform-origin: center;
+        }
+
+        .dashboard-topbar {
+          min-height: 68px;
+          padding: 0 24px;
+        }
+
+        .dashboard-brand {
+          font-size: 24px;
+        }
+
+        .dashboard-empresa {
+          font-size: 14px;
+        }
+
+        .dashboard-cuerpo {
+          grid-template-columns: 74px 1fr;
+          min-height: 490px;
+        }
+
+        .dashboard-contenido {
+          padding: 24px;
+        }
+
+        .dashboard-titulo {
+          font-size: 18px;
+        }
+
+        .dashboard-kpi small {
+          font-size: 12px;
+          min-height: 34px;
+        }
+
+        .dashboard-kpi strong {
+          font-size: 22px;
+        }
+
+        .dashboard-kpi em {
+          font-size: 10px;
+        }
+
+        .beneficios {
+          padding: 100px 0 108px;
+        }
+
+        .beneficios .seccion-cabecera h2 {
+          font-size: clamp(48px, 4.6vw, 68px);
+        }
+
+        .beneficios-grid {
+          gap: 34px;
+        }
+
+        .beneficio h3 {
+          font-size: 22px;
+        }
+
+        .beneficio p {
+          font-size: 16px;
+          line-height: 1.55;
+        }
+
+        .beneficio-icono {
+          width: 64px;
+          height: 64px;
+          font-size: 30px;
+        }
+
+        .asesor-bloque {
+          grid-template-columns: minmax(0, 0.88fr) minmax(600px, 1.12fr);
+          min-height: 560px;
+          overflow: hidden;
+        }
+
+        .asesor-contenido {
+          padding: 58px 52px;
+        }
+
+        .asesor-contenido h3 {
+          font-size: clamp(50px, 4.8vw, 68px);
+          line-height: 1.02;
+        }
+
+        .asesor-contenido p {
+          font-size: 19px;
+          line-height: 1.65;
+        }
+
+        .asesor-beneficios span {
+          font-size: 15px;
+        }
+
+        .asesor-imagen {
+          padding: 0;
+          min-height: 560px;
+          overflow: hidden;
+          background: #f4f8f6;
+        }
+
+        .asesor-imagen img {
+          width: 100%;
+          height: 100%;
+          min-height: 560px;
+          max-height: none;
+          object-fit: cover;
+          object-position: 66% center;
+          border-radius: 0;
+          display: block;
+        }
+      }
+
+      @media (min-width: 901px) and (max-width: 1099px) {
+        .logo img {
+          width: 230px;
+        }
+
+        .menu-principal a {
+          font-size: 16px;
+        }
+
+        .hero-grid {
+          grid-template-columns: 1fr 1.08fr;
+          gap: 36px;
+        }
+
+        .hero h1 {
+          font-size: 58px;
+        }
+
+        .dashboard-comercial {
+          min-width: 590px;
+        }
+
+        .asesor-bloque {
+          grid-template-columns: 0.95fr 1.05fr;
+        }
+
+        .asesor-imagen img {
+          object-position: 65% center;
+        }
+      }
+
+      @media (max-width: 900px) {
+        .header-superior {
+          gap: 12px;
+        }
+
+        .logo img {
+          width: 220px;
+          max-width: 58vw;
+        }
+
+        .boton-login {
+          min-height: 48px;
+          padding: 0 18px;
+          font-size: 15px;
+        }
+
+        .buscador {
+          margin-top: 14px;
+        }
+
+        .buscador input {
+          height: 58px;
+          font-size: 16px;
+        }
+
+        .hero {
+          padding: 54px 0 64px;
+        }
+
+        .hero h1 {
+          font-size: 46px;
+          line-height: 1.03;
+        }
+
+        .hero p {
+          font-size: 18px;
+        }
+
+        .telefono-demo {
+          max-width: 390px;
+        }
+
+        .beneficios {
+          padding: 64px 0 70px;
+        }
+
+        .beneficios .seccion-cabecera h2 {
+          font-size: 38px;
+        }
+
+        .beneficio h3 {
+          font-size: 20px;
+        }
+
+        .beneficio p {
+          font-size: 16px;
+        }
+
+        .asesor-bloque {
+          grid-template-columns: 1fr;
+          overflow: hidden;
+        }
+
+        .asesor-contenido h3 {
+          font-size: 42px;
+        }
+
+        .asesor-contenido p {
+          font-size: 17px;
+        }
+
+        .asesor-imagen {
+          display: block;
+          min-height: 300px;
+          max-height: 380px;
+          overflow: hidden;
+        }
+
+        .asesor-imagen img {
+          width: 100%;
+          height: 100%;
+          min-height: 300px;
+          max-height: 380px;
+          object-fit: cover;
+          object-position: 65% top;
+        }
+      }
+
+      @media (max-width: 520px) {
+        .logo img {
+          width: 205px;
+          max-width: 57vw;
+        }
+
+        .boton-login {
+          min-height: 46px;
+          padding: 0 15px;
+          font-size: 14px;
+        }
+
+        .buscador input {
+          font-size: 15px;
+        }
+
+        .hero h1 {
+          font-size: 40px;
+        }
+
+        .hero p {
+          font-size: 17px;
+        }
+
+        .beneficios .seccion-cabecera h2 {
+          font-size: 34px;
+        }
+
+        .asesor-contenido h3 {
+          font-size: 38px;
+        }
+
+        .asesor-imagen {
+          min-height: 260px;
+          max-height: 320px;
+        }
+
+        .asesor-imagen img {
+          min-height: 260px;
+          max-height: 320px;
+        }
+      }
+
     </style>
   </head>
 
@@ -2328,63 +2679,138 @@
       <section class="seccion seccion-suave" id="soluciones">
         <div class="contenedor">
           <div class="seccion-cabecera">
-            <span data-es="Gestión integrada" data-en="Integrated management">
-              Gestión integrada
+            <span data-es="Soluciones de control" data-en="Management solutions">
+              Soluciones de control
             </span>
 
             <h2
-              data-es="Toda la operación de tu negocio, conectada"
-              data-en="Your entire business operation, connected"
+              data-es="Información clara para dirigir mejor tu negocio"
+              data-en="Clear information to manage your business better"
             >
-              Toda la operación de tu negocio, conectada
+              Información clara para dirigir mejor tu negocio
             </h2>
 
             <p
-              data-es="KONAX conecta las áreas principales de tu empresa para reducir errores y mejorar el seguimiento."
-              data-en="KONAX connects the key areas of your company to reduce errors and improve follow-up."
+              data-es="KONAX convierte las operaciones diarias en indicadores, reportes y controles fáciles de consultar."
+              data-en="KONAX turns daily operations into easy-to-read indicators, reports and management controls."
             >
-              KONAX conecta las áreas principales de tu empresa para
-              reducir errores y mejorar el seguimiento.
+              KONAX convierte las operaciones diarias en indicadores,
+              reportes y controles fáciles de consultar.
             </p>
           </div>
 
           <div class="grid-modulos">
             <article class="modulo">
               <div class="modulo-icono">📊</div>
-              <h3 data-es="Información centralizada" data-en="Centralized information">
-                Información centralizada
-              </h3>
-              <p
-                data-es="Consulta ventas, clientes, caja e inventario desde un mismo lugar."
-                data-en="View sales, customers, cash operations and inventory from one place."
+
+              <h3
+                data-es="Indicadores KPI"
+                data-en="KPI indicators"
               >
-                Consulta ventas, clientes, caja e inventario desde un mismo lugar.
+                Indicadores KPI
+              </h3>
+
+              <p
+                data-es="Consulta ventas, cartera, cobros, mora, caja y clientes activos desde el dashboard."
+                data-en="View sales, receivables, collections, overdue balances, cash operations and active customers from the dashboard."
+              >
+                Consulta ventas, cartera, cobros, mora, caja y clientes
+                activos desde el dashboard.
+              </p>
+            </article>
+
+            <article class="modulo">
+              <div class="modulo-icono">📅</div>
+
+              <h3
+                data-es="Reportes diarios y mensuales"
+                data-en="Daily and monthly reports"
+              >
+                Reportes diarios y mensuales
+              </h3>
+
+              <p
+                data-es="Compara resultados por día, semana, mes y período para detectar cambios y oportunidades."
+                data-en="Compare results by day, week, month and period to identify changes and opportunities."
+              >
+                Compara resultados por día, semana, mes y período para
+                detectar cambios y oportunidades.
+              </p>
+            </article>
+
+            <article class="modulo">
+              <div class="modulo-icono">🧑‍💼</div>
+
+              <h3
+                data-es="Control de vendedores"
+                data-en="Sales team control"
+              >
+                Control de vendedores
+              </h3>
+
+              <p
+                data-es="Mide ventas, clientes atendidos, metas, desempeño y resultados de cada vendedor."
+                data-en="Measure sales, customers served, targets, performance and results for each salesperson."
+              >
+                Mide ventas, clientes atendidos, metas, desempeño y
+                resultados de cada vendedor.
+              </p>
+            </article>
+
+            <article class="modulo">
+              <div class="modulo-icono">📞</div>
+
+              <h3
+                data-es="Control de gestores de cobro"
+                data-en="Collections agent control"
+              >
+                Control de gestores de cobro
+              </h3>
+
+              <p
+                data-es="Supervisa asignaciones, gestiones realizadas, promesas, recuperación y productividad."
+                data-en="Monitor assignments, collection actions, payment promises, recovery and productivity."
+              >
+                Supervisa asignaciones, gestiones realizadas, promesas,
+                recuperación y productividad.
               </p>
             </article>
 
             <article class="modulo">
               <div class="modulo-icono">💳</div>
-              <h3 data-es="Cobranza organizada" data-en="Organized collections">
-                Cobranza organizada
-              </h3>
-              <p
-                data-es="Prioriza clientes, cuentas por cobrar, vencimientos y promesas de pago."
-                data-en="Prioritize customers, receivables, due dates and payment promises."
+
+              <h3
+                data-es="Seguimiento de cartera"
+                data-en="Receivables tracking"
               >
-                Prioriza clientes, cuentas por cobrar, vencimientos y promesas de pago.
+                Seguimiento de cartera
+              </h3>
+
+              <p
+                data-es="Identifica saldos pendientes, vencimientos, mora y clientes que requieren atención."
+                data-en="Identify outstanding balances, due dates, overdue accounts and customers requiring attention."
+              >
+                Identifica saldos pendientes, vencimientos, mora y clientes
+                que requieren atención.
               </p>
             </article>
 
             <article class="modulo">
-              <div class="modulo-icono">📦</div>
-              <h3 data-es="Inventario bajo control" data-en="Inventory under control">
-                Inventario bajo control
-              </h3>
-              <p
-                data-es="Controla existencias, movimientos y alertas para evitar faltantes."
-                data-en="Control stock, movements and alerts to prevent shortages."
+              <div class="modulo-icono">🏢</div>
+
+              <h3
+                data-es="Visión gerencial"
+                data-en="Management overview"
               >
-                Controla existencias, movimientos y alertas para evitar faltantes.
+                Visión gerencial
+              </h3>
+
+              <p
+                data-es="Centraliza la información comercial, operativa y financiera para tomar decisiones oportunas."
+                data-en="Centralize commercial, operational and financial information for timely decision-making."
+              >
+                Centraliza la información comercial, operativa y financiera
+                para tomar decisiones oportunas.
               </p>
             </article>
           </div>
