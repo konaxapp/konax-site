@@ -2017,69 +2017,71 @@
       /* AJUSTES FINALES DE TAMAÑO Y ENCUADRE */
 
       @media (min-width: 1100px) {
-        .contenedor {
-          width: min(94%, 1380px);
-        }
-
-        .header-principal {
-          padding: 18px 0 14px;
-        }
-
         .header-superior {
-          gap: 28px;
+          min-height: 96px;
+          padding: 18px 0 10px;
         }
 
-        .logo img {
-          width: 290px;
-          max-height: 92px;
-          object-fit: contain;
-        }
-
-        .menu-principal {
+        .header-contenido {
+          width: min(1380px, calc(100% - 48px));
+          grid-template-columns: 360px 1fr auto;
           gap: 34px;
         }
 
-        .menu-principal a {
-          font-size: 18px;
+        .logo img {
+          width: 310px;
+          max-width: 100%;
+          height: auto;
+        }
+
+        .nav-principal {
+          gap: 34px;
+        }
+
+        .nav-principal a {
+          font-size: 17px;
           font-weight: 700;
         }
 
-        .idioma-boton,
+        .selector-idioma,
         .boton-login {
-          min-height: 54px;
-          padding: 0 24px;
+          min-height: 52px;
           font-size: 16px;
+          padding-left: 20px;
+          padding-right: 20px;
         }
 
-        .buscador {
-          max-width: 920px;
-          margin: 18px auto 0;
+        .busqueda-header {
+          width: min(980px, calc(100% - 80px));
+          margin: 12px auto 22px;
         }
 
-        .buscador input {
-          height: 62px;
-          font-size: 18px;
+        .busqueda-header input {
+          min-height: 58px;
+          font-size: 17px;
           padding-left: 58px;
         }
 
-        .buscador svg {
+        .busqueda-header svg {
           width: 24px;
           height: 24px;
-          left: 22px;
+          left: 20px;
         }
 
         .hero {
-          padding: 90px 0 96px;
+          padding-top: 82px;
+          padding-bottom: 86px;
         }
 
         .hero-grid {
-          grid-template-columns: minmax(470px, 0.9fr) minmax(700px, 1.1fr);
-          gap: 64px;
+          grid-template-columns: minmax(480px, 0.92fr) minmax(700px, 1.08fr);
+          gap: 62px;
         }
 
         .hero h1 {
-          font-size: clamp(64px, 5.8vw, 88px);
-          line-height: 1;
+          font-size: clamp(62px, 6vw, 88px);
+          line-height: 1.01;
+          letter-spacing: -3px;
         }
 
         .hero p {
@@ -2088,90 +2090,71 @@
         }
 
         .dashboard-comercial {
-          min-width: 720px;
+          min-width: 700px;
           transform: scale(1.04);
           transform-origin: center;
         }
 
-        .dashboard-topbar {
-          min-height: 68px;
-          padding: 0 24px;
+        #beneficios {
+          padding-top: 96px;
+          padding-bottom: 100px;
         }
 
-        .dashboard-brand {
-          font-size: 24px;
+        #beneficios .seccion-cabecera {
+          max-width: 900px;
+          margin-bottom: 52px;
         }
 
-        .dashboard-empresa {
-          font-size: 14px;
+        #beneficios .seccion-cabecera span {
+          font-size: 13px;
+          letter-spacing: 1.7px;
         }
 
-        .dashboard-cuerpo {
-          grid-template-columns: 74px 1fr;
-          min-height: 490px;
-        }
-
-        .dashboard-contenido {
-          padding: 24px;
-        }
-
-        .dashboard-titulo {
-          font-size: 18px;
-        }
-
-        .dashboard-kpi small {
-          font-size: 12px;
-          min-height: 34px;
-        }
-
-        .dashboard-kpi strong {
-          font-size: 22px;
-        }
-
-        .dashboard-kpi em {
-          font-size: 10px;
-        }
-
-        .beneficios {
-          padding: 100px 0 108px;
-        }
-
-        .beneficios .seccion-cabecera h2 {
+        #beneficios .seccion-cabecera h2 {
           font-size: clamp(48px, 4.6vw, 68px);
+          line-height: 1.08;
         }
 
-        .beneficios-grid {
-          gap: 34px;
+        #beneficios .grid-beneficios {
+          gap: 28px;
         }
 
-        .beneficio h3 {
+        #beneficios .beneficio {
+          padding: 30px 24px;
+          min-height: 220px;
+        }
+
+        #beneficios .beneficio-icono {
+          width: 60px;
+          height: 60px;
+          font-size: 29px;
+          margin-bottom: 22px;
+        }
+
+        #beneficios .beneficio h3 {
           font-size: 22px;
+          margin-bottom: 12px;
         }
 
-        .beneficio p {
+        #beneficios .beneficio p {
           font-size: 16px;
           line-height: 1.55;
         }
 
-        .beneficio-icono {
-          width: 64px;
-          height: 64px;
-          font-size: 30px;
-        }
-
         .asesor-bloque {
-          grid-template-columns: minmax(0, 0.88fr) minmax(600px, 1.12fr);
+          grid-template-columns: minmax(520px, 0.95fr) minmax(620px, 1.05fr);
           min-height: 560px;
           overflow: hidden;
         }
 
         .asesor-contenido {
-          padding: 58px 52px;
+          padding: 58px 54px;
         }
 
         .asesor-contenido h3 {
-          font-size: clamp(50px, 4.8vw, 68px);
-          line-height: 1.02;
+          font-size: clamp(50px, 4.6vw, 68px);
+          line-height: 1.03;
+          letter-spacing: -2px;
         }
 
         .asesor-contenido p {
@@ -2179,115 +2162,147 @@
           line-height: 1.65;
         }
 
+        .asesor-beneficios {
+          gap: 18px 22px;
+        }
+
         .asesor-beneficios span {
           font-size: 15px;
         }
 
+        .boton-asesor {
+          min-height: 54px;
+          padding: 15px 26px;
+          font-size: 17px;
+        }
+
         .asesor-imagen {
-          padding: 0;
           min-height: 560px;
+          height: 560px;
+          padding: 0;
           overflow: hidden;
-          background: #f4f8f6;
+          background: #eef5f1;
         }
 
         .asesor-imagen img {
+          display: block;
           width: 100%;
           height: 100%;
           min-height: 560px;
           max-height: none;
           object-fit: cover;
-          object-position: 66% center;
+          object-position: 64% center;
           border-radius: 0;
-          display: block;
         }
       }
 
       @media (min-width: 901px) and (max-width: 1099px) {
-        .logo img {
-          width: 230px;
+        .header-contenido {
+          width: calc(100% - 34px);
+          grid-template-columns: 280px 1fr auto;
+          gap: 20px;
         }
 
-        .menu-principal a {
-          font-size: 16px;
+        .logo img {
+          width: 250px;
+        }
+
+        .nav-principal {
+          gap: 20px;
+        }
+
+        .nav-principal a {
+          font-size: 15px;
+        }
+
+        .busqueda-header {
+          width: min(900px, calc(100% - 52px));
         }
 
         .hero-grid {
-          grid-template-columns: 1fr 1.08fr;
-          gap: 36px;
-        }
-
-        .hero h1 {
-          font-size: 58px;
+          grid-template-columns: minmax(390px, 0.9fr) minmax(560px, 1.1fr);
+          gap: 38px;
         }
 
         .dashboard-comercial {
-          min-width: 590px;
+          min-width: 560px;
         }
 
         .asesor-bloque {
-          grid-template-columns: 0.95fr 1.05fr;
+          grid-template-columns: minmax(420px, 0.95fr) minmax(500px, 1.05fr);
+          min-height: 500px;
+        }
+
+        .asesor-imagen,
+        .asesor-imagen img {
+          min-height: 500px;
+          height: 500px;
         }
 
         .asesor-imagen img {
-          object-position: 65% center;
+          object-fit: cover;
+          object-position: 62% center;
         }
       }
 
       @media (max-width: 900px) {
         .header-superior {
-          gap: 12px;
+          padding: 14px 0 10px;
+        }
+
+        .header-contenido {
+          width: calc(100% - 24px);
         }
 
         .logo img {
-          width: 220px;
-          max-width: 58vw;
+          width: 270px;
+          max-width: 60vw;
         }
 
         .boton-login {
           min-height: 48px;
-          padding: 0 18px;
-          font-size: 15px;
-        }
-
-        .buscador {
-          margin-top: 14px;
-        }
-
-        .buscador input {
-          height: 58px;
           font-size: 16px;
+          padding: 12px 18px;
         }
 
-        .hero {
-          padding: 54px 0 64px;
+        .busqueda-header {
+          width: calc(100% - 24px);
+          margin: 10px auto 18px;
+        }
+
+        .busqueda-header input {
+          min-height: 58px;
+          font-size: 16px;
+          padding-left: 54px;
         }
 
         .hero h1 {
-          font-size: 46px;
-          line-height: 1.03;
+          font-size: clamp(42px, 11vw, 58px);
         }
 
         .hero p {
           font-size: 18px;
         }
 
-        .telefono-demo {
-          max-width: 390px;
+        #beneficios {
+          padding-top: 58px;
+          padding-bottom: 62px;
         }
 
-        .beneficios {
-          padding: 64px 0 70px;
-        }
-
-        .beneficios .seccion-cabecera h2 {
+        #beneficios .seccion-cabecera h2 {
           font-size: 38px;
         }
 
-        .beneficio h3 {
-          font-size: 20px;
+        #beneficios .beneficio {
+          min-height: auto;
+          padding: 24px 20px;
         }
 
-        .beneficio p {
+        #beneficios .beneficio h3 {
+          font-size: 21px;
+        }
+
+        #beneficios .beneficio p {
           font-size: 16px;
         }
 
@@ -2296,56 +2311,48 @@
           overflow: hidden;
         }
 
+        .asesor-contenido {
+          padding: 30px 24px 26px;
+        }
+
         .asesor-contenido h3 {
           font-size: 42px;
         }
 
-        .asesor-contenido p {
-          font-size: 17px;
-        }
-
         .asesor-imagen {
           display: block;
+          width: 100%;
           min-height: 300px;
-          max-height: 380px;
+          height: 300px;
           overflow: hidden;
         }
 
         .asesor-imagen img {
+          display: block;
           width: 100%;
           height: 100%;
           min-height: 300px;
-          max-height: 380px;
           object-fit: cover;
-          object-position: 65% top;
+          object-position: 62% top;
         }
       }
 
       @media (max-width: 520px) {
         .logo img {
-          width: 205px;
-          max-width: 57vw;
+          width: 240px;
+          max-width: 58vw;
         }
 
         .boton-login {
-          min-height: 46px;
-          padding: 0 15px;
           font-size: 14px;
+          padding: 10px 14px;
         }
 
-        .buscador input {
+        .busqueda-header input {
           font-size: 15px;
         }
 
-        .hero h1 {
-          font-size: 40px;
-        }
-
-        .hero p {
-          font-size: 17px;
-        }
-
-        .beneficios .seccion-cabecera h2 {
+        #beneficios .seccion-cabecera h2 {
           font-size: 34px;
         }
 
@@ -2353,14 +2360,239 @@
           font-size: 38px;
         }
 
+        .asesor-imagen,
+        .asesor-imagen img {
+          min-height: 250px;
+          height: 250px;
+        }
+      }
+
+
+      /* CORRECCIÓN REAL DEL HEADER Y DE LA IMAGEN DEL ASESOR */
+
+      .boton-login {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 52px;
+        padding: 14px 24px;
+        border-radius: 12px;
+        background: #111827;
+        color: #ffffff !important;
+        font-size: 16px;
+        font-weight: 800;
+        white-space: nowrap;
+        box-shadow: 0 8px 20px rgba(17, 24, 39, 0.14);
+      }
+
+      .boton-login:hover {
+        background: #0f172a;
+        transform: translateY(-2px);
+      }
+
+      .asesor-imagen {
+        position: relative;
+        overflow: hidden;
+        padding: 0 !important;
+        background: #eef5f1;
+      }
+
+      .asesor-imagen img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 172%;
+        max-width: none;
+        height: 100%;
+        min-height: 100%;
+        object-fit: cover;
+        object-position: right center;
+        border-radius: 0;
+      }
+
+      @media (min-width: 1100px) {
+        .nav {
+          width: min(1380px, calc(100% - 48px));
+          max-width: none;
+          min-height: 96px;
+          gap: 34px;
+        }
+
+        .marca img {
+          width: 310px;
+          max-width: none;
+          height: auto;
+        }
+
+        .nav-links {
+          gap: 30px;
+        }
+
+        .nav-links > a {
+          font-size: 17px;
+          font-weight: 700;
+        }
+
+        .idioma-boton {
+          min-height: 52px;
+          padding: 12px 18px;
+          font-size: 16px;
+        }
+
+        .buscador-superior {
+          padding-bottom: 24px;
+        }
+
+        .buscador-wrap {
+          max-width: 980px;
+        }
+
+        .buscador-caja {
+          min-height: 60px;
+          border-radius: 14px;
+        }
+
+        .buscador-caja input {
+          font-size: 17px;
+          padding-left: 56px;
+        }
+
+        .buscador-caja svg {
+          width: 24px;
+          height: 24px;
+          left: 20px;
+        }
+
+        .asesor-bloque {
+          grid-template-columns: minmax(500px, 0.92fr) minmax(650px, 1.08fr);
+          min-height: 560px;
+        }
+
+        .asesor-contenido {
+          padding: 58px 54px;
+        }
+
         .asesor-imagen {
-          min-height: 260px;
-          max-height: 320px;
+          min-height: 560px;
+          height: 560px;
+        }
+      }
+
+      @media (min-width: 901px) and (max-width: 1099px) {
+        .nav {
+          width: calc(100% - 32px);
+          gap: 18px;
+        }
+
+        .marca img {
+          width: 250px;
+        }
+
+        .nav-links {
+          gap: 18px;
+        }
+
+        .nav-links > a {
+          font-size: 15px;
+        }
+
+        .boton-login {
+          min-height: 48px;
+          padding: 12px 18px;
+          font-size: 15px;
+        }
+
+        .buscador-wrap {
+          max-width: 860px;
+        }
+
+        .asesor-bloque {
+          grid-template-columns: minmax(420px, 0.92fr) minmax(520px, 1.08fr);
+          min-height: 500px;
+        }
+
+        .asesor-imagen {
+          min-height: 500px;
+          height: 500px;
+        }
+      }
+
+      @media (max-width: 900px) {
+        .nav {
+          width: calc(100% - 24px);
+          gap: 12px;
+        }
+
+        .marca img {
+          width: 255px;
+          max-width: 58vw;
+        }
+
+        .boton-login {
+          min-height: 48px;
+          padding: 12px 16px;
+          font-size: 15px;
+          border-radius: 11px;
+        }
+
+        .buscador-superior {
+          padding-bottom: 18px;
+        }
+
+        .buscador-wrap {
+          width: calc(100% - 24px);
+          max-width: none;
+        }
+
+        .buscador-caja {
+          min-height: 58px;
+        }
+
+        .buscador-caja input {
+          font-size: 16px;
+        }
+
+        .asesor-bloque {
+          grid-template-columns: 1fr;
+        }
+
+        .asesor-imagen {
+          display: block;
+          min-height: 320px;
+          height: 320px;
         }
 
         .asesor-imagen img {
-          min-height: 260px;
-          max-height: 320px;
+          width: 168%;
+          height: 100%;
+          min-height: 100%;
+          object-position: right top;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .marca img {
+          width: 225px;
+          max-width: 56vw;
+        }
+
+        .boton-login {
+          min-height: 46px;
+          padding: 10px 13px;
+          font-size: 14px;
+        }
+
+        .buscador-wrap {
+          width: calc(100% - 20px);
+        }
+
+        .asesor-imagen {
+          min-height: 270px;
+          height: 270px;
+        }
+
+        .asesor-imagen img {
+          width: 180%;
         }
       }
 
@@ -2405,12 +2637,14 @@
           </div>
 
           <a
-            href="https://app.konax.net/login"
+            href="https://wa.me/50760211024?text=Hola,%20quiero%20solicitar%20una%20demostración%20de%20KONAX."
             class="boton-login"
-            data-es="Iniciar sesión"
-            data-en="Log in"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-es="Solicitar demo"
+            data-en="Request a demo"
           >
-            Iniciar sesión
+            Solicitar demo
           </a>
         </nav>
       </div>
