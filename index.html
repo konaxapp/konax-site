@@ -2894,6 +2894,162 @@
         }
       }
 
+
+      /* AUMENTO DE LETRA EN SOLUCIONES DE CONTROL */
+
+      #soluciones {
+        padding-top: 82px;
+        padding-bottom: 90px;
+      }
+
+      #soluciones .seccion-cabecera {
+        max-width: 980px;
+        margin-bottom: 46px;
+      }
+
+      #soluciones .seccion-cabecera span {
+        font-size: 14px;
+        letter-spacing: 1.7px;
+      }
+
+      #soluciones .seccion-cabecera h2 {
+        max-width: 980px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: clamp(52px, 5vw, 72px);
+        line-height: 1.06;
+        letter-spacing: -2px;
+      }
+
+      #soluciones .seccion-cabecera p {
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 21px;
+        line-height: 1.6;
+      }
+
+      #soluciones .grid-modulos {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+      }
+
+      #soluciones .modulo {
+        min-height: 260px;
+        padding: 34px 30px;
+        border-radius: 20px;
+      }
+
+      #soluciones .modulo-icono {
+        width: 62px;
+        height: 62px;
+        display: grid;
+        place-items: center;
+        margin-bottom: 22px;
+        font-size: 30px;
+      }
+
+      #soluciones .modulo h3 {
+        margin-bottom: 14px;
+        font-size: 27px;
+        line-height: 1.22;
+      }
+
+      #soluciones .modulo p {
+        font-size: 18px;
+        line-height: 1.62;
+        color: #55625a;
+      }
+
+      @media (max-width: 1000px) {
+        #soluciones .grid-modulos {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        #soluciones .seccion-cabecera h2 {
+          font-size: 50px;
+        }
+
+        #soluciones .seccion-cabecera p {
+          font-size: 19px;
+        }
+      }
+
+      @media (max-width: 640px) {
+        #soluciones {
+          padding-top: 56px;
+          padding-bottom: 62px;
+        }
+
+        #soluciones .seccion-cabecera {
+          margin-bottom: 30px;
+        }
+
+        #soluciones .seccion-cabecera h2 {
+          font-size: 37px;
+        }
+
+        #soluciones .seccion-cabecera p {
+          font-size: 17px;
+        }
+
+        #soluciones .grid-modulos {
+          grid-template-columns: 1fr;
+          gap: 16px;
+        }
+
+        #soluciones .modulo {
+          min-height: 0;
+          padding: 26px 22px;
+        }
+
+        #soluciones .modulo h3 {
+          font-size: 24px;
+        }
+
+        #soluciones .modulo p {
+          font-size: 17px;
+        }
+      }
+
+
+      /* BAJAR EL BLOQUE VERDE Y EVITAR QUE EL HEADER LO TAPE */
+
+      #planes {
+        scroll-margin-top: 150px;
+      }
+
+      .asesor-solo-texto {
+        margin-top: 72px !important;
+        margin-bottom: 54px;
+      }
+
+      .planes-seccion {
+        padding-bottom: 96px !important;
+      }
+
+      @media (max-width: 900px) {
+        #planes {
+          scroll-margin-top: 120px;
+        }
+
+        .asesor-solo-texto {
+          margin-top: 46px !important;
+          margin-bottom: 34px;
+        }
+
+        .planes-seccion {
+          padding-bottom: 62px !important;
+        }
+      }
+
+      @media (max-width: 520px) {
+        .asesor-solo-texto {
+          margin-top: 34px !important;
+          margin-bottom: 26px;
+        }
+      }
+
     </style>
   </head>
 
