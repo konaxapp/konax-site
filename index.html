@@ -3050,6 +3050,271 @@
         }
       }
 
+
+      /* AJUSTE COMPLETO DEL ENCABEZADO Y HERO */
+
+      header {
+        background: #ffffff;
+      }
+
+      .nav {
+        width: min(1420px, calc(100% - 40px));
+        max-width: none;
+        min-height: 88px;
+        padding-top: 8px;
+        padding-bottom: 6px;
+        gap: 28px;
+      }
+
+      .marca {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+      }
+
+      .marca img {
+        width: 340px;
+        max-width: none;
+        height: auto;
+        display: block;
+      }
+
+      .nav-links {
+        gap: 26px;
+      }
+
+      .nav-links > a {
+        font-size: 17px;
+        font-weight: 700;
+      }
+
+      .idioma-boton {
+        min-height: 52px;
+        padding: 12px 18px;
+        font-size: 16px;
+        border-radius: 11px;
+      }
+
+      .acciones-header {
+        gap: 12px;
+      }
+
+      .boton-iniciar,
+      .boton-login {
+        min-height: 52px;
+        padding: 13px 22px;
+        border-radius: 11px;
+        font-size: 16px;
+        font-weight: 800;
+      }
+
+      .buscador-superior {
+        padding-top: 0;
+        padding-bottom: 14px;
+      }
+
+      .buscador-wrap {
+        max-width: 1000px;
+      }
+
+      .buscador-caja {
+        min-height: 58px;
+        border-radius: 14px;
+      }
+
+      .buscador-caja input {
+        padding-left: 58px;
+        font-size: 17px;
+      }
+
+      .buscador-caja svg {
+        left: 20px;
+        width: 24px;
+        height: 24px;
+      }
+
+      .hero {
+        padding-top: 54px;
+        padding-bottom: 84px;
+      }
+
+      .hero-grid {
+        align-items: center;
+        gap: 54px;
+      }
+
+      .hero-texto {
+        padding-top: 0;
+      }
+
+      .hero-etiqueta {
+        font-size: 14px;
+        letter-spacing: 1.5px;
+        margin-bottom: 18px;
+      }
+
+      .hero h1 {
+        font-size: clamp(64px, 6vw, 90px);
+        line-height: 0.99;
+        letter-spacing: -3px;
+        margin-bottom: 22px;
+      }
+
+      .hero p {
+        font-size: 21px;
+        line-height: 1.62;
+        max-width: 700px;
+      }
+
+      .hero-botones a {
+        min-height: 54px;
+        padding: 15px 24px;
+        font-size: 17px;
+      }
+
+      @media (min-width: 1100px) {
+        .nav {
+          grid-template-columns: 370px 1fr auto;
+        }
+
+        .hero-grid {
+          grid-template-columns: minmax(500px, 0.9fr) minmax(690px, 1.1fr);
+        }
+
+        .dashboard-comercial {
+          min-width: 680px;
+        }
+      }
+
+      @media (min-width: 901px) and (max-width: 1099px) {
+        .nav {
+          width: calc(100% - 28px);
+          min-height: 82px;
+          gap: 16px;
+        }
+
+        .marca img {
+          width: 275px;
+        }
+
+        .nav-links {
+          gap: 18px;
+        }
+
+        .nav-links > a {
+          font-size: 15px;
+        }
+
+        .idioma-boton,
+        .boton-iniciar,
+        .boton-login {
+          min-height: 48px;
+          padding: 11px 15px;
+          font-size: 14px;
+        }
+
+        .buscador-wrap {
+          max-width: 880px;
+        }
+
+        .hero h1 {
+          font-size: 62px;
+        }
+      }
+
+      @media (max-width: 900px) {
+        .nav {
+          width: calc(100% - 24px);
+          min-height: 76px;
+          padding-top: 8px;
+          padding-bottom: 6px;
+        }
+
+        .marca img {
+          width: 275px;
+          max-width: 58vw;
+        }
+
+        .acciones-header {
+          width: auto;
+          grid-template-columns: 1fr 1fr;
+          margin-top: 0;
+        }
+
+        .boton-iniciar,
+        .boton-login {
+          min-height: 48px;
+          padding: 11px 15px;
+          font-size: 14px;
+        }
+
+        .buscador-superior {
+          padding-bottom: 12px;
+        }
+
+        .buscador-wrap {
+          width: calc(100% - 24px);
+          max-width: none;
+        }
+
+        .buscador-caja {
+          min-height: 56px;
+        }
+
+        .hero {
+          padding-top: 42px;
+        }
+
+        .hero h1 {
+          font-size: clamp(46px, 11vw, 62px);
+          line-height: 1.01;
+        }
+
+        .hero p {
+          font-size: 18px;
+        }
+      }
+
+      @media (max-width: 620px) {
+        .nav {
+          display: grid;
+          grid-template-columns: 1fr auto;
+          gap: 10px;
+        }
+
+        .marca img {
+          width: 245px;
+          max-width: 56vw;
+        }
+
+        .nav-links,
+        .idioma-selector {
+          display: none;
+        }
+
+        .acciones-header {
+          width: auto;
+          display: flex;
+          gap: 8px;
+        }
+
+        .boton-iniciar,
+        .boton-login {
+          min-height: 44px;
+          padding: 9px 12px;
+          font-size: 13px;
+        }
+
+        .buscador-caja input {
+          font-size: 15px;
+        }
+
+        .hero h1 {
+          font-size: 44px;
+          letter-spacing: -1.5px;
+        }
+      }
+
     </style>
   </head>
 
