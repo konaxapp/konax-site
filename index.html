@@ -3315,6 +3315,202 @@
         }
       }
 
+
+      /* FORMULARIO PARA SOLICITAR DEMOSTRACIÓN */
+      #solicitar-demo { scroll-margin-top: 145px; }
+
+      .demo-seccion {
+        padding: 92px 0;
+        background:
+          radial-gradient(circle at 8% 12%, rgba(17, 138, 87, 0.13), transparent 30%),
+          linear-gradient(180deg, #f7faf8 0%, #ffffff 100%);
+      }
+
+      .demo-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 0.86fr) minmax(520px, 1.14fr);
+        gap: 52px;
+        align-items: start;
+      }
+
+      .demo-info { padding-top: 22px; }
+
+      .demo-etiqueta {
+        display: inline-block;
+        margin-bottom: 15px;
+        color: var(--verde);
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+      }
+
+      .demo-info h2 {
+        margin-bottom: 20px;
+        font-size: clamp(42px, 4.4vw, 64px);
+        line-height: 1.05;
+        letter-spacing: -2px;
+      }
+
+      .demo-info h2 span { color: var(--verde); }
+
+      .demo-info > p {
+        max-width: 540px;
+        color: var(--texto-suave);
+        font-size: 18px;
+        line-height: 1.65;
+      }
+
+      .demo-ventajas {
+        display: grid;
+        gap: 12px;
+        margin-top: 28px;
+      }
+
+      .demo-ventajas span {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #344139;
+        font-size: 15px;
+        font-weight: 650;
+      }
+
+      .demo-ventajas span::before {
+        content: "✓";
+        width: 26px;
+        height: 26px;
+        flex: 0 0 26px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        background: var(--verde-claro);
+        color: var(--verde);
+        font-weight: 900;
+      }
+
+      .demo-formulario {
+        padding: 34px;
+        border: 1px solid var(--borde);
+        border-radius: 22px;
+        background: #ffffff;
+        box-shadow: 0 24px 60px rgba(23, 33, 28, 0.11);
+      }
+
+      .demo-formulario h3 { margin-bottom: 6px; font-size: 24px; }
+
+      .demo-formulario-intro {
+        margin-bottom: 24px;
+        color: var(--texto-suave);
+        font-size: 14px;
+      }
+
+      .demo-dos-columnas {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .demo-campo {
+        display: grid;
+        gap: 8px;
+        margin-bottom: 18px;
+      }
+
+      .demo-campo label {
+        color: #27332d;
+        font-size: 14px;
+        font-weight: 750;
+      }
+
+      .demo-campo input,
+      .demo-campo select,
+      .demo-campo textarea {
+        width: 100%;
+        min-width: 0;
+        padding: 14px 15px;
+        border: 1px solid #d9e3dd;
+        border-radius: 11px;
+        outline: none;
+        background: #ffffff;
+        color: var(--texto);
+        font-family: inherit;
+        font-size: 15px;
+        transition: 0.2s ease;
+      }
+
+      .demo-campo textarea {
+        min-height: 115px;
+        resize: vertical;
+      }
+
+      .demo-campo input:focus,
+      .demo-campo select:focus,
+      .demo-campo textarea:focus {
+        border-color: var(--verde);
+        box-shadow: 0 0 0 4px rgba(17, 138, 87, 0.1);
+      }
+
+      .demo-check {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        margin: 2px 0 18px;
+        color: var(--texto-suave);
+        font-size: 12px;
+      }
+
+      .demo-check input { margin-top: 3px; accent-color: var(--verde); }
+
+      .demo-boton {
+        width: 100%;
+        min-height: 56px;
+        border: 0;
+        border-radius: 11px;
+        background: var(--verde);
+        color: #ffffff;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 850;
+        box-shadow: 0 12px 30px rgba(17, 138, 87, 0.22);
+      }
+
+      .demo-boton:hover {
+        background: var(--verde-hover);
+        transform: translateY(-2px);
+      }
+
+      .demo-boton:disabled { cursor: not-allowed; opacity: 0.65; transform: none; }
+
+      .demo-mensaje {
+        display: none;
+        margin-top: 15px;
+        padding: 13px 14px;
+        border-radius: 10px;
+        font-size: 14px;
+        font-weight: 650;
+      }
+
+      .demo-mensaje.visible { display: block; }
+      .demo-mensaje.exito { background: var(--verde-claro); color: var(--verde-hover); }
+      .demo-mensaje.error { background: #fff1f1; color: #b42318; }
+
+      @media (max-width: 900px) {
+        #solicitar-demo { scroll-margin-top: 115px; }
+        .demo-seccion { padding: 62px 0; }
+        .demo-grid { grid-template-columns: 1fr; gap: 30px; }
+        .demo-info { padding-top: 0; text-align: center; }
+        .demo-info > p { margin-left: auto; margin-right: auto; }
+        .demo-ventajas { justify-items: center; }
+        .demo-formulario { padding: 27px 23px; }
+      }
+
+      @media (max-width: 600px) {
+        .demo-info h2 { font-size: 38px; }
+        .demo-dos-columnas { grid-template-columns: 1fr; gap: 0; }
+        .demo-formulario { padding: 23px 18px; border-radius: 18px; }
+      }
+
     </style>
   </head>
 
@@ -3366,10 +3562,8 @@
             </a>
 
             <a
-              href="https://wa.me/50760211024?text=Hola,%20quiero%20solicitar%20una%20demostración%20de%20KONAX."
+              href="#solicitar-demo"
               class="boton-login"
-              target="_blank"
-              rel="noopener noreferrer"
               data-es="Solicitar demo"
               data-en="Request a demo"
             >
@@ -3462,10 +3656,8 @@
 
             <div class="hero-botones">
               <a
-                href="https://wa.me/50760211024?text=Hola,%20quiero%20solicitar%20una%20demostración%20de%20KONAX."
+                href="#solicitar-demo"
                 class="boton-principal"
-                target="_blank"
-                rel="noopener noreferrer"
                 data-es="Agendar demostración"
                 data-en="Schedule a demo"
               >
@@ -3931,6 +4123,142 @@
         </div>
       </section>
 
+
+      <section class="demo-seccion" id="solicitar-demo">
+        <div class="contenedor demo-grid">
+          <div class="demo-info">
+            <span class="demo-etiqueta">Solicita una demostración</span>
+            <h2>Conoce cómo KONAX <span>puede ayudar a tu negocio</span></h2>
+            <p>
+              Completa el formulario. Prepararemos una demostración enfocada
+              en la operación y las necesidades de tu empresa.
+            </p>
+
+            <div class="demo-ventajas">
+              <span>Demostración personalizada</span>
+              <span>Orientación según tu tipo de negocio</span>
+              <span>Atención sin compromiso</span>
+            </div>
+          </div>
+
+          <form id="formularioDemo" class="demo-formulario" novalidate>
+            <h3>Cuéntanos sobre tu negocio</h3>
+            <p class="demo-formulario-intro">
+              Los campos marcados con * son obligatorios.
+            </p>
+
+            <div class="demo-dos-columnas">
+              <div class="demo-campo">
+                <label for="demoNombre">Nombre del contacto *</label>
+                <input id="demoNombre" type="text" required maxlength="100"
+                  autocomplete="name" placeholder="Ejemplo: Carlos Rodríguez" />
+              </div>
+
+              <div class="demo-campo">
+                <label for="demoNegocio">Nombre del negocio *</label>
+                <input id="demoNegocio" type="text" required maxlength="120"
+                  autocomplete="organization" placeholder="Ejemplo: Mueblería El Hogar" />
+              </div>
+            </div>
+
+            <div class="demo-dos-columnas">
+              <div class="demo-campo">
+                <label for="demoTelefono">Teléfono / WhatsApp *</label>
+                <input id="demoTelefono" type="tel" required maxlength="25"
+                  autocomplete="tel" inputmode="tel" placeholder="Ejemplo: 6000-0000" />
+              </div>
+
+              <div class="demo-campo">
+                <label for="demoCorreo">Correo electrónico</label>
+                <input id="demoCorreo" type="email" maxlength="160"
+                  autocomplete="email" placeholder="correo@empresa.com" />
+              </div>
+            </div>
+
+            <div class="demo-dos-columnas">
+              <div class="demo-campo">
+                <label for="demoUbicacion">Ciudad o provincia *</label>
+                <input id="demoUbicacion" type="text" required maxlength="100"
+                  placeholder="Ejemplo: La Chorrera" />
+              </div>
+
+              <div class="demo-campo">
+                <label for="demoTipoNegocio">Tipo de negocio *</label>
+                <select id="demoTipoNegocio" required>
+                  <option value="">Selecciona una opción</option>
+                  <option>Mueblería</option>
+                  <option>Comercio con ventas a crédito</option>
+                  <option>Financiera</option>
+                  <option>Ferretería</option>
+                  <option>Tienda minorista</option>
+                  <option>Servicios o membresías</option>
+                  <option>Otro</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="demo-campo">
+              <label for="demoArea">¿Qué área deseas mejorar? *</label>
+              <select id="demoArea" required>
+                <option value="">Selecciona una opción</option>
+                <option>Crédito y Cobranzas</option>
+                <option>Inventario y Caja</option>
+                <option>Clientes y seguimiento</option>
+                <option>Reportes</option>
+                <option>Todo el sistema</option>
+                <option>Otro</option>
+              </select>
+            </div>
+
+            <div class="demo-dos-columnas">
+              <div class="demo-campo">
+                <label for="demoSistema">¿Cómo administras actualmente?</label>
+                <select id="demoSistema">
+                  <option value="">Selecciona una opción</option>
+                  <option>Cuaderno o registros manuales</option>
+                  <option>Excel o Google Sheets</option>
+                  <option>Sistema de facturación</option>
+                  <option>ERP u otro software</option>
+                  <option>No utilizo ningún sistema</option>
+                </select>
+              </div>
+
+              <div class="demo-campo">
+                <label for="demoUsuarios">¿Cuántas personas usarían KONAX?</label>
+                <select id="demoUsuarios">
+                  <option value="">Selecciona una opción</option>
+                  <option>1 usuario</option>
+                  <option>2 a 3 usuarios</option>
+                  <option>4 a 10 usuarios</option>
+                  <option>Más de 10 usuarios</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="demo-campo">
+              <label for="demoMensaje">Cuéntanos brevemente qué necesitas</label>
+              <textarea id="demoMensaje" maxlength="800"
+                placeholder="Describe el principal problema que deseas resolver..."></textarea>
+            </div>
+
+            <label class="demo-check">
+              <input id="demoConsentimiento" type="checkbox" required />
+              <span>Acepto que KONAX me contacte para atender esta solicitud.</span>
+            </label>
+
+            <input id="demoOrigen" type="hidden" value="Página web" />
+
+            <button id="demoEnviar" class="demo-boton" type="submit">
+              Solicitar demostración
+            </button>
+
+            <p id="demoMensajeEstado" class="demo-mensaje"
+              role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+
+
       <section class="planes-seccion" id="planes">
         <div class="contenedor planes-contenido">
           <div class="planes-cabecera">
@@ -4361,7 +4689,7 @@
           en: "Demo",
           descripcionEs: "Solicita una demostración de KONAX.",
           descripcionEn: "Request a KONAX demo.",
-          destino: "#inicio"
+          destino: "#solicitar-demo"
         }
       ];
 
@@ -4594,6 +4922,79 @@
         facturacion = "anual";
         actualizarPrecios();
       });
+
+
+      /* FORMULARIO DE DEMOSTRACIÓN */
+      const formularioDemo = document.getElementById("formularioDemo");
+      const demoEnviar = document.getElementById("demoEnviar");
+      const demoMensajeEstado = document.getElementById("demoMensajeEstado");
+      const demoOrigen = document.getElementById("demoOrigen");
+
+      function obtenerOrigenProspecto() {
+        const parametros = new URLSearchParams(window.location.search);
+        return (
+          parametros.get("utm_source") ||
+          parametros.get("origen") ||
+          "Página web"
+        ).slice(0, 80);
+      }
+
+      demoOrigen.value = obtenerOrigenProspecto();
+
+      function mostrarEstadoFormulario(tipo, mensaje) {
+        demoMensajeEstado.className = `demo-mensaje visible ${tipo}`;
+        demoMensajeEstado.textContent = mensaje;
+      }
+
+      function valor(id) {
+        return document.getElementById(id)?.value.trim() || "";
+      }
+
+      formularioDemo.addEventListener("submit", (evento) => {
+        evento.preventDefault();
+
+        if (!formularioDemo.checkValidity()) {
+          formularioDemo.reportValidity();
+          mostrarEstadoFormulario(
+            "error",
+            "Completa los campos obligatorios antes de continuar."
+          );
+          return;
+        }
+
+        const lineas = [
+          "Hola, acabo de solicitar una demostración de KONAX.",
+          "",
+          `Nombre: ${valor("demoNombre")}`,
+          `Negocio: ${valor("demoNegocio")}`,
+          `WhatsApp: ${valor("demoTelefono")}`,
+          valor("demoCorreo") ? `Correo: ${valor("demoCorreo")}` : "",
+          `Ubicación: ${valor("demoUbicacion")}`,
+          `Tipo de negocio: ${valor("demoTipoNegocio")}`,
+          `Área de interés: ${valor("demoArea")}`,
+          valor("demoSistema") ? `Sistema actual: ${valor("demoSistema")}` : "",
+          valor("demoUsuarios") ? `Usuarios estimados: ${valor("demoUsuarios")}` : "",
+          valor("demoMensaje") ? `Necesidad: ${valor("demoMensaje")}` : "",
+          `Origen: ${demoOrigen.value}`
+        ].filter(Boolean);
+
+        const urlWhatsApp =
+          "https://wa.me/50760211024?text=" +
+          encodeURIComponent(lineas.join("\n"));
+
+        demoEnviar.disabled = true;
+        mostrarEstadoFormulario(
+          "exito",
+          "Tu solicitud está lista. Se abrirá WhatsApp para enviarla a KONAX."
+        );
+
+        window.open(urlWhatsApp, "_blank", "noopener,noreferrer");
+
+        setTimeout(() => {
+          demoEnviar.disabled = false;
+        }, 1200);
+      });
+
 
       aplicarIdioma(idiomaActual);
     </script>
