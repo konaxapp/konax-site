@@ -4044,7 +4044,136 @@
         opacity: 1;
       }
 
-    </style>
+    
+      .hero-confianza {
+        margin-top: 12px !important;
+        color: #16875a !important;
+        font-size: 15px !important;
+        font-weight: 800;
+      }
+
+      .problema-solucion {
+        padding: 72px 0;
+        background: #0f1d33;
+        color: #ffffff;
+      }
+
+      .problema-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 56px;
+        align-items: center;
+      }
+
+      .problema-etiqueta {
+        display: inline-block;
+        margin-bottom: 14px;
+        color: #35cf83;
+        font-size: 13px;
+        font-weight: 900;
+        letter-spacing: .12em;
+      }
+
+      .problema-texto h2 {
+        margin: 0;
+        max-width: 760px;
+        font-size: clamp(34px, 4.5vw, 58px);
+        line-height: 1.05;
+      }
+
+      .problema-texto p {
+        margin: 20px 0 0;
+        max-width: 720px;
+        color: #c8d4e2;
+        font-size: 18px;
+        line-height: 1.7;
+      }
+
+      .problema-beneficios {
+        display: grid;
+        gap: 14px;
+      }
+
+      .problema-beneficios article {
+        display: grid;
+        grid-template-columns: 58px 1fr;
+        align-items: center;
+        gap: 16px;
+        padding: 18px 20px;
+        border: 1px solid rgba(255,255,255,.12);
+        border-radius: 16px;
+        background: rgba(255,255,255,.06);
+      }
+
+      .problema-beneficios strong {
+        color: #35cf83;
+        font-size: 22px;
+      }
+
+      .problema-beneficios span {
+        font-size: 16px;
+        font-weight: 800;
+      }
+
+      .franja-confianza {
+        padding: 24px 0;
+        background: #eaf8f1;
+        border-bottom: 1px solid #d7eee3;
+      }
+
+      .confianza-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+
+      .confianza-grid div {
+        padding: 14px 18px;
+        border-left: 3px solid #17a969;
+      }
+
+      .confianza-grid strong,
+      .confianza-grid span {
+        display: block;
+      }
+
+      .confianza-grid strong {
+        color: #102033;
+        font-size: 15px;
+      }
+
+      .confianza-grid span {
+        margin-top: 4px;
+        color: #68766e;
+        font-size: 13px;
+      }
+
+      .plan-etiqueta {
+        min-height: 42px;
+        display: flex;
+        align-items: center;
+      }
+
+      @media (max-width: 900px) {
+        .problema-grid,
+        .confianza-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .problema-solucion {
+          padding: 54px 0;
+        }
+
+        .problema-grid {
+          gap: 32px;
+        }
+
+        .confianza-grid {
+          gap: 8px;
+        }
+      }
+
+</style>
 
 <style>
 .hero-visual-nuevo{
@@ -4404,8 +4533,8 @@
 <section class="hero" id="inicio">
 <div class="contenedor hero-grid">
 <div class="hero-contenido">
-<div class="hero-etiqueta" data-en="Business management software for SMEs" data-es="Software de gestión comercial para PYMES">
-              Software de gestión comercial para PYMES
+<div class="hero-etiqueta" data-en="Business management software for SMEs" data-es="SOFTWARE GESTIÓN EMPRESARIAL">
+              SOFTWARE GESTIÓN EMPRESARIAL
             </div>
 <h1 class="hero-titulo-premium">
 <span data-en="Manage your business" data-es="Gestiona tu negocio">
@@ -4417,9 +4546,12 @@
                 </span>
 </span>
 </h1>
-<p data-en="KONAX centralizes your business operation so you can make better decisions, reduce risk and accelerate cash flow." data-es="Centraliza ventas, Crédito y Cobranzas, caja, inventario y reportes en una plataforma moderna creada para hacer crecer tu negocio.">
-              Centraliza ventas, Crédito y Cobranzas, caja, inventario y
-              reportes en una plataforma moderna creada para hacer crecer tu negocio.
+<p data-en="Control sales, customers, credit, collections, cash, inventory and reports from one platform designed for growing businesses." data-es="Controla ventas, clientes, crédito, cobranza, caja, inventario y reportes desde una sola plataforma diseñada para hacer crecer tu negocio.">
+              Controla ventas, clientes, crédito, cobranza, caja, inventario y
+              reportes desde una sola plataforma diseñada para hacer crecer tu negocio.
+            </p>
+            <p class="hero-confianza" data-en="Request a no-obligation demonstration and see how KONAX adapts to your operation." data-es="Solicita una demostración sin compromiso y descubre cómo KONAX se adapta a tu operación.">
+              Solicita una demostración sin compromiso y descubre cómo KONAX se adapta a tu operación.
             </p>
 <div class="hero-botones">
 <a class="boton-principal" data-en="Schedule a demo" data-es="Agendar demostración" href="#solicitar-demo">
@@ -4533,6 +4665,34 @@
 </div>
 </div>
 </section>
+
+<section class="problema-solucion" aria-label="Problema y solución">
+  <div class="contenedor problema-grid">
+    <div class="problema-texto">
+      <span class="problema-etiqueta" data-es="MENOS DESORDEN. MÁS CONTROL." data-en="LESS DISORDER. MORE CONTROL.">MENOS DESORDEN. MÁS CONTROL.</span>
+      <h2 data-es="¿Tu negocio todavía depende de Excel, libretas y mensajes separados?" data-en="Does your business still depend on spreadsheets, notebooks and scattered messages?">
+        ¿Tu negocio todavía depende de Excel, libretas y mensajes separados?
+      </h2>
+      <p data-es="KONAX organiza la operación diaria en un solo lugar para que sepas qué vendiste, quién debe, cuánto tienes en caja y qué productos quedan." data-en="KONAX organizes your daily operation in one place so you know what you sold, who owes, what is in cash and what inventory remains.">
+        KONAX organiza la operación diaria en un solo lugar para que sepas qué vendiste, quién debe, cuánto tienes en caja y qué productos quedan.
+      </p>
+    </div>
+    <div class="problema-beneficios">
+      <article><strong>01</strong><span data-es="Información centralizada" data-en="Centralized information">Información centralizada</span></article>
+      <article><strong>02</strong><span data-es="Seguimiento de crédito y cobranza" data-en="Credit and collections tracking">Seguimiento de crédito y cobranza</span></article>
+      <article><strong>03</strong><span data-es="Decisiones con datos claros" data-en="Decisions with clear data">Decisiones con datos claros</span></article>
+    </div>
+  </div>
+</section>
+
+<section class="franja-confianza" aria-label="Confianza KONAX">
+  <div class="contenedor confianza-grid">
+    <div><strong>Acceso flexible</strong><span>Computadora, tablet y celular</span></div>
+    <div><strong>Configuración guiada</strong><span>Adaptada al tipo de negocio</span></div>
+    <div><strong>Soporte y acompañamiento</strong><span>Antes y después de comenzar</span></div>
+  </div>
+</section>
+
 <section class="seccion seccion-suave" id="soluciones">
 <div class="contenedor">
 <div class="seccion-cabecera">
@@ -4849,13 +5009,13 @@
 </div>
 <div class="grid-planes">
 <article class="plan" data-plan="KONAX Cobros" data-precio-anual="499" data-precio-mensual="49">
-<div class="plan-etiqueta" data-en="Receivables and collections" data-es="Cartera y cobranza">
-                Cartera y cobranza
+<div class="plan-etiqueta" data-en="For businesses that sell on credit" data-es="Para negocios que venden a crédito">
+                Para negocios que venden a crédito
               </div>
 <h3>KONAX Cobros</h3>
-<p class="plan-descripcion" data-en="For companies that need to manage receivables, overdue balances, promises and recovery." data-es="Para empresas que necesitan controlar cuentas por cobrar, mora, promesas y recuperación.">
-                Para empresas que necesitan controlar cuentas por cobrar,
-                mora, promesas y recuperación.
+<p class="plan-descripcion" data-en="Ideal for controlling customers, outstanding balances, overdue accounts, payment promises and collection actions." data-es="Ideal para controlar clientes, saldos pendientes, mora, promesas de pago y gestiones de cobro.">
+                Ideal para controlar clientes, saldos pendientes, mora,
+                promesas de pago y gestiones de cobro.
               </p>
 <div class="precio-box">
 <span class="precio-moneda">US$</span>
@@ -4886,13 +5046,13 @@
 <div class="recomendado" data-en="MOST POPULAR" data-es="MÁS RECOMENDADO">
                 MÁS RECOMENDADO
               </div>
-<div class="plan-etiqueta" data-en="Complete operation" data-es="Operación completa">
-                Operación completa
+<div class="plan-etiqueta" data-en="For stores with sales, cash and inventory" data-es="Para comercios con ventas, caja e inventario">
+                Para comercios con ventas, caja e inventario
               </div>
 <h3>KONAX Ventas y Gestión</h3>
-<p class="plan-descripcion" data-en="For companies managing sales, credit, cash operations, inventory and collections." data-es="Para empresas que gestionan ventas, crédito, caja, inventario y cobranza.">
-                Para empresas que gestionan ventas, crédito, caja,
-                inventario y cobranza.
+<p class="plan-descripcion" data-en="The most balanced option for controlling sales, credit, collections, cash, expenses, inventory and operational reports." data-es="La opción más completa para controlar ventas, crédito, cobranza, caja, gastos, inventario y reportes operativos.">
+                La opción más completa para controlar ventas, crédito,
+                cobranza, caja, gastos, inventario y reportes operativos.
               </p>
 <div class="precio-box">
 <span class="precio-moneda">US$</span>
@@ -4920,12 +5080,13 @@
               </div>
 </article>
 <article class="plan" data-plan="KONAX Pro" data-precio-anual="1499" data-precio-mensual="149">
-<div class="plan-etiqueta" data-en="Management and growth" data-es="Gerencia y crecimiento">
-                Gerencia y crecimiento
+<div class="plan-etiqueta" data-en="For growing companies and teams" data-es="Para empresas con equipos y crecimiento">
+                Para empresas con equipos y crecimiento
               </div>
 <h3>KONAX Pro</h3>
-<p class="plan-descripcion" data-en="For companies with branches, teams and management control." data-es="Para empresas con sucursales, equipos y control gerencial.">
-                Para empresas con sucursales, equipos y control gerencial.
+<p class="plan-descripcion" data-en="Designed for companies that need executive indicators, teams, goals, commissions, branches and advanced reporting." data-es="Diseñado para empresas que necesitan indicadores ejecutivos, equipos, metas, comisiones, sucursales y reportes avanzados.">
+                Diseñado para empresas que necesitan indicadores ejecutivos,
+                equipos, metas, comisiones, sucursales y reportes avanzados.
               </p>
 <div class="precio-box">
 <span class="precio-moneda">US$</span>
@@ -4989,13 +5150,13 @@
 <a class="marca footer-marca" href="#inicio">
 <img alt="KONAX - Eficiencia en cada proceso" src="konax-logo-web.png"/>
 </a>
-<a aria-label="Instagram de KONAX" class="instagram-link" href="https://www.instagram.com/konaxapp/" rel="noopener noreferrer" target="_blank" title="Instagram">
+<a aria-label="Instagram de KONAX" class="instagram-link" href="https://www.instagram.com/konax_net/" rel="noopener noreferrer" target="_blank" title="Instagram">
 <svg aria-hidden="true" viewbox="0 0 24 24">
 <rect height="18" rx="5" width="18" x="3" y="3"></rect>
 <circle cx="12" cy="12" r="4"></circle>
 <circle cx="17.5" cy="6.5" r="1"></circle>
 </svg>
-<span>Instagram</span>
+<span>@konax_net</span>
 </a>
 <p class="copyright">
           © <span id="anio"></span> KONAX.
