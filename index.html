@@ -4479,6 +4479,207 @@
 }
 </style>
 
+
+<style>
+/* =========================================================
+   CORRECCIÓN FINAL: HEADER MÓVIL Y CONTENIDO RESPONSIVO
+   ========================================================= */
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+}
+
+.panel-ejecutivo,
+.panel-grafico,
+.panel-lateral,
+.kpi-principal,
+.demo-formulario,
+.plan,
+.modulo,
+.beneficio {
+  min-width: 0;
+}
+
+/* Las acciones ya están fuera de .nav-links para que no desaparezcan
+   cuando el menú de navegación se oculta en celular. */
+.acciones-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 700px) {
+  .contenedor {
+    width: calc(100% - 24px);
+  }
+
+  .nav {
+    width: calc(100% - 20px);
+    min-height: 72px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 0;
+  }
+
+  .marca {
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .marca img {
+    width: 190px !important;
+    max-width: 52vw !important;
+    height: auto;
+  }
+
+  .nav-links {
+    display: none !important;
+  }
+
+  .acciones-header {
+    width: auto !important;
+    display: flex !important;
+    grid-template-columns: none !important;
+    gap: 6px !important;
+    margin: 0 !important;
+  }
+
+  .boton-iniciar {
+    display: inline-flex !important;
+    min-height: 42px !important;
+    padding: 8px 11px !important;
+    border-radius: 10px !important;
+    font-size: 12px !important;
+    white-space: nowrap;
+  }
+
+  /* En móvil el CTA de demostración ya aparece en el hero.
+     Se oculta aquí para que el encabezado no se corte. */
+  .acciones-header .boton-login {
+    display: none !important;
+  }
+
+  .hero {
+    padding-top: 42px;
+    padding-bottom: 58px;
+  }
+
+  .hero-grid,
+  .hero-visual-nuevo,
+  .demo-grid,
+  .problema-grid,
+  .confianza-grid,
+  .grid-planes,
+  .grid-modulos,
+  .beneficios-grid {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .hero-visual {
+    width: 100%;
+    max-width: 100%;
+    min-height: 0;
+    padding: 0;
+  }
+
+  .panel-ejecutivo {
+    width: 100%;
+    max-width: 100%;
+    padding: 14px;
+    border-radius: 20px;
+  }
+
+  .panel-cabecera {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .panel-empresa {
+    max-width: 100%;
+    white-space: normal;
+  }
+
+  .panel-kpis,
+  .panel-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .kpi-principal {
+    width: 100%;
+  }
+
+  .kpi-principal strong {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .panel-lateral {
+    display: none;
+  }
+
+  .panel-grafico,
+  .grafico-nuevo {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .demo-formulario,
+  .plan,
+  .modulo,
+  .beneficio {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .precio-box {
+    flex-wrap: wrap;
+  }
+
+  .precio-numero {
+    font-size: 42px;
+  }
+
+  .whatsapp {
+    right: 12px;
+    bottom: 14px;
+  }
+}
+
+@media (max-width: 390px) {
+  .marca img {
+    width: 170px !important;
+    max-width: 49vw !important;
+  }
+
+  .boton-iniciar {
+    padding: 8px 9px !important;
+    font-size: 11px !important;
+  }
+
+  .hero-titulo-premium,
+  .hero h1 {
+    font-size: 38px;
+  }
+}
+</style>
+
 </head>
 <body>
 <header class="header">
@@ -4506,6 +4707,7 @@
               </button>
 </div>
 </div>
+</nav>
 <div class="acciones-header">
 <a class="boton-iniciar" data-en="Log in" data-es="Iniciar sesión" href="https://app.konax.net/login">
               Iniciar sesión
@@ -4514,7 +4716,6 @@
               Solicitar demo
             </a>
 </div>
-</nav>
 </div>
 <div class="contenedor buscador-superior">
 <div class="buscador-wrap">
