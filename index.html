@@ -212,6 +212,220 @@
         transform: translateY(-2px);
       }
 
+
+      /* MEGA MENÚ DE MÓDULOS */
+
+      .nav-item-dropdown {
+        position: relative;
+        display: flex;
+        align-items: center;
+      }
+
+      .nav-dropdown-trigger {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        border: 0;
+        background: transparent;
+        color: #344139;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      .nav-dropdown-trigger:hover,
+      .nav-item-dropdown.abierto .nav-dropdown-trigger {
+        color: var(--verde);
+      }
+
+      .nav-dropdown-trigger svg {
+        width: 14px;
+        height: 14px;
+        transition: transform 0.2s ease;
+      }
+
+      .nav-item-dropdown.abierto .nav-dropdown-trigger svg {
+        transform: rotate(180deg);
+      }
+
+      .mega-menu {
+        position: absolute;
+        top: calc(100% + 22px);
+        left: 50%;
+        width: min(720px, 78vw);
+        padding: 14px;
+        border: 1px solid var(--borde);
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.98);
+        box-shadow: 0 24px 60px rgba(23, 33, 28, 0.16);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform: translate(-50%, 8px);
+        transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s ease;
+      }
+
+      .nav-item-dropdown:hover .mega-menu,
+      .nav-item-dropdown:focus-within .mega-menu,
+      .nav-item-dropdown.abierto .mega-menu {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translate(-50%, 0);
+      }
+
+      .mega-menu::before {
+        content: "";
+        position: absolute;
+        top: -22px;
+        left: 0;
+        right: 0;
+        height: 22px;
+      }
+
+      .mega-menu-cabecera {
+        padding: 10px 12px 14px;
+        border-bottom: 1px solid #edf1ef;
+      }
+
+      .mega-menu-cabecera span {
+        display: block;
+        color: var(--verde);
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 1.1px;
+        text-transform: uppercase;
+      }
+
+      .mega-menu-cabecera strong {
+        display: block;
+        margin-top: 3px;
+        color: #1a261f;
+        font-size: 17px;
+      }
+
+      .mega-menu-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 6px;
+        padding: 10px 0;
+      }
+
+      .mega-menu-link {
+        display: grid;
+        grid-template-columns: 42px minmax(0, 1fr);
+        gap: 11px;
+        align-items: center;
+        padding: 12px;
+        border-radius: 12px;
+      }
+
+      .mega-menu-link:hover {
+        background: #f3faf6;
+      }
+
+      .mega-menu-icono {
+        width: 42px;
+        height: 42px;
+        display: grid;
+        place-items: center;
+        border: 1px solid #d7e9df;
+        border-radius: 12px;
+        background: #eef8f3;
+        color: var(--verde);
+        font-size: 18px;
+        font-weight: 800;
+      }
+
+      .mega-menu-texto strong {
+        display: block;
+        color: #1f2d25;
+        font-size: 13px;
+        line-height: 1.25;
+      }
+
+      .mega-menu-texto span {
+        display: block;
+        margin-top: 3px;
+        color: #748078;
+        font-size: 11px;
+        line-height: 1.35;
+      }
+
+      .mega-menu-footer {
+        padding: 11px 12px 5px;
+        border-top: 1px solid #edf1ef;
+      }
+
+      .mega-menu-footer a {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        color: var(--verde);
+        font-size: 12px;
+        font-weight: 800;
+      }
+
+      .konax-negocios-nav {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+      }
+
+      .konax-negocios-nav::before {
+        content: "";
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--verde);
+        box-shadow: 0 0 0 4px rgba(17, 138, 87, 0.09);
+      }
+
+      @media (max-width: 980px) {
+        .mega-menu {
+          width: min(640px, 88vw);
+        }
+      }
+
+      @media (max-width: 760px) {
+        .nav-item-dropdown {
+          width: 100%;
+          display: block;
+        }
+
+        .nav-dropdown-trigger {
+          width: 100%;
+          justify-content: space-between;
+        }
+
+        .mega-menu {
+          position: static;
+          width: 100%;
+          margin-top: 10px;
+          padding: 10px;
+          display: none;
+          opacity: 1;
+          visibility: visible;
+          pointer-events: auto;
+          transform: none;
+          box-shadow: none;
+          border-radius: 14px;
+        }
+
+        .nav-item-dropdown:hover .mega-menu,
+        .nav-item-dropdown:focus-within .mega-menu {
+          display: none;
+        }
+
+        .nav-item-dropdown.abierto .mega-menu {
+          display: block;
+        }
+
+        .mega-menu-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
       /* BUSCADOR SUPERIOR */
 
       .buscador-superior {
@@ -4689,8 +4903,69 @@ canvas {
 </a>
 <nav class="nav-links">
 <a data-en="Solutions" data-es="Soluciones" href="#soluciones">Soluciones</a>
-<a data-en="Modules" data-es="Módulos" href="#modulos">Módulos</a>
+<div class="nav-item-dropdown" id="modulosDropdown">
+<button aria-expanded="false" aria-haspopup="true" class="nav-dropdown-trigger" id="modulosTrigger" type="button">
+<span data-en="Modules" data-es="Módulos">Módulos</span>
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+<path d="m6 9 6 6 6-6"></path>
+</svg>
+</button>
+<div class="mega-menu" id="modulosMegaMenu">
+<div class="mega-menu-cabecera">
+<span data-en="KONAX MODULES" data-es="MÓDULOS KONAX">MÓDULOS KONAX</span>
+<strong data-en="Everything you need to manage your business" data-es="Todo lo que necesitas para gestionar tu negocio">Todo lo que necesitas para gestionar tu negocio</strong>
+</div>
+<div class="mega-menu-grid">
+<a class="mega-menu-link" href="#modulos">
+<div class="mega-menu-icono">👥</div>
+<div class="mega-menu-texto">
+<strong data-en="Customers" data-es="Clientes">Clientes</strong>
+<span data-en="Data, accounts, payments and actions in one profile." data-es="Datos, cuentas, pagos y gestiones en un solo perfil.">Datos, cuentas, pagos y gestiones en un solo perfil.</span>
+</div>
+</a>
+<a class="mega-menu-link" href="#modulos">
+<div class="mega-menu-icono">🛒</div>
+<div class="mega-menu-texto">
+<strong data-en="Sales and credit" data-es="Ventas y crédito">Ventas y crédito</strong>
+<span data-en="Cash sales, credit sales and initial payments." data-es="Ventas al contado, crédito y abonos iniciales.">Ventas al contado, crédito y abonos iniciales.</span>
+</div>
+</a>
+<a class="mega-menu-link" href="#modulos">
+<div class="mega-menu-icono">◌</div>
+<div class="mega-menu-texto">
+<strong data-en="Collections" data-es="Cobranza">Cobranza</strong>
+<span data-en="Overdue accounts, promises, agents and recovery." data-es="Mora, promesas, gestores y recuperación.">Mora, promesas, gestores y recuperación.</span>
+</div>
+</a>
+<a class="mega-menu-link" href="#modulos">
+<div class="mega-menu-icono">💵</div>
+<div class="mega-menu-texto">
+<strong data-en="Cash management" data-es="Caja">Caja</strong>
+<span data-en="Payments, collections and daily transactions." data-es="Pagos, cobros y movimientos diarios.">Pagos, cobros y movimientos diarios.</span>
+</div>
+</a>
+<a class="mega-menu-link" href="#modulos">
+<div class="mega-menu-icono">⬓</div>
+<div class="mega-menu-texto">
+<strong data-en="Inventory" data-es="Inventario">Inventario</strong>
+<span data-en="Products, stock, prices, suppliers and alerts." data-es="Productos, stock, precios, proveedores y alertas.">Productos, stock, precios, proveedores y alertas.</span>
+</div>
+</a>
+<a class="mega-menu-link" href="#modulos">
+<div class="mega-menu-icono">🔐</div>
+<div class="mega-menu-texto">
+<strong data-en="Users and permissions" data-es="Usuarios y permisos">Usuarios y permisos</strong>
+<span data-en="Define access and responsibilities for your team." data-es="Define accesos y responsabilidades para tu equipo.">Define accesos y responsabilidades para tu equipo.</span>
+</div>
+</a>
+</div>
+<div class="mega-menu-footer">
+<a data-en="View all modules →" data-es="Ver todos los módulos →" href="#modulos">Ver todos los módulos →</a>
+</div>
+</div>
+</div>
 <a data-en="Benefits" data-es="Beneficios" href="#beneficios">Beneficios</a>
+<a class="konax-negocios-nav" data-en="KONAX Businesses" data-es="KONAX Negocios" href="https://app.konax.net/negocios">KONAX Negocios</a>
 <a data-en="Plans" data-es="Planes" href="#planes">Planes</a>
 <div class="idioma">
 <button class="idioma-boton" id="idiomaBoton" type="button">
@@ -5744,5 +6019,44 @@ canvas {
 
       aplicarIdioma(idiomaActual);
     </script>
+
+<script>
+(function () {
+  const dropdown = document.getElementById("modulosDropdown");
+  const trigger = document.getElementById("modulosTrigger");
+
+  if (!dropdown || !trigger) return;
+
+  function cerrar() {
+    dropdown.classList.remove("abierto");
+    trigger.setAttribute("aria-expanded", "false");
+  }
+
+  function alternar(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    const abierto = dropdown.classList.toggle("abierto");
+    trigger.setAttribute("aria-expanded", abierto ? "true" : "false");
+  }
+
+  trigger.addEventListener("click", alternar);
+
+  dropdown.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", cerrar);
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!dropdown.contains(event.target)) cerrar();
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      cerrar();
+      trigger.focus();
+    }
+  });
+})();
+</script>
+
 </body>
 </html>
